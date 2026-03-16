@@ -11,14 +11,6 @@
       "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44C5A4EB-1D6E-4FA3-BAA4-5E13B2E9A1FE}|Repository_MariaDB\\Repository_SqlServer.csproj|d:\\proyectosatyly\\alquiler\\repository_mariadb\\rolrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44C5A4EB-1D6E-4FA3-BAA4-5E13B2E9A1FE}|Repository_MariaDB\\Repository_SqlServer.csproj|solutionrelative:repository_mariadb\\rolrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44C5A4EB-1D6E-4FA3-BAA4-5E13B2E9A1FE}|Repository_MariaDB\\Repository_SqlServer.csproj|d:\\proyectosatyly\\alquiler\\repository_mariadb\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44C5A4EB-1D6E-4FA3-BAA4-5E13B2E9A1FE}|Repository_MariaDB\\Repository_SqlServer.csproj|solutionrelative:repository_mariadb\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectosatyly\\alquiler\\alquilerwebapplication\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,6 +21,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|d:\\proyectosatyly\\alquiler\\model\\entitie\\ent_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|solutionrelative:model\\entitie\\ent_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\UsuarioRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repository_MariaDB\\UsuarioRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\RolRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repository_MariaDB\\RolRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "AlquilerWebApplication\\appsettings.json",
               "ToolTip": "D:\\ProyectoSatyly\\ALQUILER\\AlquilerWebApplication\\appsettings.json",
               "RelativeToolTip": "AlquilerWebApplication\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-03-14T22:23:11.576Z",
               "EditorCaption": ""
@@ -75,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "D:\\ProyectoSatyly\\ALQUILER\\AlquilerWebApplication\\Mapping\\MappingProfile.cs",
               "RelativeDocumentMoniker": "AlquilerWebApplication\\Mapping\\MappingProfile.cs",
@@ -87,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UsuarioRepository.cs",
               "DocumentMoniker": "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\UsuarioRepository.cs",
               "RelativeDocumentMoniker": "Repository_MariaDB\\UsuarioRepository.cs",
@@ -99,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "RolRepository.cs",
               "DocumentMoniker": "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\RolRepository.cs",
               "RelativeDocumentMoniker": "Repository_MariaDB\\RolRepository.cs",
@@ -111,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Ent_Rol.cs",
               "DocumentMoniker": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Entitie\\Ent_Rol.cs",
               "RelativeDocumentMoniker": "Model\\Entitie\\Ent_Rol.cs",
@@ -123,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Ent_Usuario.cs",
               "DocumentMoniker": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Entitie\\Ent_Usuario.cs",
               "RelativeDocumentMoniker": "Model\\Entitie\\Ent_Usuario.cs",

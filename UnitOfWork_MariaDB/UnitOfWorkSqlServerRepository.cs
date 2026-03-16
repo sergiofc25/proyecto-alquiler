@@ -1,0 +1,20 @@
+﻿using Repository_Interface;
+using Repository_SqlServer;
+using Microsoft.Data.SqlClient;
+using UnitOfWork_Interface;
+
+namespace UnitOfWork_SqlServer
+{
+    public class UnitOfWorkSqlServerRepository : IUnitOfWorkRepository
+    {
+
+        public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
+        {
+            RolRepository = new RolRepository(context, transaction);
+            UsuarioRepository = new UsuarioRepository(context, transaction);
+        }
+
+        public IRolRepository RolRepository { get; }
+        public IUsuarioRepository UsuarioRepository { get; }
+    }
+}

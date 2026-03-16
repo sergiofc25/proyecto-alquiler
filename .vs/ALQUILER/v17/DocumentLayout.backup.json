@@ -1,0 +1,141 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Proyectos_2025\\ALQUILER\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectos_2025\\alquiler\\alquilerwebapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectos_2025\\alquiler\\alquilerwebapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44C5A4EB-1D6E-4FA3-BAA4-5E13B2E9A1FE}|Repository_MariaDB\\Repository_SqlServer.csproj|d:\\proyectos_2025\\alquiler\\repository_mariadb\\rolrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44C5A4EB-1D6E-4FA3-BAA4-5E13B2E9A1FE}|Repository_MariaDB\\Repository_SqlServer.csproj|solutionrelative:repository_mariadb\\rolrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44C5A4EB-1D6E-4FA3-BAA4-5E13B2E9A1FE}|Repository_MariaDB\\Repository_SqlServer.csproj|d:\\proyectos_2025\\alquiler\\repository_mariadb\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44C5A4EB-1D6E-4FA3-BAA4-5E13B2E9A1FE}|Repository_MariaDB\\Repository_SqlServer.csproj|solutionrelative:repository_mariadb\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectos_2025\\alquiler\\alquilerwebapplication\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|d:\\proyectos_2025\\alquiler\\model\\entitie\\ent_rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|solutionrelative:model\\entitie\\ent_rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|d:\\proyectos_2025\\alquiler\\model\\entitie\\ent_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|solutionrelative:model\\entitie\\ent_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 399,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Proyectos_2025\\ALQUILER\\AlquilerWebApplication\\appsettings.json",
+              "RelativeDocumentMoniker": "AlquilerWebApplication\\appsettings.json",
+              "ToolTip": "D:\\Proyectos_2025\\ALQUILER\\AlquilerWebApplication\\appsettings.json",
+              "RelativeToolTip": "AlquilerWebApplication\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-14T22:23:11.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Proyectos_2025\\ALQUILER\\AlquilerWebApplication\\Program.cs",
+              "RelativeDocumentMoniker": "AlquilerWebApplication\\Program.cs",
+              "ToolTip": "D:\\Proyectos_2025\\ALQUILER\\AlquilerWebApplication\\Program.cs",
+              "RelativeToolTip": "AlquilerWebApplication\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T22:20:39.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\Proyectos_2025\\ALQUILER\\AlquilerWebApplication\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "AlquilerWebApplication\\Mapping\\MappingProfile.cs",
+              "ToolTip": "D:\\Proyectos_2025\\ALQUILER\\AlquilerWebApplication\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "AlquilerWebApplication\\Mapping\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T22:16:38.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "D:\\Proyectos_2025\\ALQUILER\\Repository_MariaDB\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Repository_MariaDB\\UsuarioRepository.cs",
+              "ToolTip": "D:\\Proyectos_2025\\ALQUILER\\Repository_MariaDB\\UsuarioRepository.cs",
+              "RelativeToolTip": "Repository_MariaDB\\UsuarioRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wB4AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T22:16:01.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RolRepository.cs",
+              "DocumentMoniker": "D:\\Proyectos_2025\\ALQUILER\\Repository_MariaDB\\RolRepository.cs",
+              "RelativeDocumentMoniker": "Repository_MariaDB\\RolRepository.cs",
+              "ToolTip": "D:\\Proyectos_2025\\ALQUILER\\Repository_MariaDB\\RolRepository.cs",
+              "RelativeToolTip": "Repository_MariaDB\\RolRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T22:15:45.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ent_Rol.cs",
+              "DocumentMoniker": "D:\\Proyectos_2025\\ALQUILER\\Model\\Entitie\\Ent_Rol.cs",
+              "RelativeDocumentMoniker": "Model\\Entitie\\Ent_Rol.cs",
+              "ToolTip": "D:\\Proyectos_2025\\ALQUILER\\Model\\Entitie\\Ent_Rol.cs",
+              "RelativeToolTip": "Model\\Entitie\\Ent_Rol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T22:15:17.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ent_Usuario.cs",
+              "DocumentMoniker": "D:\\Proyectos_2025\\ALQUILER\\Model\\Entitie\\Ent_Usuario.cs",
+              "RelativeDocumentMoniker": "Model\\Entitie\\Ent_Usuario.cs",
+              "ToolTip": "D:\\Proyectos_2025\\ALQUILER\\Model\\Entitie\\Ent_Usuario.cs",
+              "RelativeToolTip": "Model\\Entitie\\Ent_Usuario.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T22:12:27.995Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "SIEET_API_REST.Controllers.v1.RolController",
+    "Method": "Obten",
+    "RelativePath": "api/Rol",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIEET_API_REST.Controllers.v1.UsuarioController",
+    "Method": "Obten",
+    "RelativePath": "api/Usuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

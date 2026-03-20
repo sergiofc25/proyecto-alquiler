@@ -34,11 +34,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj",
+      "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj",
       "projectName": "Repository_Interface",
-      "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj",
+      "projectPath": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\obj\\",
+      "outputPath": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -63,8 +63,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj"
             }
           }
         }

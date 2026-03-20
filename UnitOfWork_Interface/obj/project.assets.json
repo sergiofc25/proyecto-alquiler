@@ -52,11 +52,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj",
+      "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj",
       "projectName": "UnitOfWork_Interface",
-      "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj",
+      "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\obj\\",
+      "outputPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -81,8 +81,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj"
             }
           }
         }

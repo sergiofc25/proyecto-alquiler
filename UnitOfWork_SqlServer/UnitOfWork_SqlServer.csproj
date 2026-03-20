@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Repository_MariaDB\Repository_SqlServer.csproj" />
+    <ProjectReference Include="..\Repository_SqlServer\Repository_SqlServer.csproj" />
     <ProjectReference Include="..\UnitOfWork_Interface\UnitOfWork_Interface.csproj" />
   </ItemGroup>
 

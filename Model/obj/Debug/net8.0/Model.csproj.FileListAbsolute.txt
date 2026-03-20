@@ -9,3 +9,15 @@ D:\Proyectos_2025\ALQUILER\Model\obj\Debug\net8.0\Model.dll
 D:\Proyectos_2025\ALQUILER\Model\obj\Debug\net8.0\refint\Model.dll
 D:\Proyectos_2025\ALQUILER\Model\obj\Debug\net8.0\Model.pdb
 D:\Proyectos_2025\ALQUILER\Model\obj\Debug\net8.0\ref\Model.dll
+D:\ProyectoStayly\ALQUILER\Model\bin\Debug\net8.0\Model.deps.json
+D:\ProyectoStayly\ALQUILER\Model\bin\Debug\net8.0\Model.dll
+D:\ProyectoStayly\ALQUILER\Model\bin\Debug\net8.0\Model.pdb
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\Model.AssemblyInfoInputs.cache
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\Model.AssemblyInfo.cs
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\Model.csproj.CoreCompileInputs.cache
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\Model.sourcelink.json
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\Model.dll
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\refint\Model.dll
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\Model.pdb
+D:\ProyectoStayly\ALQUILER\Model\obj\Debug\net8.0\ref\Model.dll

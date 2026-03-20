@@ -18,7 +18,7 @@
     <ProjectReference Include="..\Model\Model.csproj" />
     <ProjectReference Include="..\Service\Service.csproj" />
     <ProjectReference Include="..\UnitOfWork_Interface\UnitOfWork_Interface.csproj" />
-    <ProjectReference Include="..\UnitOfWork_MariaDB\UnitOfWork_SqlServer.csproj" />
+    <ProjectReference Include="..\UnitOfWork_SqlServer\UnitOfWork_SqlServer.csproj" />
   </ItemGroup>
 
 </Project>

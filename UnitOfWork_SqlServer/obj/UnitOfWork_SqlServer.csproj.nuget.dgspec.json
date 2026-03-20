@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\UnitOfWork_SqlServer.csproj": {}
+    "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj": {}
   },
   "projects": {
-    "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj": {
+    "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj",
+        "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj",
+        "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\Model\\obj\\",
+        "outputPath": "D:\\ProyectoStayly\\ALQUILER\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -73,14 +73,14 @@
         }
       }
     },
-    "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj": {
+    "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj",
+        "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj",
         "projectName": "Repository_Interface",
-        "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj",
+        "projectPath": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\obj\\",
+        "outputPath": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -105,8 +105,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj": {
-                "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj"
+              "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj": {
+                "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj"
               }
             }
           }
@@ -146,14 +146,14 @@
         }
       }
     },
-    "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\Repository_SqlServer.csproj": {
+    "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\Repository_SqlServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\Repository_SqlServer.csproj",
+        "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\Repository_SqlServer.csproj",
         "projectName": "Repository_SqlServer",
-        "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\Repository_SqlServer.csproj",
+        "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\Repository_SqlServer.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\obj\\",
+        "outputPath": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -178,11 +178,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj": {
-                "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj"
+              "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj": {
+                "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj"
               },
-              "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj": {
-                "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj"
+              "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj": {
+                "projectPath": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj"
               }
             }
           }
@@ -232,14 +232,14 @@
         }
       }
     },
-    "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
+    "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj",
+        "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj",
         "projectName": "UnitOfWork_Interface",
-        "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj",
+        "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\obj\\",
+        "outputPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -264,8 +264,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj": {
-                "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj"
+              "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj": {
+                "projectPath": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\Repository_Interface.csproj"
               }
             }
           }
@@ -305,14 +305,14 @@
         }
       }
     },
-    "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\UnitOfWork_SqlServer.csproj": {
+    "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\UnitOfWork_SqlServer.csproj",
+        "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj",
         "projectName": "UnitOfWork_SqlServer",
-        "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\UnitOfWork_SqlServer.csproj",
+        "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\obj\\",
+        "outputPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -337,11 +337,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\Repository_SqlServer.csproj": {
-                "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\Repository_SqlServer.csproj"
+              "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\Repository_SqlServer.csproj": {
+                "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\Repository_SqlServer.csproj"
               },
-              "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
-                "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj"
+              "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
+                "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj"
               }
             }
           }

@@ -70,11 +70,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\Service\\Service.csproj",
+      "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Service\\Service.csproj",
+      "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Service\\Service.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\Service\\obj\\",
+      "outputPath": "D:\\ProyectoStayly\\ALQUILER\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -99,8 +99,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj"
             }
           }
         }

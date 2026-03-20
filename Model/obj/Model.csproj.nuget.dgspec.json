@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj": {}
+    "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj": {}
   },
   "projects": {
-    "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj": {
+    "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj",
+        "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj",
+        "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\Model\\obj\\",
+        "outputPath": "D:\\ProyectoStayly\\ALQUILER\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",

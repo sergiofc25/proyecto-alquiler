@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rG8+Gl8ep1w=",
+  "dgSpecHash": "hyhoWWMa8oU=",
   "success": true,
-  "projectFilePath": "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\Repository_SqlServer.csproj",
+  "projectFilePath": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\Repository_SqlServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",

@@ -2577,8 +2577,8 @@
     },
     "Repository_SqlServer/1.0.0": {
       "type": "project",
-      "path": "../Repository_MariaDB/Repository_SqlServer.csproj",
-      "msbuildProject": "../Repository_MariaDB/Repository_SqlServer.csproj"
+      "path": "../Repository_SqlServer/Repository_SqlServer.csproj",
+      "msbuildProject": "../Repository_SqlServer/Repository_SqlServer.csproj"
     },
     "Service/1.0.0": {
       "type": "project",
@@ -2592,8 +2592,8 @@
     },
     "UnitOfWork_SqlServer/1.0.0": {
       "type": "project",
-      "path": "../UnitOfWork_MariaDB/UnitOfWork_SqlServer.csproj",
-      "msbuildProject": "../UnitOfWork_MariaDB/UnitOfWork_SqlServer.csproj"
+      "path": "../UnitOfWork_SqlServer/UnitOfWork_SqlServer.csproj",
+      "msbuildProject": "../UnitOfWork_SqlServer/UnitOfWork_SqlServer.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2617,11 +2617,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
+      "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
       "projectName": "AlquilerWebApplication",
-      "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
+      "projectPath": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\AlquilerWebApplication\\obj\\",
+      "outputPath": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -2646,17 +2646,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Model\\Model.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Model\\Model.csproj"
             },
-            "D:\\ProyectoSatyly\\ALQUILER\\Service\\Service.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Service\\Service.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\Service\\Service.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Service\\Service.csproj"
             },
-            "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj"
             },
-            "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\UnitOfWork_SqlServer.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\UnitOfWork_SqlServer.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj"
             }
           }
         }

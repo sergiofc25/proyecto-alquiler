@@ -1716,8 +1716,8 @@
     },
     "Repository_SqlServer/1.0.0": {
       "type": "project",
-      "path": "../Repository_MariaDB/Repository_SqlServer.csproj",
-      "msbuildProject": "../Repository_MariaDB/Repository_SqlServer.csproj"
+      "path": "../Repository_SqlServer/Repository_SqlServer.csproj",
+      "msbuildProject": "../Repository_SqlServer/Repository_SqlServer.csproj"
     },
     "UnitOfWork_Interface/1.0.0": {
       "type": "project",
@@ -1742,11 +1742,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\UnitOfWork_SqlServer.csproj",
+      "projectUniqueName": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj",
       "projectName": "UnitOfWork_SqlServer",
-      "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\UnitOfWork_SqlServer.csproj",
+      "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_MariaDB\\obj\\",
+      "outputPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -1771,11 +1771,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\Repository_SqlServer.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\Repository_MariaDB\\Repository_SqlServer.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\Repository_SqlServer.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\Repository_SqlServer.csproj"
             },
-            "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
-              "projectPath": "D:\\ProyectoSatyly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj"
+            "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj": {
+              "projectPath": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_Interface\\UnitOfWork_Interface.csproj"
             }
           }
         }

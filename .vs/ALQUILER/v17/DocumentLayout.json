@@ -31,12 +31,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AlquilerWebApplication",
+              "Title": "AlquilerWebApplication.csproj",
               "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
               "RelativeDocumentMoniker": "AlquilerWebApplication\\AlquilerWebApplication.csproj",
               "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
               "RelativeToolTip": "AlquilerWebApplication\\AlquilerWebApplication.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-03-20T16:25:05.516Z",
               "EditorCaption": ""
@@ -44,7 +44,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UnitOfWork_SqlServer",
+              "Title": "UnitOfWork_SqlServer.csproj",
               "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj",
               "RelativeDocumentMoniker": "UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj",
               "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\UnitOfWork_SqlServer\\UnitOfWork_SqlServer.csproj",

@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "AlquilerWebApplication.Controllers.v1.AccountsController",
+    "Method": "Login",
+    "RelativePath": "api/Accounts/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eDTO_Usuario_Obten_Login",
+        "Type": "Model.DTO.DTO_Usuario_Obten_Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.v1.AccountsController",
+    "Method": "GetServerTime",
+    "RelativePath": "api/Accounts/ServerTime",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SIEET_API_REST.Controllers.v1.RolController",
     "Method": "Obten",
     "RelativePath": "api/Rol",
@@ -7,6 +33,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.v1.TokenController",
+    "Method": "Refresh",
+    "RelativePath": "api/Token/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eDTO_RefreshToken",
+        "Type": "Model.DTO.DTO_RefreshToken",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

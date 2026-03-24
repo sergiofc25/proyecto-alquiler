@@ -12,4 +12,9 @@ namespace Model.DTO
         public string? Email { get; set; }
         public string? Rol { get; set; }
     }
+    public class DTO_Usuario_Obten_Login
+    {
+        public string? Usu_Correo { get; set; }
+        public string? Usu_Clave { get; set; }
+    }
 }

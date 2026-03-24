@@ -19,7 +19,7 @@ namespace Model.Entitie
         public string? Usu_Observacion { get; set; }
         public string? Usu_Token { get; set; }
         public string? Usu_TokenActualizado { get; set; }
-        public string Usu_Clave { get; set; }
+        public string? Usu_Clave { get; set; }
         public DateTime Usu_FecHoraTokenActualizado { get; set; }
         
     }

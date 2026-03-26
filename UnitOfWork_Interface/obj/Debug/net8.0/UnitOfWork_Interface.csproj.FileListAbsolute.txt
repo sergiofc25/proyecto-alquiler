@@ -15,11 +15,6 @@ D:\Proyectos_2025\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Inte
 D:\Proyectos_2025\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\refint\UnitOfWork_Interface.dll
 D:\Proyectos_2025\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.pdb
 D:\Proyectos_2025\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\ref\UnitOfWork_Interface.dll
-D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.GeneratedMSBuildEditorConfig.editorconfig
-D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.AssemblyInfoInputs.cache
-D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.AssemblyInfo.cs
-D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.csproj.CoreCompileInputs.cache
-D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.sourcelink.json
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\bin\Debug\net8.0\UnitOfWork_Interface.deps.json
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\bin\Debug\net8.0\UnitOfWork_Interface.dll
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\bin\Debug\net8.0\UnitOfWork_Interface.pdb
@@ -28,6 +23,11 @@ D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\bin\Debug\net8.0\Repository_Inte
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\bin\Debug\net8.0\Repository_Interface.pdb
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\bin\Debug\net8.0\Model.pdb
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.csproj.AssemblyReference.cache
+D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.AssemblyInfoInputs.cache
+D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.AssemblyInfo.cs
+D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.csproj.CoreCompileInputs.cache
+D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.sourcelink.json
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWo.4AC9AAD0.Up2Date
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\UnitOfWork_Interface.dll
 D:\ProyectoStayly\ALQUILER\UnitOfWork_Interface\obj\Debug\net8.0\refint\UnitOfWork_Interface.dll

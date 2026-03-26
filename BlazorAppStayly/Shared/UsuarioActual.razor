@@ -1,0 +1,112 @@
+﻿@using Newtonsoft.Json
+@using Model.DTO
+@inject IHttpClientFactory ClientFactory
+@using Blazored.LocalStorage
+@using System.Net.Http.Headers
+@inject ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+@inject UserStateService UserStateService
+
+@* <MudMenu>
+    <ActivatorContent>
+        <MudButton variant="Variant.Text"
+                   color="Color.Inherit"
+                   endIcon="@Icons.Material.Filled.ArrowDropDown"
+                   class="ml-auto user-menu-button"
+                   style="text-transform: none;">
+            <MudAvatar Size="Size.Small" Class="mr-2" Style="background-color: #4CAF50;">
+                <MudIcon Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Inherit" />
+            </MudAvatar>
+            <span class="user-name">@usuario.NombreUsuario</span>
+        </MudButton>
+    </ActivatorContent>
+    <ChildContent>
+        <div class="d-flex align-center">
+            <MudTooltip Text="LogOut">
+                <MudButton Class="mx-2" OnClick="@(async () => { await Btn_LogOut();})">
+                    Cerrar Sesión <MudIcon Icon="@Icons.Material.Outlined.Logout"/>
+                </MudButton>
+            </MudTooltip>
+        </div>
+    </ChildContent>
+</MudMenu> *@
+<MudButton Variant="Variant.Text"
+           Color="Color.Inherit"
+           EndIcon="@Icons.Material.Filled.ArrowDropDown"
+           OnClick="ToggleMenu"
+           Style="text-transform: none;">
+
+    <MudAvatar Size="Size.Small" Class="mr-2">
+        <MudIcon Icon="@Icons.Material.Filled.AccountCircle" />
+    </MudAvatar>
+
+    @usuario.NombreUsuario
+</MudButton>
+
+<MudPopover Open="@_menuOpen"
+            AnchorOrigin="Origin.BottomRight"
+            TransformOrigin="Origin.TopRight">
+
+    <MudPaper Class="pa-2">
+        <MudButton FullWidth="true" OnClick="Btn_LogOut">
+            Cerrar Sesión
+            <MudIcon Icon="@Icons.Material.Outlined.Logout" />
+        </MudButton>
+    </MudPaper>
+
+</MudPopover>
+
+@code {
+    private MudForm? form;
+    private DTO_Usuario_Obten_x_Correo usuario = new DTO_Usuario_Obten_x_Correo();
+    private string errorMessage = string.Empty;
+    private bool _processing = false;
+    private bool _menuOpen;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await GetUsuario();
+        }
+    }
+    void ToggleMenu()
+    {
+        _menuOpen = !_menuOpen;
+    }
+    private async Task GetUsuario()
+    {
+        try
+        {
+            var client = ClientFactory.CreateClient("ApiStayly");
+            var token = await localStorage.GetItemAsync<string>("authToken");
+            if (!string.IsNullOrEmpty(token))
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            }
+
+            var response = await client.GetAsync("api/Usuario/Obten_Usuario_Logeado");
+            if (response.IsSuccessStatusCode)
+            {
+                string responseBody = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<DTO_Response<DTO_Usuario_Obten_x_Correo>>(responseBody);
+
+                if (result != null && result.IsSuccessful)
+                {
+                    usuario = result.Data;
+                    UserStateService.SetUser(usuario);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error al cargar usuario: {ex.Message}";
+        }
+        StateHasChanged();
+    }
+    private async Task Btn_LogOut()
+    {
+        await localStorage.ClearAsync();
+        NavigationManager.NavigateTo("/login", forceLoad: true);
+    }
+}

@@ -14,7 +14,15 @@ namespace Model.DTO
     }
     public class DTO_Usuario_Obten_Login
     {
-        public string? Usu_Correo { get; set; }
-        public string? Usu_Clave { get; set; }
+        public string? Email { get; set; }
+        public string? Clave { get; set; }
+    }
+    public class DTO_Usuario_Obten_x_Correo
+    {
+        public string? Email { get; set; }
+        public string? NombreUsuario { get; set; }
+        public string? Rol { get; set; }
+        public string? FechaRegistroUsuario { get; set; }
+        public string? EstadoUsuario { get; set; }
     }
 }

@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork_SqlServer", "Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository_SqlServer", "Repository_SqlServer\Repository_SqlServer.csproj", "{3E2C6C1D-1A1C-B869-F05F-671FE12D2011}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppStayly", "BlazorAppStayly\BlazorAppStayly.csproj", "{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{3E2C6C1D-1A1C-B869-F05F-671FE12D2011}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E2C6C1D-1A1C-B869-F05F-671FE12D2011}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E2C6C1D-1A1C-B869-F05F-671FE12D2011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{1A70A946-ECBE-40C8-B67E-D1A3F3CB41BF} = {12D102B5-0BCB-4145-902C-AB0CC091A82A}
 		{FAFC97F4-C9BF-3884-609D-AD7964958162} = {1705AA83-F800-4D3E-B982-360B81053E40}
 		{3E2C6C1D-1A1C-B869-F05F-671FE12D2011} = {6350FBC2-1E6B-489D-8FD2-2ED985AC5C45}
+		{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678} = {DB879DF8-A2AE-4A2B-96BD-50535E887E95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6BA78F69-757E-4B88-8E77-ABFF412C5CCB}

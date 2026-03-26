@@ -1,8 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "AlquilerWebApplication",
-    "version": "1.0"
+    "title": "API Stayly"
   },
   "paths": {
     "/api/Accounts/Login": {
@@ -102,6 +101,18 @@
           }
         }
       }
+    },
+    "/api/Usuario/Obten_Usuario_Logeado": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -123,17 +134,30 @@
       "DTO_Usuario_Obten_Login": {
         "type": "object",
         "properties": {
-          "usu_Correo": {
+          "email": {
             "type": "string",
             "nullable": true
           },
-          "usu_Clave": {
+          "clave": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Bearer Authentication with JWT Token",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

@@ -22,6 +22,25 @@ namespace AlquilerWebApplication.Mapping
                 opt => opt.MapFrom(origen => origen.Usu_Correo))
                 .ForMember(destino => destino.Rol,
                 opt => opt.MapFrom(origen => origen.eRol.Rol_Nombre));
+
+            CreateMap<Ent_Usuario, DTO_Usuario_Obten_x_Correo>()
+            .ForMember(destino => destino.Email,
+            opt => opt.MapFrom(origen => origen.Usu_Correo))
+            .ForMember(destino => destino.NombreUsuario,
+            opt => opt.MapFrom(origen => origen.Usu_Nombre))
+            .ForMember(destino => destino.Rol,
+            opt => opt.MapFrom(origen => origen.eRol.Rol_Nombre))
+            .ForMember(destino => destino.FechaRegistroUsuario,
+            opt => opt.MapFrom(origen => origen.Usu_FechaHoraRegistro))
+            .ForMember(destino => destino.EstadoUsuario,
+            opt => opt.MapFrom(origen => origen.Usu_Estado));
+
+            CreateMap<Ent_Usuario, DTO_Usuario_Obten_Login>()
+            .ForMember(destino => destino.Email,
+            opt => opt.MapFrom(origen => origen.Usu_Correo))
+            .ForMember(destino => destino.Clave,
+            opt => opt.MapFrom(origen => origen.Usu_Clave))
+            ;
         }
     }
 }

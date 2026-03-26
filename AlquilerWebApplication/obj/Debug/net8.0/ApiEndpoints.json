@@ -52,9 +52,19 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SIEET_API_REST.Controllers.v1.UsuarioController",
+    "ContainingType": "AlquilerWebApplication.Controllers.UsuarioController",
     "Method": "Obten",
     "RelativePath": "api/Usuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.UsuarioController",
+    "Method": "Obten_Usuario_Logeado",
+    "RelativePath": "api/Usuario/Obten_Usuario_Logeado",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

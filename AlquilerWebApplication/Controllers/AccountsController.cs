@@ -33,9 +33,9 @@ public class AccountsController : ControllerBase
     [HttpPost("Login")]
     public async Task<IActionResult> Login([FromBody] DTO_Usuario_Obten_Login eDTO_Usuario_Obten_Login)
     {
-        var Usuario = await UsuarioService.Obten_x_Correo(eDTO_Usuario_Obten_Login.Usu_Correo);
+        var Usuario = await UsuarioService.Obten_x_Correo(eDTO_Usuario_Obten_Login.Email);
 
-        if (Usuario == null || await UsuarioService.Obten_Login(eDTO_Usuario_Obten_Login.Usu_Correo, eDTO_Usuario_Obten_Login.Usu_Clave) == 0)
+        if (Usuario == null || await UsuarioService.Obten_Login(eDTO_Usuario_Obten_Login.Email, eDTO_Usuario_Obten_Login.Clave) == 0)
             return Unauthorized(new DTO_AuthResponse { ErrorMessage = "Autenticación no válida." });
 
         var signingCredentials = _tokenService.GetSigningCredentials();

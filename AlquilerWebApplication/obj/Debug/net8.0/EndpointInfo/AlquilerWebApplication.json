@@ -47,6 +47,18 @@
         }
       }
     },
+    "/api/Alojamiento/Alojamiento_Obten": {
+      "get": {
+        "tags": [
+          "Alojamiento"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Rol": {
       "get": {
         "tags": [

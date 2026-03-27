@@ -57,6 +57,7 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWorkSqlServer>();
 builder.Services.AddTransient<IRolService, RolService>();
 builder.Services.AddTransient<IUsuarioService, UsuarioService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddTransient<IAlojamientoService, AlojamientoService>();
 
 var jwtSettings = builder.Configuration.GetSection("JWTSettings");
 

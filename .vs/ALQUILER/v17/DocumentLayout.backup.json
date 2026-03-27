@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\ProyectoStayly\\ALQUILER\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\shared\\usuarioactual.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\shared\\usuarioactual.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectostayly\\alquiler\\alquilerwebapplication\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\habitaciones.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\habitaciones.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectostayly\\alquiler\\alquilerwebapplication\\controllers\\alojamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\controllers\\alojamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "AlquilerWebApplication\\Controllers\\UsuarioController.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "AlquilerWebApplication\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAuwC0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T00:40:26.699Z",
+              "DocumentIndex": 0,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Shared\\NavMenu.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Shared\\NavMenu.razor",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-26T21:10:15.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuarioActual.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Shared\\UsuarioActual.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Shared\\UsuarioActual.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Shared\\UsuarioActual.razor*",
-              "RelativeToolTip": "BlazorAppStayly\\Shared\\UsuarioActual.razor*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCAAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Habitaciones.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Habitaciones.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Habitaciones.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-26T00:32:29.032Z",
+              "WhenOpened": "2026-03-26T20:27:59.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AlojamientoController.cs",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Controllers\\AlojamientoController.cs",
+              "RelativeDocumentMoniker": "AlquilerWebApplication\\Controllers\\AlojamientoController.cs",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Controllers\\AlojamientoController.cs",
+              "RelativeToolTip": "AlquilerWebApplication\\Controllers\\AlojamientoController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T20:13:01.203Z",
               "EditorCaption": ""
             }
           ]

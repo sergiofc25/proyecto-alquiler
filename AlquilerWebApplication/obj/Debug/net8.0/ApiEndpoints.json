@@ -26,6 +26,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SIEET_API_REST.Controllers.v1.AlojamientoController",
+    "Method": "AlojamientoObten",
+    "RelativePath": "api/Alojamiento/Alojamiento_Obten",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SIEET_API_REST.Controllers.v1.RolController",
     "Method": "Obten",
     "RelativePath": "api/Rol",

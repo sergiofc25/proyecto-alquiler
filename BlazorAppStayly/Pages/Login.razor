@@ -17,10 +17,10 @@
     <MudItem xs="12" md="8" Class="d-flex flex-column justify-center align-center pa-4 pa-md-10">
         <div class="welcome-content">
             <MudText Typo="Typo.h4" Class="mb-3" Color="Color.Primary">
-                Bienvenido al Sistema Web De Análisis de Precios Unitarios
+                Bienvenido al Sistema Web De Gestión de Rentas Stayly
             </MudText>
             <MudText Typo="Typo.h6" Class="mb-4" Color="Color.Secondary">
-                Gestión Integral de Proyectos
+                Gestión de rentas
             </MudText>
 
             <div class="features-list">
@@ -39,7 +39,7 @@
             </div>
 
             <MudPaper Class="mt-6 pa-3" Elevation="0" Style="background-color: rgba(255,255,255,0.1); border-radius: 16px;">
-                <MudButton Href="https://sergiofc.runasp.net/" Variant="Variant.Outlined" Color="Color.Info" FullWidth="true"
+                <MudButton Variant="Variant.Outlined" Color="Color.Info" FullWidth="true"
                            EndIcon="@Icons.Material.Filled.ContactSupport" Size="Size.Small">
                     Contactar al administrador
                 </MudButton>
@@ -198,7 +198,7 @@
                     {
                         // Almacenar el token en el almacenamiento local
                         localStorage.SetItemAsync("authToken", result.Token);
-                        NavigationManager.NavigateTo("/counter", forceLoad: true);
+                        NavigationManager.NavigateTo("/habitaciones", forceLoad: true);
                     }
                     else
                     {

@@ -36,6 +36,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SIEET_API_REST.Controllers.v1.ClienteController",
+    "Method": "Obten_Paginado",
+    "RelativePath": "api/Cliente/Obten_Paginado/{RegistroPagina}/{NumeroPagina}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RegistroPagina",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "NumeroPagina",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "PorNDocumento",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SIEET_API_REST.Controllers.v1.RolController",
     "Method": "Obten",
     "RelativePath": "api/Rol",

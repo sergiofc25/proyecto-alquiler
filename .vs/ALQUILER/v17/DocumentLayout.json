@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\cliente\\clientespaginado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\cliente\\clientespaginado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectostayly\\alquiler\\alquilerwebapplication\\controllers\\alojamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\controllers\\alojamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\habitaciones.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\habitaciones.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|d:\\proyectostayly\\alquiler\\model\\requestfeatures\\metadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|solutionrelative:model\\requestfeatures\\metadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,54 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Shared\\MainLayout.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Shared\\MainLayout.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Shared\\MainLayout.razor",
-              "RelativeToolTip": "BlazorAppStayly\\Shared\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-26T21:26:29.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Shared\\NavMenu.razor",
               "RelativeDocumentMoniker": "BlazorAppStayly\\Shared\\NavMenu.razor",
               "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Shared\\NavMenu.razor",
               "RelativeToolTip": "BlazorAppStayly\\Shared\\NavMenu.razor",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-26T21:10:15.483Z",
+              "WhenOpened": "2026-03-29T04:49:39.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Habitaciones.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Habitaciones.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones.razor",
-              "RelativeToolTip": "BlazorAppStayly\\Pages\\Habitaciones.razor",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ClientesPaginado.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Cliente\\ClientesPaginado.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Cliente\\ClientesPaginado.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Cliente\\ClientesPaginado.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Cliente\\ClientesPaginado.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-26T20:27:59.555Z",
+              "WhenOpened": "2026-03-29T04:41:08.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AlojamientoController.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Controllers\\AlojamientoController.cs",
-              "RelativeDocumentMoniker": "AlquilerWebApplication\\Controllers\\AlojamientoController.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Controllers\\AlojamientoController.cs",
-              "RelativeToolTip": "AlquilerWebApplication\\Controllers\\AlojamientoController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAQwBgAAAAAAAAAAAAAAA==",
+              "Title": "MetaData.cs",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\Model\\RequestFeatures\\MetaData.cs",
+              "RelativeDocumentMoniker": "Model\\RequestFeatures\\MetaData.cs",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\Model\\RequestFeatures\\MetaData.cs",
+              "RelativeToolTip": "Model\\RequestFeatures\\MetaData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T20:13:01.203Z",
+              "WhenOpened": "2026-03-29T04:41:00.287Z",
               "EditorCaption": ""
             }
           ]

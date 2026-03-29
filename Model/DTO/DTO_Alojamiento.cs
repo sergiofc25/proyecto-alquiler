@@ -13,6 +13,6 @@ namespace Model.DTO
         public string? Precio { get; set; }
         public string? BanIndependiente { get; set; }
         public string? Amoblado { get; set; }
-        public string? EstadoAlojamiento { get; set; }
+        public bool EstadoAlojamiento { get; set; }
     }
 }

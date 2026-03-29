@@ -58,6 +58,7 @@ builder.Services.AddTransient<IRolService, RolService>();
 builder.Services.AddTransient<IUsuarioService, UsuarioService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IAlojamientoService, AlojamientoService>();
+builder.Services.AddTransient<IClienteService, ClienteService>();
 
 var jwtSettings = builder.Configuration.GetSection("JWTSettings");
 

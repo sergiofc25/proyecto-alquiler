@@ -56,6 +56,26 @@ namespace AlquilerWebApplication.Mapping
                 opt => opt.MapFrom(origen => origen.Alo_Amoblado))
                 .ForMember(destino => destino.EstadoAlojamiento,
                 opt => opt.MapFrom(origen => origen.Alo_Estado));
+
+            //CLIENTE
+
+            CreateMap<Ent_Cliente, DTO_Cliente_Obten_Paginado>()
+                .ForMember(destino => destino.IdCliente,
+                opt => opt.MapFrom(origen => origen.Cli_Id))
+                .ForMember(destino => destino.NombreCliente,
+                opt => opt.MapFrom(origen => origen.Cli_Nombre))
+                .ForMember(destino => destino.NumDocumento,
+                opt => opt.MapFrom(origen => origen.Cli_NumDocumento))
+                .ForMember(destino => destino.FotoDocumento,
+                opt => opt.MapFrom(origen => origen.Cli_FotoDocumento))
+                .ForMember(destino => destino.Telefono,
+                opt => opt.MapFrom(origen => origen.Cli_NumTelefono))
+                .ForMember(destino => destino.Email,
+                opt => opt.MapFrom(origen => origen.Cli_Email))
+                .ForMember(destino => destino.TipoDocumento,
+                opt => opt.MapFrom(origen => origen.eTipo_Documento.TipDoc_Nombre))
+                .ForMember(destino => destino.EstadoCliente,
+                opt => opt.MapFrom(origen => origen.Cli_Estado));
         }
     }
 }

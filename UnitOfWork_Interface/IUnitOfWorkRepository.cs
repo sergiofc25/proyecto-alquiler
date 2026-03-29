@@ -8,5 +8,7 @@ public interface IUnitOfWorkRepository
     IUsuarioRepository UsuarioRepository { get; }
     IAlojamientoRepository AlojamientoRepository { get; }
     IClienteRepository ClienteRepository { get; }
+    IContratoRepository ContratoRepository { get; }
+    IPagoRepository PagoRepository { get; }
 
 }

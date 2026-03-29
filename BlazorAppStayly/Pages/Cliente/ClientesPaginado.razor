@@ -25,7 +25,7 @@
         <MudPaper Class="pa-5" Elevation="3">
             <MudItem Class="d-flex align-center justify-center mud-width-full" xs="12">
                 <MudItem Class="d-flex align-center justify-start mud-width-full" xs="6">
-                    <MudText Typo="Typo.h6" Color="Color.Primary">Clientes</MudText>
+                    <MudText Typo="Typo.h6" Color="Color.Primary">Inquilinos</MudText>
                 </MudItem>
 
                 <MudItem Class="d-flex align-center justify-end mud-width-full" xs="6">
@@ -42,12 +42,12 @@
             Hover="true" Striped="true" Breakpoint="Breakpoint.Sm" Loading="@cargando"
             LoadingProgressColor="Color.Primary" Height="466px" Elevation="3">
                 <ToolBarContent>
-                    <MudText Typo="Typo.h6">Listado de Clientes</MudText>
+                    <MudText Typo="Typo.h6">Listado de Inquilinos</MudText>
                 </ToolBarContent>
                 <ToolBarContent>
                     <MudItem Class="d-flex align-center justify-center mud-width-full pb-5" xs="12">
                         <MudTextField T="string" Value="@searchTerm" ValueChanged="@(value => OnSearch(value))"
-                        Placeholder="Buscar por N° de documento" Adornment="Adornment.Start"
+                        Placeholder="Buscar por DNI/Nombre" Adornment="Adornment.Start"
                         AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
                         </MudTextField>
                     </MudItem>
@@ -80,7 +80,7 @@
                         Variant="Variant.Filled"
                         Color="Color.Error"
                         Disabled="true"
-                        Title="Eliminar cliente">
+                        Title="Eliminar Inquilino">
                         </MudIconButton>
                     </MudTd>
                 </RowTemplate>

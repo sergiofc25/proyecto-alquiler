@@ -1,0 +1,301 @@
+﻿@page "/contratos_paginado"
+@using System.Net.Http.Json
+@using System.Text.Json
+@inject NavigationManager NavigationManager
+@inject IHttpClientFactory ClientFactory
+@using Model.DTO
+@using MudBlazor
+@using Blazored.LocalStorage
+@using System.Net.Http.Headers
+@using System.Text
+@using System.Net
+@using System.Reflection.Metadata
+@using System.Net.Http.Headers
+@inject ILocalStorageService localStorage
+@inject IDialogService DialogService
+@inject UserStateService UserStateService
+
+
+
+<PageTitle>Contratos Paginados</PageTitle>
+
+<MudGrid>
+    <MudItem xs="12">
+        <MudPaper Class="pa-5" Elevation="3">
+            <MudItem Class="d-flex align-center justify-center mud-width-full" xs="12">
+                <MudItem Class="d-flex align-center justify-start mud-width-full" xs="6">
+                    <MudText Typo="Typo.h6" Color="Color.Primary">Contratos</MudText>
+                </MudItem>
+
+                <MudItem Class="d-flex align-center justify-end mud-width-full" xs="6">
+                    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.AddBox" Color="Color.Primary"
+                               Size="Size.Small" OnClick="@(() => Btn_Nuevo_Cliente_Click())">NUEVO</MudButton>
+                </MudItem>
+            </MudItem>
+        </MudPaper>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudPaper Class="pa-5" Elevation="3">
+            <MudTable Items="@contratos" RowsPerPage="@registroPagina" FixedHeader="true" Dense="true"
+            Hover="true" Striped="true" Breakpoint="Breakpoint.Sm" Loading="@cargando"
+            LoadingProgressColor="Color.Primary" Height="466px" Elevation="3">
+                <ToolBarContent>
+                    <MudText Typo="Typo.h6">Listado de Contratos</MudText>
+                </ToolBarContent>
+                <ToolBarContent>
+                    <MudItem Class="d-flex align-center justify-center mud-width-full pb-5" xs="12">
+                        <MudTextField T="string" Value="@searchTerm" ValueChanged="@(value => OnSearch(value))"
+                        Placeholder="Buscar por N° de documento" Adornment="Adornment.Start"
+                        AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
+                        </MudTextField>
+                    </MudItem>
+                </ToolBarContent>
+                <HeaderContent>
+
+                    <MudTh>Codigo</MudTh>
+                    <MudTh>Descripcion</MudTh>
+                    <MudTh>Fecha Inicio</MudTh>
+                    <MudTh>Fecha Fin</MudTh>
+                    <MudTh>Alquiler</MudTh>
+                    <MudTh>Usuario</MudTh>
+                    <MudTh>Inquilino</MudTh>
+                    <MudTh>DNI Inquilino</MudTh>
+                    <MudTh>Habitación</MudTh>
+                    <MudTh>Adelanto</MudTh>
+                    <MudTh>Garantía</MudTh>
+                    <MudTh>Acciones</MudTh>
+                </HeaderContent>
+                <RowTemplate>
+
+                    <MudTd DataLabel="Codigo">@context.ContratoCodigo</MudTd>
+                    <MudTd DataLabel="Descripcion">@context.DescripcionContrato</MudTd>
+                    <MudTd DataLabel="Fecha Inicio">@context.FechaInicio</MudTd>
+                    <MudTd DataLabel="Fecha Fin">@context.FechaFin</MudTd>
+                    <MudTd DataLabel="Alquiler">@context.PrecioAlquiler</MudTd>
+                    <MudTd DataLabel="Usuario">@context.NombreUsuario</MudTd>
+                    <MudTd DataLabel="Inquilino">@context.NombreCliente</MudTd>
+                    <MudTd DataLabel="DNI Inquilino">@context.NumDocumento</MudTd>
+                    <MudTd DataLabel="Habitación">@context.AlojamientoCodigo</MudTd>
+                    <MudTd DataLabel="Adelanto">@context.AdelantoC</MudTd>
+                    <MudTd DataLabel="Garantía">@context.GarantiaC</MudTd>
+                    <MudTd DataLabel="Acciones">
+                        <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                        Variant="Variant.Filled"
+                        Color="Color.Primary"
+                        Disabled="true"
+                        Size="Size.Small" @onclick="@(() => Btn_Actualizar_Cliente_Click(@context.IdContrato))">
+                        </MudIconButton>
+                        <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                        @onclick="@(() => Btn_Eliminar_Cliente_Click(context))"
+                        Variant="Variant.Filled"
+                        Color="Color.Error"
+                        Disabled="true"
+                        Title="Eliminar contrato">
+                        </MudIconButton>
+                    </MudTd>
+                </RowTemplate>
+                <PagerContent>
+                    <div class="d-flex flex-column align-center">
+                        <MudPagination Size="Size.Small" Rectangular="true" Variant="Variant.Text" BoundaryCount="1"
+                                       MiddleCount="3" Count="@metaData.TotalPagina" SelectedChanged="PageChanged" Class="pa-4" />
+                    </div>
+                </PagerContent>
+                <NoRecordsContent>
+                    <MudText>No se encontraron registros.</MudText>
+                </NoRecordsContent>
+                <LoadingContent>
+                    <MudText>Un momento por favor...</MudText>
+                </LoadingContent>
+            </MudTable>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+@code {
+    private IEnumerable<DTO_Contrato_Obten_Paginado> contratos;
+    private MetaData metaData = new MetaData();
+    private int registroPagina = 10;
+    private int numeroPagina = 1;
+    private string searchTerm = string.Empty;
+    private bool cargando = true;
+    private string errorMessage = string.Empty;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var token = await localStorage.GetItemAsync<string>("authToken");
+        if (string.IsNullOrEmpty(token))
+        {
+            NavigationManager.NavigateTo("/login");
+            return;
+        }
+        await LoadClients();
+    }
+
+    private async Task LoadClients()
+    {
+        try
+        {
+            cargando = true;
+            var client = ClientFactory.CreateClient("ApiStayly");
+
+            // Agregar el token de autorización a la solicitud actual
+            // var token = await localStorage.GetItemAsync<string>("authToken");
+            // if (token != null)
+            // {
+            //     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            // }
+            var requestUri = $"api/Contrato/Obten_Paginado/{registroPagina}/{numeroPagina}";
+
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                requestUri += $"?PorNombre={Uri.EscapeDataString(searchTerm)}";
+            }
+
+            var response = await client.GetAsync(requestUri);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var metadataHeader = response.Headers.GetValues("X-Pagination").FirstOrDefault();
+                if (metadataHeader != null)
+                {
+                    metaData = JsonSerializer.Deserialize<MetaData>(metadataHeader);
+                }
+
+                var responseBody = await response.Content.ReadFromJsonAsync<DTO_ResponsePag<IEnumerable<DTO_Contrato_Obten_Paginado>>>();
+                if (responseBody != null && responseBody.IsSuccessful)
+                {
+                    contratos = responseBody.Data;
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            cargando = false;
+            StateHasChanged();
+        }
+    }
+
+    private void PageChanged(int page)
+    {
+        numeroPagina = page;
+        _ = LoadClients();
+    }
+
+    private void OnSearch(string searchTerm)
+    {
+        this.searchTerm = searchTerm;
+        numeroPagina = 1; // Reset to first page when searching
+        _ = LoadClients();
+    }
+    private async Task EliminarCliente(DTO_Contrato_Obten_Paginado cliente)
+    {
+        // if (cliente == null) return;
+
+        // cargando = true;
+        // StateHasChanged();
+
+        // try
+        // {
+        //     var client = ClientFactory.CreateClient("ApiPRESUPUESTOS");
+        //     var token = await localStorage.GetItemAsync<string>("authToken");
+
+        //     if (token != null)
+        //     {
+        //         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        //     }
+
+        //     var requestData = new { Cli_Id = cliente.Cli_Id, Cli_Estado = "False" };
+        //     var content = new StringContent(JsonSerializer.Serialize(requestData), Encoding.UTF8, "application/json");
+
+        //     var response = await client.PutAsync($"api/v1/Cliente/Actualiza_Condicion/{cliente.Cli_Id}", content);
+
+        //     if (response.IsSuccessStatusCode)
+        //     {
+        //         await LoadClients();
+
+        //     }
+        //     else
+        //     {
+        //         var errorContent = await response.Content.ReadAsStringAsync();
+        //         errorMessage = $"Error: {response.StatusCode} - {errorContent}";
+        //     }
+        // }
+        // catch (Exception ex)
+        // {
+        //     errorMessage = $"Ocurrió un error: {ex.Message}";
+        // }
+        // finally
+        // {
+        //     cargando = false;
+        //     StateHasChanged();
+        // }
+    }
+    private async Task Btn_Eliminar_Cliente_Click(DTO_Contrato_Obten_Paginado cliente)
+    {
+        // var options = new DialogOptions()
+        //     {
+        //         CloseOnEscapeKey = true,
+        //         CloseButton = true,
+        //         FullWidth = true
+        //     };
+
+        // var parameters = new DialogParameters();
+        // parameters.Add("Cliente", cliente);
+
+        // var dialog = DialogService.Show<ClienteEliminaDialog>("Eliminar Cliente", parameters, options);
+        // var result = await dialog.Result;
+
+        // if (!result.Cancelled && result.Data is bool confirmado && confirmado)
+        // {
+        //     await EliminarCliente(cliente);
+        // }
+    }
+
+    private async Task Btn_Nuevo_Cliente_Click()
+    {
+        // var options = new DialogOptions()
+        //     {
+        //         CloseOnEscapeKey = true,
+        //         CloseButton = true,
+        //         FullWidth = true,
+        //         MaxWidth = MaxWidth.Small
+        //     };
+        // var dialog = DialogService.Show<ClienteCreaDialog>("Crear Cliente", options);
+        // var result = await dialog.Result;
+
+        // if (!result.Canceled)
+        // {
+        //     await LoadClients();
+        // }
+    }
+
+    private async Task Btn_Actualizar_Cliente_Click(string Cli_Id)
+    {
+        // var options = new DialogOptions()
+        //     {
+        //         CloseOnEscapeKey = true,
+        //         CloseButton = true,
+        //         FullWidth = true,
+        //         MaxWidth = MaxWidth.Small
+        //     };
+        // var parameters = new DialogParameters();
+        // parameters.Add("Cli_Id", Cli_Id);
+        // var dialog = DialogService.Show<ClienteActualizaDialog>("Editar Cliente", parameters, options);
+        // var result = await dialog.Result;
+
+        // if (!result.Canceled)
+        // {
+        //     await LoadClients();
+        // }
+    }
+}

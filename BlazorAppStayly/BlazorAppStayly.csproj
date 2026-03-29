@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\Boletas\" />
     <Folder Include="wwwroot\FotosHabitaciones\303\" />
     <Folder Include="wwwroot\FotosHabitaciones\304\" />
     <Folder Include="wwwroot\FotosHabitaciones\305\" />

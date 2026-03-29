@@ -14,11 +14,15 @@ namespace UnitOfWork_SqlServer
             UsuarioRepository = new UsuarioRepository(context, transaction);
             AlojamientoRepository = new AlojamientoRepository(context, transaction);
             ClienteRepository = new ClienteRepository(context, transaction);
+            ContratoRepository = new ContratoRepository(context, transaction);
+            PagoRepository = new PagoRepository(context, transaction);
         }
 
         public IRolRepository RolRepository { get; }
         public IUsuarioRepository UsuarioRepository { get; }
         public IAlojamientoRepository AlojamientoRepository { get; }
         public IClienteRepository ClienteRepository { get; }
+        public IContratoRepository ContratoRepository { get; }
+        public IPagoRepository PagoRepository { get; }
     }
 }

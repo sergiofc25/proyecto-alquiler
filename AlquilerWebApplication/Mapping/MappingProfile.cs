@@ -76,6 +76,66 @@ namespace AlquilerWebApplication.Mapping
                 opt => opt.MapFrom(origen => origen.eTipo_Documento.TipDoc_Nombre))
                 .ForMember(destino => destino.EstadoCliente,
                 opt => opt.MapFrom(origen => origen.Cli_Estado));
+
+            //CONTRATO
+
+            CreateMap<Ent_Contrato, DTO_Contrato_Obten_Paginado>()
+                .ForMember(destino => destino.IdContrato,
+                opt => opt.MapFrom(origen => origen.Con_Id))
+                .ForMember(destino => destino.ContratoCodigo,
+                opt => opt.MapFrom(origen => origen.Con_Codigo))
+                .ForMember(destino => destino.DescripcionContrato,
+                opt => opt.MapFrom(origen => origen.Con_Descripcion))
+                .ForMember(destino => destino.FechaInicio,
+                opt => opt.MapFrom(origen => origen.Con_FechaInicio))
+                .ForMember(destino => destino.FechaFin,
+                opt => opt.MapFrom(origen => origen.Con_FechaFin))
+                .ForMember(destino => destino.PrecioAlquiler,
+                opt => opt.MapFrom(origen => origen.Con_PrecioAlqDefinido))
+                .ForMember(destino => destino.EstadoContrato,
+                opt => opt.MapFrom(origen => origen.Con_Estado))
+                .ForMember(destino => destino.NombreUsuario,
+                opt => opt.MapFrom(origen => origen.eUsuario.Usu_Nombre))
+                .ForMember(destino => destino.NombreCliente,
+                opt => opt.MapFrom(origen => origen.eCliente.Cli_Nombre))
+                .ForMember(destino => destino.NumDocumento,
+                opt => opt.MapFrom(origen => origen.eCliente.Cli_NumDocumento))
+                .ForMember(destino => destino.AlojamientoCodigo,
+                opt => opt.MapFrom(origen => origen.eAlojamiento.Alo_Codigo))
+                .ForMember(destino => destino.AdelantoC,
+                opt => opt.MapFrom(origen => origen.Con_Adelanto))
+                .ForMember(destino => destino.GarantiaC,
+                opt => opt.MapFrom(origen => origen.Con_Garantia));
+
+            //PAGO
+
+            CreateMap<Ent_Pago, DTO_Pago_Obten_Paginado>()
+                .ForMember(destino => destino.IdPago,
+                opt => opt.MapFrom(origen => origen.Pag_Id))
+                .ForMember(destino => destino.CodigoPago,
+                opt => opt.MapFrom(origen => origen.Pag_Codigo))
+                .ForMember(destino => destino.FechaPago,
+                opt => opt.MapFrom(origen => origen.Pag_FechaPago))
+                .ForMember(destino => destino.FechaVencimiento,
+                opt => opt.MapFrom(origen => origen.Pag_FechaVencimieto))
+                .ForMember(destino => destino.FechaPagado,
+                opt => opt.MapFrom(origen => origen.Pag_FechaPagoRealizado))
+                .ForMember(destino => destino.NombreUsuario,
+                opt => opt.MapFrom(origen => origen.eContrato.eUsuario.Usu_Nombre))
+                .ForMember(destino => destino.NombreCliente,
+                opt => opt.MapFrom(origen => origen.eContrato.eCliente.Cli_Nombre))
+                .ForMember(destino => destino.DNICliente,
+                opt => opt.MapFrom(origen => origen.eContrato.eCliente.Cli_NumDocumento))
+                .ForMember(destino => destino.CodigoHabitacion,
+                opt => opt.MapFrom(origen => origen.eContrato.eAlojamiento.Alo_Codigo))
+                .ForMember(destino => destino.CodigoContrato,
+                opt => opt.MapFrom(origen => origen.eContrato.Con_Codigo))
+                .ForMember(destino => destino.PagoCantidad,
+                opt => opt.MapFrom(origen => origen.Pag_Cantidad))
+                .ForMember(destino => destino.TipoPago,
+                opt => opt.MapFrom(origen => origen.eTipo_Pago.Tip_Nombre))
+                .ForMember(destino => destino.EstadoPago,
+                opt => opt.MapFrom(origen => origen.Pag_Estado));
         }
     }
 }

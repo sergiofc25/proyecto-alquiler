@@ -139,7 +139,7 @@
 
             if (!string.IsNullOrWhiteSpace(searchTerm))
             {
-                requestUri += $"?PorNombre={Uri.EscapeDataString(searchTerm)}";
+                requestUri += $"?TerBusqueda={Uri.EscapeDataString(searchTerm)}";
             }
 
             var response = await client.GetAsync(requestUri);

@@ -14,7 +14,7 @@ public class ClienteRepository : Repository, IClienteRepository
         _transaction = transaction;
     }
 
-    public (int, int, bool, bool, IEnumerable<Ent_Cliente>) Obten_Paginado(int RegistroPagina, int NumeroPagina, string? PorNombre)
+    public (int, int, bool, bool, IEnumerable<Ent_Cliente>) Obten_Paginado(int RegistroPagina, int NumeroPagina, string? TerBusqueda)
     {
         var Lst_Ent_Cliente = new List<Ent_Cliente>();
 
@@ -24,7 +24,7 @@ public class ClienteRepository : Repository, IClienteRepository
 
         oCmd.Parameters.AddWithValue("RegistroPagina", RegistroPagina);
         oCmd.Parameters.AddWithValue("NumeroPagina", NumeroPagina);
-        oCmd.Parameters.AddWithValue("PorNombre", PorNombre != null ? (object)PorNombre : DBNull.Value);
+        oCmd.Parameters.AddWithValue("TerBusqueda", TerBusqueda != null ? (object)TerBusqueda : DBNull.Value);
         oCmd.Parameters.AddWithValue("TotalPagina", 0).Direction = ParameterDirection.Output;
         oCmd.Parameters.AddWithValue("TotalRegistro", 0).Direction = ParameterDirection.Output;
         oCmd.Parameters.AddWithValue("TienePaginaAnterior", 0).Direction = ParameterDirection.Output;

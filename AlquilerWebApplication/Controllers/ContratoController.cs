@@ -25,12 +25,12 @@ public class ContratoController : ControllerBase
     }
 
     [HttpGet("Obten_Paginado/{RegistroPagina}/{NumeroPagina}")]
-    public async Task<IActionResult> Obten_Paginado(int RegistroPagina, int NumeroPagina, [FromQuery] string? PorNDocumento = null)
+    public async Task<IActionResult> Obten_Paginado(int RegistroPagina, int NumeroPagina, [FromQuery] string? TerBusqueda = null)
     {
         try
         {
-            PorNDocumento ??= string.Empty;
-            (int TotalPagina, int TotalRegistro, bool TienePaginaAnterior, bool TienePaginaProximo, var Lst_Contrato) = await _ContratoService.Obten_Paginado(RegistroPagina, NumeroPagina, PorNDocumento);
+            TerBusqueda ??= string.Empty;
+            (int TotalPagina, int TotalRegistro, bool TienePaginaAnterior, bool TienePaginaProximo, var Lst_Contrato) = await _ContratoService.Obten_Paginado(RegistroPagina, NumeroPagina, TerBusqueda);
 
             var metadata = new
             {

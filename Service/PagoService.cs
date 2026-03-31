@@ -6,7 +6,7 @@ namespace Service;
 
 public interface IPagoService
 {
-    Task<(int, int, bool, bool, IEnumerable<Ent_Pago>)> Obten_Paginado(int RegistroPagina, int NumeroPagina, string? PorNombre);
+    Task<(int, int, bool, bool, IEnumerable<Ent_Pago>)> Obten_Paginado(int RegistroPagina, int NumeroPagina, string? TerBusqueda);
 }
 
 public class PagoService : IPagoService
@@ -18,13 +18,13 @@ public class PagoService : IPagoService
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<(int, int, bool, bool, IEnumerable<Ent_Pago>)> Obten_Paginado(int RegistroPagina, int NumeroPagina, string? PorNombre)
+    public async Task<(int, int, bool, bool, IEnumerable<Ent_Pago>)> Obten_Paginado(int RegistroPagina, int NumeroPagina, string? TerBusqueda)
     {
         return await Task.Run(() =>
         {
             using var context = _unitOfWork.Create();
 
-            return context.Repositories.PagoRepository.Obten_Paginado(RegistroPagina, NumeroPagina, PorNombre);
+            return context.Repositories.PagoRepository.Obten_Paginado(RegistroPagina, NumeroPagina, TerBusqueda);
         });
     }
 }

@@ -6,7 +6,7 @@ using Model.DTO;
 using Service;
 using System.Text.Json;
 
-namespace SIEET_API_REST.Controllers.v1;
+namespace AlquilerWebApplication.Controllers;
 
 //[Route("api/v{version:apiVersion}/[Controller]")]
 //[ApiVersion("1")]
@@ -53,6 +53,23 @@ public class ClienteController : ControllerBase
                 IsSuccessful = true,
                 Data = _mapper.Map<IEnumerable<DTO_Cliente_Obten_Paginado>>(Lst_Cliente)
             });
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, "Error interno del servidor.");
+        }
+    }
+    [HttpGet("Obten_x_NumDocumento/{Cli_NumDocumento}")]
+    public async Task<IActionResult> Obten_x_NumDoc(string Cli_NumDocumento)
+    {
+        try
+        {
+            var Lst_Cliente = await _ClienteService.Obten_x_NumDoc(Cli_NumDocumento);
+
+            if (Lst_Cliente is null) return NotFound(new DTO_Response<object> { ErrorMessage = "Datos no encontrados." });
+
+            return Ok(new DTO_Response<DTO_Cliente_Obten_x_NumDocumento> { IsSuccessful = true, Data = _mapper.Map<DTO_Cliente_Obten_x_NumDocumento>(Lst_Cliente) });
+
         }
         catch (Exception)
         {

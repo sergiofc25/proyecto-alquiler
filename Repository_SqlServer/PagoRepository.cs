@@ -39,20 +39,17 @@ public class PagoRepository : Repository, IPagoRepository
                 Pag_Codigo = oDR.IsDBNull(oDR.GetOrdinal("Pag_Codigo"))
                             ? (string?)null
                             : oDR.GetString(oDR.GetOrdinal("Pag_Codigo")),
-                //Pag_FechaPago = oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaPago")),
-                //Pag_FechaVencimieto = oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaVencimieto")),
-                //Pag_FechaPagoRealizado = oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaPagoRealizado")),
                 Pag_FechaPago = oDR.IsDBNull(oDR.GetOrdinal("Pag_FechaPago"))
-                            ? (DateTime?)null
-                            : oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaPago")),
+                            ? null
+                            : DateOnly.FromDateTime(oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaPago"))),
 
                 Pag_FechaVencimieto = oDR.IsDBNull(oDR.GetOrdinal("Pag_FechaVencimieto"))
-                                  ? (DateTime?)null
-                                  : oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaVencimieto")),
+                                  ? null
+                                  : DateOnly.FromDateTime(oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaVencimieto"))),
 
                 Pag_FechaPagoRealizado = oDR.IsDBNull(oDR.GetOrdinal("Pag_FechaPagoRealizado"))
-                                     ? (DateTime?)null
-                                     : oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaPagoRealizado")),
+                                     ? null
+                                     : DateOnly.FromDateTime(oDR.GetDateTime(oDR.GetOrdinal("Pag_FechaPagoRealizado"))),
                 eContrato = new()
                 {
                     eUsuario = new()

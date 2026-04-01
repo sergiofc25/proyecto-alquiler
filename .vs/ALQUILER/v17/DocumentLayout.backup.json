@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\ProyectoStayly\\ALQUILER\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E2C6C1D-1A1C-B869-F05F-671FE12D2011}|Repository_SqlServer\\Repository_SqlServer.csproj|d:\\proyectostayly\\alquiler\\repository_sqlserver\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E2C6C1D-1A1C-B869-F05F-671FE12D2011}|Repository_SqlServer\\Repository_SqlServer.csproj|solutionrelative:repository_sqlserver\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\cliente\\clientespaginado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\cliente\\clientespaginado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\habitaciones\\dialoggeneracontrato.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\habitaciones\\dialoggeneracontrato.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ClienteRepository.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\ClienteRepository.cs",
-              "RelativeDocumentMoniker": "Repository_SqlServer\\ClienteRepository.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\ClienteRepository.cs",
-              "RelativeToolTip": "Repository_SqlServer\\ClienteRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAD4vxoAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T16:35:00.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClientesPaginado.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Cliente\\ClientesPaginado.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Cliente\\ClientesPaginado.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Cliente\\ClientesPaginado.razor",
-              "RelativeToolTip": "BlazorAppStayly\\Pages\\Cliente\\ClientesPaginado.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgAAAARAAAAAAAAAA==",
+              "Title": "DialogGeneraContrato.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAiwIwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-31T16:33:29.409Z",
+              "WhenOpened": "2026-04-01T03:00:18.37Z",
               "EditorCaption": ""
             }
           ]

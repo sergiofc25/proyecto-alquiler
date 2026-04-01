@@ -10,5 +10,6 @@ public interface IUnitOfWorkRepository
     IClienteRepository ClienteRepository { get; }
     IContratoRepository ContratoRepository { get; }
     IPagoRepository PagoRepository { get; }
+    ITipo_DocumentoRepository Tipo_DocumentoRepository { get; }
 
 }

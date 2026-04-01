@@ -38,8 +38,8 @@ public class ContratoRepository : Repository, IContratoRepository
                 Con_Id = oDR.GetInt32(oDR.GetOrdinal("Con_Id")),
                 Con_Codigo = oDR.GetString(oDR.GetOrdinal("Con_Codigo")),
                 Con_Descripcion = oDR.GetString(oDR.GetOrdinal("Con_Descripcion")),
-                Con_FechaInicio = oDR.GetDateTime(oDR.GetOrdinal("Con_FechaInicio")),
-                Con_FechaFin = oDR.GetDateTime(oDR.GetOrdinal("Con_FechaFin")),
+                Con_FechaInicio = DateOnly.FromDateTime(oDR.GetDateTime(oDR.GetOrdinal("Con_FechaInicio"))),
+                Con_FechaFin = DateOnly.FromDateTime(oDR.GetDateTime(oDR.GetOrdinal("Con_FechaFin"))),
                 Con_PrecioAlqDefinido = oDR.GetDecimal(oDR.GetOrdinal("Con_PrecioAlqDefinido")),
                 Con_Estado = oDR.GetByte(oDR.GetOrdinal("Con_Estado")) != 0 ? true : false,
                 eUsuario = new()

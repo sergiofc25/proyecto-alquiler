@@ -7,7 +7,7 @@ using Service;
 using System.IdentityModel.Tokens.Jwt;
 using AlquilerWebApplication.TokenServices;
 
-namespace AlquilerWebApplication.Controllers.v1;
+namespace AlquilerWebApplication.Controllers;
 
 [Route("api/[Controller]")]
 [ApiController]

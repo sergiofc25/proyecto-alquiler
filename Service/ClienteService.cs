@@ -7,6 +7,8 @@ namespace Service;
 public interface IClienteService
 {
     Task<(int, int, bool, bool, IEnumerable<Ent_Cliente>)> Obten_Paginado(int RegistroPagina, int NumeroPagina, string? TerBusqueda);
+    Task<Ent_Cliente> Obten_x_NumDoc(string Cli_NumDocumento);
+
 }
 
 public class ClienteService : IClienteService
@@ -25,6 +27,15 @@ public class ClienteService : IClienteService
             using var context = _unitOfWork.Create();
 
             return context.Repositories.ClienteRepository.Obten_Paginado(RegistroPagina, NumeroPagina, TerBusqueda);
+        });
+    }
+    public async Task<Ent_Cliente> Obten_x_NumDoc(string Cli_NumDocumento)
+    {
+        return await Task.Run(() =>
+        {
+            using var context = _unitOfWork.Create();
+
+            return context.Repositories.ClienteRepository.Obten_x_NumDoc(Cli_NumDocumento);
         });
     }
 }

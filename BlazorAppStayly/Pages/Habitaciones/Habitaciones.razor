@@ -6,6 +6,7 @@
 @inject ILocalStorageService localStorage
 @inject ISnackbar Snackbar
 @inject NavigationManager NavigationManager
+@inject IDialogService DialogService
 @using Newtonsoft.Json
 
 <PageTitle>Habitaciones</PageTitle>
@@ -39,19 +40,12 @@ else
                             S/ @habitacion.Precio
                         </MudText>
                     </MudCardContent>
-
-                    @* <MudCardActions>
-                        <MudButton Variant="Variant.Filled"
-                                   Color="Color.Primary"
-                                   FullWidth="true">
-                            Alquilar
-                        </MudButton>
-                    </MudCardActions> *@
                     <MudCardActions>
-                        <MudButton Variant="Variant.Filled"
-                                   Color="Color.Primary"
-                                   FullWidth="true"
-                                   Disabled="@(!habitacion.EstadoAlojamiento)">
+                        <MudButton  Variant="Variant.Filled"
+                                    OnClick="@(() => OpenDialogAsync(_maxWidth, habitacion.CodigoAlojamiento))"
+                                    Color="Color.Primary"
+                                    FullWidth="true"
+                                    Disabled="@(!habitacion.EstadoAlojamiento)">
                             @(habitacion.EstadoAlojamiento ? "Alquilar" : "No Disponible")
                         </MudButton>
                     </MudCardActions>
@@ -67,6 +61,8 @@ else
     private List<DTO_Alojamiento_Obten> Alojamiento = new();
     private string errorMessage = string.Empty;
     private bool _loading = true;
+    private readonly DialogOptions _maxWidth = new() { MaxWidth = MaxWidth.Medium, FullWidth = true };
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -85,7 +81,6 @@ else
             {
                 string responseBody = await response.Content.ReadAsStringAsync();
 
-                //var result = JsonConvert.DeserializeObject<DTO_Response<List<DTO_Alojamiento_Obten>>>(responseBody);
                 Alojamiento = JsonConvert.DeserializeObject<List<DTO_Alojamiento_Obten>>(responseBody) ?? new();
 
                 if (response.IsSuccessStatusCode)
@@ -110,6 +105,15 @@ else
         {
             _loading = false;
         }
+    }
+    private Task OpenDialogAsync(DialogOptions options, string CodigoAlojamiento)
+    {
+
+        var parameters = new DialogParameters
+        {
+            { "CodigoAlojamiento", CodigoAlojamiento }
+        };
+        return DialogService.ShowAsync<DialogGeneraContrato>("Genera Contrato", parameters, options);
     }
 
     // private string GetImagen(DTO_Alojamiento_Obten habitacion)

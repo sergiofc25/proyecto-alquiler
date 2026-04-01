@@ -10,7 +10,7 @@ namespace Model.Entitie
     {
         public int Bol_Id { get; set; }
         public string? Bol_Codigo { get; set; }
-        public DateTime? Bol_Fecha { get; set; }
+        public DateOnly? Bol_Fecha { get; set; }
         public string? Bol_Descripcion { get; set; }
         public decimal? Bol_Total { get; set; }
         public Ent_Pago ePago { get; set; }

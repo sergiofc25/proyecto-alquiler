@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\ProyectoStayly\\ALQUILER\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\pago\\pagospaginado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\pago\\pagospaginado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\habitaciones\\dialoggeneracontrato.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\habitaciones\\dialoggeneracontrato.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,21 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PagosPaginado.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Pago\\PagosPaginado.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Pago\\PagosPaginado.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Pago\\PagosPaginado.razor",
-              "RelativeToolTip": "BlazorAppStayly\\Pages\\Pago\\PagosPaginado.razor",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAEwJwAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-31T17:17:31.099Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -36,6 +23,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DialogGeneraContrato.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "ViewState": "AgIAAEsAAAAAAAAAAAASwHYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-01T03:00:18.37Z",
+              "EditorCaption": ""
             }
           ]
         }

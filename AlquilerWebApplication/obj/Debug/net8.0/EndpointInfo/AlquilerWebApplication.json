@@ -98,6 +98,28 @@
         }
       }
     },
+    "/api/Cliente/Obten_x_NumDocumento/{Cli_NumDocumento}": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "parameters": [
+          {
+            "name": "Cli_NumDocumento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Contrato/Obten_Paginado/{RegistroPagina}/{NumeroPagina}": {
       "get": {
         "tags": [
@@ -180,6 +202,18 @@
       "get": {
         "tags": [
           "Rol"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tipo_Documento/Obten": {
+      "get": {
+        "tags": [
+          "Tipo_Documento"
         ],
         "responses": {
           "200": {

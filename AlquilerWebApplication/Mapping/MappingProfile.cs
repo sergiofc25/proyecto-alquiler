@@ -77,6 +77,22 @@ namespace AlquilerWebApplication.Mapping
                 .ForMember(destino => destino.EstadoCliente,
                 opt => opt.MapFrom(origen => origen.Cli_Estado));
 
+            CreateMap<Ent_Cliente, DTO_Cliente_Obten_x_NumDocumento>()
+                .ForMember(destino => destino.NombreCliente,
+                opt => opt.MapFrom(origen => origen.Cli_Nombre))
+                .ForMember(destino => destino.NumDocumento,
+                opt => opt.MapFrom(origen => origen.Cli_NumDocumento))
+                .ForMember(destino => destino.FotoDocumento,
+                opt => opt.MapFrom(origen => origen.Cli_FotoDocumento))
+                .ForMember(destino => destino.Telefono,
+                opt => opt.MapFrom(origen => origen.Cli_NumTelefono))
+                .ForMember(destino => destino.Email,
+                opt => opt.MapFrom(origen => origen.Cli_Email))
+                .ForMember(destino => destino.TipoDocumento,
+                opt => opt.MapFrom(origen => origen.eTipo_Documento.TipDoc_Nombre))
+                .ForMember(destino => destino.EstadoCliente,
+                opt => opt.MapFrom(origen => origen.Cli_Estado));
+
             //CONTRATO
 
             CreateMap<Ent_Contrato, DTO_Contrato_Obten_Paginado>()
@@ -136,6 +152,12 @@ namespace AlquilerWebApplication.Mapping
                 opt => opt.MapFrom(origen => origen.eTipo_Pago.Tip_Nombre))
                 .ForMember(destino => destino.EstadoPago,
                 opt => opt.MapFrom(origen => origen.Pag_Estado));
+
+            //TIPO_DOCUMENTO
+
+            CreateMap<Ent_Tipo_Documento, DTO_Tipo_Documento_Obten>()
+                .ForMember(destino => destino.TipoDocumeno,
+                opt => opt.MapFrom(origen => origen.TipDoc_Nombre));
         }
     }
 }

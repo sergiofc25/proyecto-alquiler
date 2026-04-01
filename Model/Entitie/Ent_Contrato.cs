@@ -11,8 +11,8 @@ namespace Model.Entitie
         public int Con_Id { get; set; }
         public string? Con_Codigo { get; set; }
         public string? Con_Descripcion { get; set; }
-        public DateTime? Con_FechaInicio { get; set; }
-        public DateTime? Con_FechaFin { get; set; }
+        public DateOnly? Con_FechaInicio { get; set; }
+        public DateOnly? Con_FechaFin { get; set; }
         public decimal? Con_PrecioAlqDefinido { get; set; }
         public bool Con_Estado { get; set; }
         public Ent_Usuario? eUsuario { get; set; }

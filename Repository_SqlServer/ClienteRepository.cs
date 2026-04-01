@@ -56,4 +56,34 @@ public class ClienteRepository : Repository, IClienteRepository
             Convert.ToBoolean(oCmd.Parameters["TienePaginaProximo"].Value),
             Lst_Ent_Cliente);
     }
+
+    public Ent_Cliente Obten_x_NumDoc(string Cli_NumDocumento)
+    {
+        using var oCmd = CreateCommand("SP_Cliente_Obten_x_NumDoc");
+
+        oCmd.CommandType = CommandType.StoredProcedure;
+
+        oCmd.Parameters.AddWithValue("Cli_NumDocumento", Cli_NumDocumento);
+
+        using var oDR = oCmd.ExecuteReader(CommandBehavior.SingleRow);
+
+        if (oDR.HasRows)
+        {
+            oDR.Read();
+
+            return new Ent_Cliente
+            {
+                Cli_Nombre = oDR.GetString(oDR.GetOrdinal("Cli_Nombre")),
+                Cli_NumTelefono = oDR.GetString(oDR.GetOrdinal("Cli_NumTelefono")),
+                Cli_NumDocumento = oDR.GetString(oDR.GetOrdinal("Cli_NumDocumento")),
+                Cli_Email = oDR.GetString(oDR.GetOrdinal("Cli_Email")),
+                eTipo_Documento = new()
+                {
+                    TipDoc_Nombre = oDR.GetString(oDR.GetOrdinal("TipDoc_Nombre")),
+                },
+                Cli_Estado = oDR.GetByte(oDR.GetOrdinal("Cli_Estado")) != 0 ? true : false,
+            };
+        }
+        return null;
+    }
 }

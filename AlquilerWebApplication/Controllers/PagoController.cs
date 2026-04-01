@@ -6,7 +6,7 @@ using Model.DTO;
 using Service;
 using System.Text.Json;
 
-namespace SIEET_API_REST.Controllers.v1;
+namespace AlquilerWebApplication.Controllers;
 
 //[Route("api/v{version:apiVersion}/[Controller]")]
 //[ApiVersion("1")]

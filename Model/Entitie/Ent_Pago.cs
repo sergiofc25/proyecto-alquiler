@@ -9,9 +9,9 @@ namespace Model.Entitie
     public class Ent_Pago
     {
         public int Pag_Id { get; set; }
-        public DateTime? Pag_FechaPago { get; set; }
-        public DateTime? Pag_FechaVencimieto { get; set; }
-        public DateTime? Pag_FechaPagoRealizado { get; set; }
+        public DateOnly? Pag_FechaPago { get; set; }
+        public DateOnly? Pag_FechaVencimieto { get; set; }
+        public DateOnly? Pag_FechaPagoRealizado { get; set; }
         public decimal? Pag_Cantidad { get; set; }
         public Ent_Tipo_Pago? eTipo_Pago { get; set; }
         public Ent_Contrato? eContrato { get; set; }

@@ -43,7 +43,7 @@ public class UsuarioController : ControllerBase
     {
         try
         {
-            var Email = User.FindFirst(ClaimTypes.Email).Value;
+            var Email = User?.FindFirst(ClaimTypes.Email).Value;
             var Usuario = await _UsuarioService.Obten_x_Correo(Email);
 
             if (Usuario is null)

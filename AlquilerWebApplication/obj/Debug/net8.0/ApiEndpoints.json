@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "AlquilerWebApplication.Controllers.v1.AccountsController",
+    "ContainingType": "AlquilerWebApplication.Controllers.AccountsController",
     "Method": "Login",
     "RelativePath": "api/Accounts/Login",
     "HttpMethod": "POST",
@@ -16,7 +16,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AlquilerWebApplication.Controllers.v1.AccountsController",
+    "ContainingType": "AlquilerWebApplication.Controllers.AccountsController",
     "Method": "GetServerTime",
     "RelativePath": "api/Accounts/ServerTime",
     "HttpMethod": "GET",
@@ -26,7 +26,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SIEET_API_REST.Controllers.v1.AlojamientoController",
+    "ContainingType": "AlquilerWebApplication.Controllers.AlojamientoController",
     "Method": "AlojamientoObten",
     "RelativePath": "api/Alojamiento/Alojamiento_Obten",
     "HttpMethod": "GET",
@@ -36,7 +36,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SIEET_API_REST.Controllers.v1.ClienteController",
+    "ContainingType": "AlquilerWebApplication.Controllers.ClienteController",
     "Method": "Obten_Paginado",
     "RelativePath": "api/Cliente/Obten_Paginado/{RegistroPagina}/{NumeroPagina}",
     "HttpMethod": "GET",
@@ -62,7 +62,23 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SIEET_API_REST.Controllers.v1.ContratoController",
+    "ContainingType": "AlquilerWebApplication.Controllers.ClienteController",
+    "Method": "Obten_x_NumDoc",
+    "RelativePath": "api/Cliente/Obten_x_NumDocumento/{Cli_NumDocumento}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Cli_NumDocumento",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.ContratoController",
     "Method": "Obten_Paginado",
     "RelativePath": "api/Contrato/Obten_Paginado/{RegistroPagina}/{NumeroPagina}",
     "HttpMethod": "GET",
@@ -88,7 +104,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SIEET_API_REST.Controllers.v1.PagoController",
+    "ContainingType": "AlquilerWebApplication.Controllers.PagoController",
     "Method": "Obten_Paginado",
     "RelativePath": "api/Pago/Obten_Paginado/{RegistroPagina}/{NumeroPagina}",
     "HttpMethod": "GET",
@@ -114,7 +130,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SIEET_API_REST.Controllers.v1.RolController",
+    "ContainingType": "AlquilerWebApplication.Controllers.RolController",
     "Method": "Obten",
     "RelativePath": "api/Rol",
     "HttpMethod": "GET",
@@ -124,7 +140,17 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AlquilerWebApplication.Controllers.v1.TokenController",
+    "ContainingType": "AlquilerWebApplication.Controllers.Tipo_DocumentoController",
+    "Method": "Obten",
+    "RelativePath": "api/Tipo_Documento/Obten",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.TokenController",
     "Method": "Refresh",
     "RelativePath": "api/Token/refresh",
     "HttpMethod": "POST",

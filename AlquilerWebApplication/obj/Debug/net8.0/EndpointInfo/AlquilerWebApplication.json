@@ -159,6 +159,60 @@
         }
       }
     },
+    "/api/Contrato/Crea": {
+      "post": {
+        "tags": [
+          "Contrato"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTO_Contrato_Crea"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTO_Contrato_Crea"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTO_Contrato_Crea"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Contrato/Obten_x_Id/{Con_Id}": {
+      "get": {
+        "tags": [
+          "Contrato"
+        ],
+        "parameters": [
+          {
+            "name": "Con_Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Pago/Obten_Paginado/{RegistroPagina}/{NumeroPagina}": {
       "get": {
         "tags": [
@@ -280,6 +334,48 @@
   },
   "components": {
     "schemas": {
+      "DTO_Contrato_Crea": {
+        "type": "object",
+        "properties": {
+          "fechaInicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "numDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "alojamientoCodigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefonoCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoDocumento": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DTO_RefreshToken": {
         "type": "object",
         "properties": {

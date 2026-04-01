@@ -79,6 +79,22 @@
   },
   {
     "ContainingType": "AlquilerWebApplication.Controllers.ContratoController",
+    "Method": "Crea",
+    "RelativePath": "api/Contrato/Crea",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eDTO_Contrato_Crea",
+        "Type": "Model.DTO.DTO_Contrato_Crea",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.ContratoController",
     "Method": "Obten_Paginado",
     "RelativePath": "api/Contrato/Obten_Paginado/{RegistroPagina}/{NumeroPagina}",
     "HttpMethod": "GET",
@@ -99,6 +115,22 @@
         "Name": "TerBusqueda",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.ContratoController",
+    "Method": "Obten_x_Id",
+    "RelativePath": "api/Contrato/Obten_x_Id/{Con_Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Con_Id",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

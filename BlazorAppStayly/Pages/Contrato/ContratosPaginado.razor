@@ -17,7 +17,7 @@
 
 
 
-<PageTitle>Contratos Paginados</PageTitle>
+<PageTitle>Contratos</PageTitle>
 
 <MudGrid>
     <MudItem xs="12">
@@ -80,6 +80,15 @@
                     <MudTd DataLabel="Adelanto">@context.AdelantoC</MudTd>
                     <MudTd DataLabel="Garantía">@context.GarantiaC</MudTd>
                     <MudTd DataLabel="Acciones">
+                        @* @if (@context.EstadoPago == true)
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.ViewModule"
+                                           @onclick="@(() => Btn_Mostrar_Pagos_Click(context.))"
+                                           Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           Title="Pagos">
+                            </MudIconButton>
+                        } *@
                         <MudIconButton Icon="@Icons.Material.Filled.Edit"
                         Variant="Variant.Filled"
                         Color="Color.Primary"
@@ -90,7 +99,6 @@
                         @onclick="@(() => Btn_Eliminar_Cliente_Click(context))"
                         Variant="Variant.Filled"
                         Color="Color.Error"
-                        Disabled="true"
                         Title="Eliminar contrato">
                         </MudIconButton>
                     </MudTd>

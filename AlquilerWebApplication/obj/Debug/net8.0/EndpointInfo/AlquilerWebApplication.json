@@ -59,6 +59,29 @@
         }
       }
     },
+    "/api/Boleta/Obten_x_Pago/{Pag_Id}": {
+      "get": {
+        "tags": [
+          "Boleta"
+        ],
+        "parameters": [
+          {
+            "name": "Pag_Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cliente/Obten_Paginado/{RegistroPagina}/{NumeroPagina}": {
       "get": {
         "tags": [
@@ -339,10 +362,12 @@
         "properties": {
           "fechaInicio": {
             "type": "string",
+            "format": "date",
             "nullable": true
           },
           "fechaFin": {
             "type": "string",
+            "format": "date",
             "nullable": true
           },
           "nombreUsuario": {

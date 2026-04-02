@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "D:\\ProyectoStayly\\ALQUILER\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectostayly\\alquiler\\alquilerwebapplication\\controllers\\contratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\controllers\\contratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\boletas\\boletadialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\boletas\\boletadialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E2C6C1D-1A1C-B869-F05F-671FE12D2011}|Repository_SqlServer\\Repository_SqlServer.csproj|d:\\proyectostayly\\alquiler\\repository_sqlserver\\contratorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E2C6C1D-1A1C-B869-F05F-671FE12D2011}|Repository_SqlServer\\Repository_SqlServer.csproj|solutionrelative:repository_sqlserver\\contratorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\habitaciones\\dialoggeneracontrato.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\habitaciones\\dialoggeneracontrato.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A53CE06-2432-41F8-910B-2E9915ADB73C}|RepositoryInterface\\Repository_Interface.csproj|d:\\proyectostayly\\alquiler\\repositoryinterface\\icontratorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A53CE06-2432-41F8-910B-2E9915ADB73C}|RepositoryInterface\\Repository_Interface.csproj|solutionrelative:repositoryinterface\\icontratorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\pago\\pagospaginado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\pago\\pagospaginado.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|d:\\proyectostayly\\alquiler\\alquilerwebapplication\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79E4CB5F-A5DB-411C-9FCE-792119DCBB29}|AlquilerWebApplication\\AlquilerWebApplication.csproj|solutionrelative:alquilerwebapplication\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|d:\\proyectostayly\\alquiler\\model\\dto\\dto_contrato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9061FB85-EFCC-45C1-A649-AA156ED45F05}|Model\\Model.csproj|solutionrelative:model\\dto\\dto_contrato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A70A946-ECBE-40C8-B67E-D1A3F3CB41BF}|Service\\Service.csproj|d:\\proyectostayly\\alquiler\\service\\contratoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A70A946-ECBE-40C8-B67E-D1A3F3CB41BF}|Service\\Service.csproj|solutionrelative:service\\contratoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\habitaciones\\habitaciones.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\habitaciones\\habitaciones.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,80 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ContratoService.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\Service\\ContratoService.cs",
-              "RelativeDocumentMoniker": "Service\\ContratoService.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\Service\\ContratoService.cs",
-              "RelativeToolTip": "Service\\ContratoService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwCoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T16:56:19.238Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IContratoRepository.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\IContratoRepository.cs",
-              "RelativeDocumentMoniker": "RepositoryInterface\\IContratoRepository.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\RepositoryInterface\\IContratoRepository.cs",
-              "RelativeToolTip": "RepositoryInterface\\IContratoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T16:56:00.663Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ContratoRepository.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\ContratoRepository.cs",
-              "RelativeDocumentMoniker": "Repository_SqlServer\\ContratoRepository.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\Repository_SqlServer\\ContratoRepository.cs",
-              "RelativeToolTip": "Repository_SqlServer\\ContratoRepository.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAiwHkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T16:50:17.018Z",
+              "Title": "DialogGeneraContrato.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T01:05:06.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Mapping\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "AlquilerWebApplication\\Mapping\\MappingProfile.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Mapping\\MappingProfile.cs",
-              "RelativeToolTip": "AlquilerWebApplication\\Mapping\\MappingProfile.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAiwJkAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T16:33:31.309Z",
+              "Title": "Habitaciones.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\Habitaciones.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Habitaciones\\Habitaciones.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\Habitaciones.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Habitaciones\\Habitaciones.razor",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAHMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T01:04:02.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DTO_Contrato.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\Model\\DTO\\DTO_Contrato.cs",
-              "RelativeDocumentMoniker": "Model\\DTO\\DTO_Contrato.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\Model\\DTO\\DTO_Contrato.cs",
-              "RelativeToolTip": "Model\\DTO\\DTO_Contrato.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA1wCgAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T16:30:21.518Z",
+              "DocumentIndex": 2,
+              "Title": "PagosPaginado.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Pago\\PagosPaginado.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Pago\\PagosPaginado.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Pago\\PagosPaginado.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Pago\\PagosPaginado.razor",
+              "ViewState": "AgIAABcBAAAAAAAAAAAAACUBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T00:58:06.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ContratoController.cs",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Controllers\\ContratoController.cs",
-              "RelativeDocumentMoniker": "AlquilerWebApplication\\Controllers\\ContratoController.cs",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\Controllers\\ContratoController.cs",
-              "RelativeToolTip": "AlquilerWebApplication\\Controllers\\ContratoController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAowEUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T16:29:19.249Z",
+              "Title": "BoletaDialog.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor*",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-02T01:00:41.573Z",
               "EditorCaption": ""
             }
           ]

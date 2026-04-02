@@ -66,18 +66,19 @@
                             {
                                 @foreach (var tipo in tipo_Documentos)
                                 {
-                                    // Importante: El Value debe ser lo que esperas guardar en cliente.TipoDocumento
                                     <MudSelectItem T="string" Value="@tipo.TipoDocumeno">
                                         @tipo.TipoDocumeno
                                     </MudSelectItem>
                                 }
                             }
                         </MudSelect>
-                        
+                        <MudDatePicker Label="Fecha Inicio"
+                                       @bind-Date="fechaInicio"
+                                       Required="true"
+                                       RequiredError="Fecha Requerida!" />
 
-                        <MudDatePicker Label="Fecha Inicio" Required="true" RequiredError="Fecha Requerida!" />
-                        <MudDatePicker Label="Fecha Fin" />
-
+                        <MudDatePicker Label="Fecha Fin"
+                                       @bind-Date="fechaFin" />
                     </MudForm>
                 </MudPaper>
             </MudItem>
@@ -85,7 +86,7 @@
     </DialogContent>
     <DialogActions>
         <MudButton OnClick="Cancel">Cancelar</MudButton>
-        <MudButton Color="Color.Primary" OnClick="Submit">Alquilar</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Guardar">Alquilar</MudButton>
     </DialogActions>
 </MudDialog>
 
@@ -102,9 +103,11 @@
     [Parameter] public string? CodigoAlojamiento { get; set; }
     private DTO_Cliente_Obten_x_NumDocumento cliente = new ();
     private DTO_Tipo_Documento_Obten selectedTipoDocumento { get; set; } = new DTO_Tipo_Documento_Obten();
-
+    private DTO_Contrato_Crea nuevoContrato = new DTO_Contrato_Crea();
+    private bool guardando = false;
     private string dni = "";
-
+    private DateTime? fechaInicio;
+    private DateTime? fechaFin;
 
 
     protected override async Task OnInitializedAsync()
@@ -235,7 +238,122 @@
         }
     }
 
+    // private async Task Guardar()
+    // {
+    //     guardando = true;
 
+    //     await form.Validate();
+
+    //     if (!form.IsValid)
+    //     {
+    //         guardando = false;
+    //         return;
+    //     }
+
+    //     try
+    //     {
+    //         var client = ClientFactory.CreateClient("ApiStayly");
+    //         var token = await localStorage.GetItemAsync<string>("authToken");
+
+    //         if (!string.IsNullOrEmpty(token))
+    //         {
+    //             client.DefaultRequestHeaders.Authorization =
+    //                 new AuthenticationHeaderValue("Bearer", token);
+    //         }
+
+    //         var contratoParaEnviar = new DTO_Contrato_Crea
+    //         {
+    //             FechaInicio = nuevoContrato.FechaInicio,
+    //             FechaFin = nuevoContrato.FechaFin,
+    //             NombreUsuario = nuevoContrato.NombreUsuario,
+    //             NumDocumento = nuevoContrato.NumDocumento,
+    //             AlojamientoCodigo = nuevoContrato.AlojamientoCodigo,
+
+    //             NombreCliente = nuevoContrato?.NombreCliente,
+    //             TelefonoCliente = nuevoContrato?.TelefonoCliente,
+    //             EmailCliente = nuevoContrato?.EmailCliente,
+    //             TipoDocumento = nuevoContrato?.TipoDocumento
+    //         };
+
+    //         var response = await client.PostAsJsonAsync("api/Contrato/Crea", contratoParaEnviar);
+
+    //         if (response.IsSuccessStatusCode)
+    //         {
+    //             Submit(); // cerrar diálogo correctamente
+    //         }
+    //         else
+    //         {
+    //             var errorContent = await response.Content.ReadAsStringAsync();
+    //             Console.WriteLine(errorContent);
+    //         }
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         Console.WriteLine($"Error al crear contrato: {ex.Message}");
+    //     }
+    //     finally
+    //     {
+    //         guardando = false;
+    //     }
+    // }
+    private async Task Guardar()
+    {
+        guardando = true;
+
+        await form.Validate();
+
+        if (!form.IsValid)
+        {
+            guardando = false;
+            return;
+        }
+
+        try
+        {
+            var client = ClientFactory.CreateClient("ApiStayly");
+            var token = await localStorage.GetItemAsync<string>("authToken");
+
+            if (!string.IsNullOrEmpty(token))
+            {
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
+            }
+            if (fechaInicio.HasValue)
+                nuevoContrato.FechaInicio = DateOnly.FromDateTime(fechaInicio.Value);
+
+            if (fechaFin.HasValue)
+                nuevoContrato.FechaFin = DateOnly.FromDateTime(fechaFin.Value);
+
+
+            nuevoContrato.NumDocumento = cliente.NumDocumento;
+            nuevoContrato.NombreCliente = cliente.NombreCliente;
+            nuevoContrato.TelefonoCliente = cliente.Telefono;
+            nuevoContrato.EmailCliente = cliente.Email;
+            nuevoContrato.TipoDocumento = cliente.TipoDocumento;
+            nuevoContrato.NombreUsuario = usuario.NombreUsuario;
+            nuevoContrato.AlojamientoCodigo = CodigoAlojamiento;
+
+            var response = await client.PostAsJsonAsync("api/Contrato/Crea", nuevoContrato);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Submit();
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(errorContent);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al crear contrato: {ex.Message}");
+        }
+        finally
+        {
+            guardando = false;
+        }
+    }
 
 
 }

@@ -24,8 +24,8 @@ namespace Model.DTO
     }
     public class DTO_Contrato_Crea
     {
-        public string? FechaInicio { get; set; }
-        public string? FechaFin { get; set; }
+        public DateOnly? FechaInicio { get; set; }
+        public DateOnly? FechaFin { get; set; }
         public string? NombreUsuario { get; set; }
         public string? NumDocumento { get; set; }
         public string? AlojamientoCodigo { get; set; }

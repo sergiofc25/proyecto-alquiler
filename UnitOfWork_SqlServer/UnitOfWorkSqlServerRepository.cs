@@ -16,7 +16,7 @@ namespace UnitOfWork_SqlServer
             ClienteRepository = new ClienteRepository(context, transaction);
             ContratoRepository = new ContratoRepository(context, transaction);
             PagoRepository = new PagoRepository(context, transaction);
-            Tipo_DocumentoRepository = new Tipo_DocumentoRepository(context, transaction);
+            BoletaRepository = new BoletaRepository(context, transaction);
         }
 
         public IRolRepository RolRepository { get; }
@@ -26,5 +26,6 @@ namespace UnitOfWork_SqlServer
         public IContratoRepository ContratoRepository { get; }
         public IPagoRepository PagoRepository { get; }
         public ITipo_DocumentoRepository Tipo_DocumentoRepository { get; }
+        public IBoletaRepository BoletaRepository { get; }
     }
 }

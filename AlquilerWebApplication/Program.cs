@@ -62,6 +62,7 @@ builder.Services.AddTransient<IClienteService, ClienteService>();
 builder.Services.AddTransient<IContratoService, ContratoService>();
 builder.Services.AddTransient<IPagoService, PagoService>();
 builder.Services.AddTransient<ITipo_DocumentoService, Tipo_DocumentoService>();
+builder.Services.AddTransient<IBoletaService, BoletaService>();
 
 var jwtSettings = builder.Configuration.GetSection("JWTSettings");
 

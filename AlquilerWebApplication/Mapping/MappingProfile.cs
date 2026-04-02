@@ -204,6 +204,27 @@ namespace AlquilerWebApplication.Mapping
             CreateMap<Ent_Tipo_Documento, DTO_Tipo_Documento_Obten>()
                 .ForMember(destino => destino.TipoDocumeno,
                 opt => opt.MapFrom(origen => origen.TipDoc_Nombre));
+            //BOLETA
+
+            CreateMap<Ent_Boleta, DTO_Boleta_Obten_x_Pago>()
+                .ForMember(destino => destino.IdBoleta,
+                opt => opt.MapFrom(origen => origen.Bol_Id))
+                .ForMember(destino => destino.Codigo,
+                opt => opt.MapFrom(origen => origen.Bol_Codigo))
+                .ForMember(destino => destino.fecha,
+                opt => opt.MapFrom(origen => origen.Bol_Fecha))
+                .ForMember(destino => destino.descripcion,
+                opt => opt.MapFrom(origen => origen.Bol_Descripcion))
+                .ForMember(destino => destino.total,
+                opt => opt.MapFrom(origen => origen.Bol_Total))
+                .ForMember(destino => destino.IdPago,
+                opt => opt.MapFrom(origen => origen.ePago.Pag_Id))
+                .ForMember(destino => destino.NombreCliente,
+                opt => opt.MapFrom(origen => origen.ePago.eContrato.eCliente.Cli_Nombre))
+                .ForMember(destino => destino.NumDocumento,
+                opt => opt.MapFrom(origen => origen.ePago.eContrato.eCliente.Cli_NumDocumento))
+                .ForMember(destino => destino.EstadoPago,
+                opt => opt.MapFrom(origen => origen.Bol_Estado));
         }
     }
 }

@@ -36,6 +36,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AlquilerWebApplication.Controllers.BoletaController",
+    "Method": "Obten_x_Pago",
+    "RelativePath": "api/Boleta/Obten_x_Pago/{Pag_Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Pag_Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AlquilerWebApplication.Controllers.ClienteController",
     "Method": "Obten_Paginado",
     "RelativePath": "api/Cliente/Obten_Paginado/{RegistroPagina}/{NumeroPagina}",

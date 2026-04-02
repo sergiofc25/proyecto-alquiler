@@ -1,0 +1,47 @@
+﻿@using Newtonsoft.Json
+@using System.Net.Http.Json
+@using System.Text.Json
+@inject NavigationManager NavigationManager
+@inject IHttpClientFactory ClientFactory
+@using Model.DTO
+@using MudBlazor
+@using Blazored.LocalStorage
+@using System.Net.Http.Headers
+@using System.Text
+@using System.Net
+@using System.Reflection.Metadata
+@using System.Net.Http.Headers
+@inject ILocalStorageService localStorage
+@inject IDialogService DialogService
+<MudDialog>
+    <TitleContent>
+        Boleta
+    </TitleContent>
+    <DialogContent>
+        Dialog Content
+        <MudForm @ref="form" Validation="@formValidation">
+            <MudTextField @bind-Value="IdPago"
+                          Label="PagoId"
+                          Required="true"
+                          ReadOnly="true" />
+        </MudForm>
+
+        
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">OK</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+    private void Submit() => MudDialog.Close(DialogResult.Ok(true));
+    private void Cancel() => MudDialog.Cancel();
+    private MudForm? form;
+    private bool formValidation = true;
+    [Parameter] public string? IdPago { get; set; }
+
+
+}

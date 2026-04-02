@@ -11,6 +11,7 @@
 @using System.Net
 @using System.Reflection.Metadata
 @using System.Net.Http.Headers
+@using Boletas
 @inject ILocalStorageService localStorage
 @inject IDialogService DialogService
 @inject UserStateService UserStateService
@@ -81,12 +82,21 @@
                     <MudTd DataLabel="Tipo Pago">@context.TipoPago</MudTd>
 
                     <MudTd DataLabel="Acciones">
-                        <MudIconButton Icon="@Icons.Material.Filled.Edit"
-                        Variant="Variant.Filled"
-                        Color="Color.Primary"
-                        Disabled="true"
-                        Size="Size.Small" @onclick="@(() => Btn_Actualizar_Cliente_Click(@context.IdPago))">
-                        </MudIconButton>
+                        @if (@context.EstadoPago == false)
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.Receipt"
+                                           Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           Size="Size.Small" @onclick="@(() => Btn_Ver_Boleta_Click(_maxWidth, @context.IdPago))">
+                            </MudIconButton>
+                        }else
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.Payment"
+                                           Variant="Variant.Filled"
+                                           Color="Color.Warning"
+                                           Size="Size.Small" @onclick="@(() => Btn_Ver_Boleta_Click(_maxWidth, @context.IdPago))">
+                            </MudIconButton>
+                        }
                         <MudIconButton Icon="@Icons.Material.Filled.Delete"
                         @onclick="@(() => Btn_Eliminar_Cliente_Click(context))"
                         Variant="Variant.Filled"
@@ -121,6 +131,7 @@
     private string searchTerm = string.Empty;
     private bool cargando = true;
     private string errorMessage = string.Empty;
+    private readonly DialogOptions _maxWidth = new() { MaxWidth = MaxWidth.Small, FullWidth = true };
 
 
     protected override async Task OnInitializedAsync()
@@ -280,23 +291,13 @@
         // }
     }
 
-    private async Task Btn_Actualizar_Cliente_Click(string Cli_Id)
+    private Task Btn_Ver_Boleta_Click(DialogOptions options, string IdPago)
     {
-        // var options = new DialogOptions()
-        //     {
-        //         CloseOnEscapeKey = true,
-        //         CloseButton = true,
-        //         FullWidth = true,
-        //         MaxWidth = MaxWidth.Small
-        //     };
-        // var parameters = new DialogParameters();
-        // parameters.Add("Cli_Id", Cli_Id);
-        // var dialog = DialogService.Show<ClienteActualizaDialog>("Editar Cliente", parameters, options);
-        // var result = await dialog.Result;
 
-        // if (!result.Canceled)
-        // {
-        //     await LoadClients();
-        // }
+        var parameters = new DialogParameters
+        {
+            { "IdPago", IdPago}
+        };
+        return DialogService.ShowAsync<BoletaDialog>("Ver Boleta", parameters, options);
     }
 }

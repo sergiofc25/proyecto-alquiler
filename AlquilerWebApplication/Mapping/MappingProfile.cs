@@ -50,6 +50,8 @@ namespace AlquilerWebApplication.Mapping
                 opt => opt.MapFrom(origen => origen.Alo_Descripcion))
                 .ForMember(destino => destino.Precio,
                 opt => opt.MapFrom(origen => origen.Alo_Precio))
+                .ForMember(destino => destino.Garantia,
+                opt => opt.MapFrom(origen => origen.Alo_Garantia))
                 .ForMember(destino => destino.BanIndependiente,
                 opt => opt.MapFrom(origen => origen.Alo_BanIndependiente))
                 .ForMember(destino => destino.Amoblado,

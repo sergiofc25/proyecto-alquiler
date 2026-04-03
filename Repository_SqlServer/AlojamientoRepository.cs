@@ -30,6 +30,7 @@ public class AlojamientoRepository : Repository, IAlojamientoRepository
                 Alo_Codigo = oDR.GetString(oDR.GetOrdinal("Alo_Codigo")),
                 Alo_Descripcion = oDR.GetString(oDR.GetOrdinal("Alo_Descripcion")),
                 Alo_Precio = oDR.GetDecimal(oDR.GetOrdinal("Alo_Precio")),
+                Alo_Garantia = oDR.GetDecimal(oDR.GetOrdinal("Alo_Garantia")),
                 Alo_BanIndependiente = oDR.GetByte(oDR.GetOrdinal("Alo_BanIndependiente")) != 0 ? true : false,
                 Alo_Amoblado = oDR.GetByte(oDR.GetOrdinal("Alo_Amoblado")) != 0 ? true : false,
                 Alo_Estado = oDR.GetByte(oDR.GetOrdinal("Alo_Estado")) != 0 ? true : false,

@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\ProyectoStayly\\ALQUILER\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\boletas\\boletadialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\boletas\\boletadialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\habitaciones\\dialoggeneracontrato.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\habitaciones\\dialoggeneracontrato.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BoletaDialog.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
-              "RelativeToolTip": "BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAG4AAAAFAAAAAAAAAA==",
+              "Title": "DialogGeneraContrato.razor",
+              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "RelativeToolTip": "BlazorAppStayly\\Pages\\Habitaciones\\DialogGeneraContrato.razor",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAFcAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-02T23:51:18.805Z",
+              "WhenOpened": "2026-04-03T18:56:46.763Z",
               "EditorCaption": ""
             }
           ]

@@ -11,8 +11,9 @@ namespace Model.DTO
         public string? CodigoAlojamiento { get; set; }
         public string? Descripcion { get; set; }
         public string? Precio { get; set; }
-        public string? BanIndependiente { get; set; }
-        public string? Amoblado { get; set; }
+        public string? Garantia { get; set; }
+        public bool? BanIndependiente { get; set; }
+        public bool? Amoblado { get; set; }
         public bool EstadoAlojamiento { get; set; }
     }
 }

@@ -29,8 +29,20 @@
                                         Label="Usuario"
                                         Required="true"
                                         ReadOnly="true"/>
-                        <MudTextField @bind-Value="CodigoAlojamiento"
+                        <MudTextField @bind-Value="Alojamiento.CodigoAlojamiento"
                                       Label="Habitación"
+                                      Required="true"
+                                      ReadOnly="true" />
+                        <MudTextField @bind-Value="Alojamiento.Descripcion"
+                                      Label="Descripción"
+                                      Required="true"
+                                      ReadOnly="true" />
+                        <MudTextField @bind-Value="Alojamiento.Precio"
+                                      Label="Precio"
+                                      Required="true"
+                                      ReadOnly="true" />
+                        <MudTextField @bind-Value="Alojamiento.Garantia"
+                                      Label="Garantía"
                                       Required="true"
                                       ReadOnly="true" />
                         <MudAutocomplete T="DTO_Cliente_Obten_x_NumDocumento"
@@ -44,22 +56,15 @@
                                          MinCharacters="8"
                                          DebounceInterval="300"
                                          CoerceText="false"
+                                         Required="true"
                                          ResetValueOnEmptyText="false"
                                          AdornmentIcon="@Icons.Material.Filled.Search" />
-                        <MudButton Variant="Variant.Filled"
-                                   Color="Color.Default"
-                                   StartIcon="@Icons.Material.Filled.CleaningServices"
-                                   OnClick="LimpiarCampos"
-                                   Class="mt-4">
-                            Limpiar Formulario
-                        </MudButton>
+                        <MudTextField T="string" Required="true" Label="Nombre" @bind-Value="cliente.NombreCliente" />
 
-                        <MudTextField T="string" Label="Nombre" @bind-Value="cliente.NombreCliente" />
+                        <MudTextField T="string" Required="true" Label="Teléfono" @bind-Value="cliente.Telefono" />
 
-                        <MudTextField T="string" Label="Teléfono" @bind-Value="cliente.Telefono"/>
-
-                        <MudTextField T="string" Label="Email" @bind-Value="cliente.Email" />
-                        <MudSelect T="string"
+                        <MudTextField T="string" Required="true" Label="Email" @bind-Value="cliente.Email" />
+                        <MudSelect T="string" Required="true"
                                    Label="Tipo de Documento"
                                    @bind-Value="cliente.TipoDocumento">
                             @if (tipo_Documentos != null)
@@ -79,6 +84,13 @@
 
                         <MudDatePicker Label="Fecha Fin"
                                        @bind-Date="fechaFin" />
+                        <MudButton Variant="Variant.Filled"
+                                   Color="Color.Default"
+                                   StartIcon="@Icons.Material.Filled.CleaningServices"
+                                   OnClick="LimpiarCampos"
+                                   Class="mt-4">
+                            Limpiar Formulario
+                        </MudButton>
                     </MudForm>
                 </MudPaper>
             </MudItem>
@@ -100,7 +112,6 @@
     private List<DTO_Tipo_Documento_Obten> tipo_Documentos = new();
     private string errorMessage = string.Empty;
     private DTO_Usuario_Obten_x_Correo usuario = new DTO_Usuario_Obten_x_Correo();
-    [Parameter] public string? CodigoAlojamiento { get; set; }
     private DTO_Cliente_Obten_x_NumDocumento cliente = new ();
     private DTO_Tipo_Documento_Obten selectedTipoDocumento { get; set; } = new DTO_Tipo_Documento_Obten();
     private DTO_Contrato_Crea nuevoContrato = new DTO_Contrato_Crea();
@@ -108,6 +119,7 @@
     private string dni = "";
     private DateTime? fechaInicio;
     private DateTime? fechaFin;
+    [Parameter]public DTO_Alojamiento_Obten Alojamiento { get; set; }
 
 
     protected override async Task OnInitializedAsync()
@@ -331,13 +343,14 @@
             nuevoContrato.EmailCliente = cliente.Email;
             nuevoContrato.TipoDocumento = cliente.TipoDocumento;
             nuevoContrato.NombreUsuario = usuario.NombreUsuario;
-            nuevoContrato.AlojamientoCodigo = CodigoAlojamiento;
+            nuevoContrato.AlojamientoCodigo = Alojamiento.CodigoAlojamiento;
 
             var response = await client.PostAsJsonAsync("api/Contrato/Crea", nuevoContrato);
 
             if (response.IsSuccessStatusCode)
             {
                 Submit();
+                NavigationManager.NavigateTo(NavigationManager.Uri, true);
             }
             else
             {

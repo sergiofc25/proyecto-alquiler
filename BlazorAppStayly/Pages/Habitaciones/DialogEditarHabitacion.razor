@@ -1,0 +1,132 @@
+﻿@using Model.DTO
+@using MudBlazor
+@using Blazored.LocalStorage
+@using System.Net.Http.Headers
+
+@inject NavigationManager NavigationManager
+@inject IHttpClientFactory ClientFactory
+@inject ILocalStorageService localStorage
+@inject IDialogService DialogService
+
+<MudDialog>
+    <TitleContent>
+        Alquilar Habitación
+    </TitleContent>
+
+    <DialogContent>
+        <MudGrid>
+            <MudItem xs="12">
+                <MudPaper Class="pa-4">
+
+                    <MudForm @ref="form">
+
+                        <MudTextField @bind-Value="Alojamiento.CodigoAlojamiento"
+                                      Label="Habitación"
+                                      Required="true"
+                                      ReadOnly="true" />
+
+                        <MudTextField @bind-Value="Alojamiento.Descripcion"
+                                      Label="Descripción"
+                                      Required="true" />
+
+                        <MudTextField @bind-Value="Alojamiento.Precio"
+                                      Label="Precio"
+                                      Required="true"
+                                      InputType="InputType.Number" />
+
+                        <MudTextField @bind-Value="Alojamiento.Garantia"
+                                      Label="Garantía"
+                                      Required="true"
+                                      InputType="InputType.Number" />
+
+                    </MudForm>
+
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <MudAlert Severity="Severity.Error" Class="mt-4">
+                            @errorMessage
+                        </MudAlert>
+                    }
+
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+    </DialogContent>
+
+    <DialogActions>
+        <MudButton OnClick="Cancel">
+            Cancelar
+        </MudButton>
+
+        <MudButton Color="Color.Primary" OnClick="Submit">
+            Guardar
+        </MudButton>
+    </DialogActions>
+
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public DTO_Alojamiento_Obten Alojamiento { get; set; }
+
+    private MudForm? form;
+
+    private string errorMessage = string.Empty;
+
+    private async Task Submit()
+    {
+        if (form is not null)
+        {
+            await form.Validate();
+
+            if (form.IsValid)
+            {
+                await Guardar();
+            }
+        }
+    }
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task Guardar()
+    {
+        try
+        {
+            var client = ClientFactory.CreateClient("ApiStayly");
+
+            var token = await localStorage.GetItemAsync<string>("authToken");
+
+            if (!string.IsNullOrEmpty(token))
+            {
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
+            }
+
+            var response = await client.PutAsJsonAsync(
+                $"api/Alojamiento/Actualiza/{Alojamiento.IdAlojamiento}",
+                Alojamiento);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MudDialog.Close(DialogResult.Ok(true));
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                errorMessage = $"Error: {response.StatusCode} - {errorContent}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Ocurrió un error: {ex.Message}";
+        }
+    }
+
+}

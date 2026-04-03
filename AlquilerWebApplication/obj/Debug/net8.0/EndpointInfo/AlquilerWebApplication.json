@@ -59,6 +59,71 @@
         }
       }
     },
+    "/api/Alojamiento/Obten_x_Id/{Alo_Id}": {
+      "get": {
+        "tags": [
+          "Alojamiento"
+        ],
+        "parameters": [
+          {
+            "name": "Alo_Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Alojamiento/Actualiza/{Alo_Id}": {
+      "put": {
+        "tags": [
+          "Alojamiento"
+        ],
+        "parameters": [
+          {
+            "name": "Alo_Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTO_Alojamiento_Actualiza"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTO_Alojamiento_Actualiza"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DTO_Alojamiento_Actualiza"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Boleta/Obten_x_Pago/{Pag_Id}": {
       "get": {
         "tags": [
@@ -403,6 +468,24 @@
   },
   "components": {
     "schemas": {
+      "DTO_Alojamiento_Actualiza": {
+        "type": "object",
+        "properties": {
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "string",
+            "nullable": true
+          },
+          "garantia": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DTO_Contrato_Crea": {
         "type": "object",
         "properties": {

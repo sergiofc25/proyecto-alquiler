@@ -44,6 +44,8 @@ namespace AlquilerWebApplication.Mapping
             //ALOJAMIENTO
 
             CreateMap<Ent_Alojamiento, DTO_Alojamiento_Obten>()
+                .ForMember(destino => destino.IdAlojamiento,
+                opt => opt.MapFrom(origen => origen.Alo_Id))
                 .ForMember(destino => destino.CodigoAlojamiento,
                 opt => opt.MapFrom(origen => origen.Alo_Codigo))
                 .ForMember(destino => destino.Descripcion,
@@ -58,6 +60,31 @@ namespace AlquilerWebApplication.Mapping
                 opt => opt.MapFrom(origen => origen.Alo_Amoblado))
                 .ForMember(destino => destino.EstadoAlojamiento,
                 opt => opt.MapFrom(origen => origen.Alo_Estado));
+            
+            CreateMap<Ent_Alojamiento, DTO_Alojamiento_Obten_x_Id>()
+                .ForMember(destino => destino.IdAlojamiento,
+                opt => opt.MapFrom(origen => origen.Alo_Id))
+                .ForMember(destino => destino.CodigoAlojamiento,
+                opt => opt.MapFrom(origen => origen.Alo_Codigo))
+                .ForMember(destino => destino.Descripcion,
+                opt => opt.MapFrom(origen => origen.Alo_Descripcion))
+                .ForMember(destino => destino.Precio,
+                opt => opt.MapFrom(origen => origen.Alo_Precio))
+                .ForMember(destino => destino.Garantia,
+                opt => opt.MapFrom(origen => origen.Alo_Garantia))
+                .ForMember(destino => destino.BanIndependiente,
+                opt => opt.MapFrom(origen => origen.Alo_BanIndependiente))
+                .ForMember(destino => destino.Amoblado,
+                opt => opt.MapFrom(origen => origen.Alo_Amoblado))
+                .ForMember(destino => destino.EstadoAlojamiento,
+                opt => opt.MapFrom(origen => origen.Alo_Estado));
+            CreateMap<DTO_Alojamiento_Actualiza, Ent_Alojamiento>()
+                .ForPath(destino => destino.Alo_Descripcion,
+                opt => opt.MapFrom(origen => origen.Descripcion))
+                .ForPath(destino => destino.Alo_Precio,
+                opt => opt.MapFrom(origen => origen.Precio))
+                .ForPath(destino => destino.Alo_Garantia,
+                opt => opt.MapFrom(origen => origen.Garantia));
 
             //CLIENTE
 

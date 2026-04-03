@@ -27,12 +27,49 @@
   },
   {
     "ContainingType": "AlquilerWebApplication.Controllers.AlojamientoController",
+    "Method": "Actualiza",
+    "RelativePath": "api/Alojamiento/Actualiza/{Alo_Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Alo_Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "eDTO_Alojamiento_Actualiza",
+        "Type": "Model.DTO.DTO_Alojamiento_Actualiza",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.AlojamientoController",
     "Method": "AlojamientoObten",
     "RelativePath": "api/Alojamiento/Alojamiento_Obten",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.AlojamientoController",
+    "Method": "Obten_x_Id",
+    "RelativePath": "api/Alojamiento/Obten_x_Id/{Alo_Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Alo_Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

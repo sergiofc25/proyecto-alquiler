@@ -16,6 +16,7 @@ namespace UnitOfWork_SqlServer
             ClienteRepository = new ClienteRepository(context, transaction);
             ContratoRepository = new ContratoRepository(context, transaction);
             PagoRepository = new PagoRepository(context, transaction);
+            Tipo_DocumentoRepository = new Tipo_DocumentoRepository(context, transaction);
             BoletaRepository = new BoletaRepository(context, transaction);
         }
 

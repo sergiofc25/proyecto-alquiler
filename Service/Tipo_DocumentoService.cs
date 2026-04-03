@@ -27,4 +27,5 @@ public class Tipo_DocumentoService : ITipo_DocumentoService
             return context.Repositories.Tipo_DocumentoRepository.Obten();
         });
     }
+
 }

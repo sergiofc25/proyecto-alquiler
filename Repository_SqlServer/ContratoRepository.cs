@@ -137,4 +137,23 @@ public class ContratoRepository : Repository, IContratoRepository
 
         return null;
     }
+    public string Actualiza_Cerrar(int Con_Id)
+    {
+        using var oCmd = CreateCommand("SP_Contrato_Actualiza_Cerrar");
+
+        oCmd.CommandType = CommandType.StoredProcedure;
+
+        oCmd.Parameters.Add("@Con_Id", SqlDbType.Int).Value = Con_Id;
+
+        var pMensaje = new SqlParameter("@MensajeError", SqlDbType.VarChar, 500)
+        {
+            Direction = ParameterDirection.Output
+        };
+
+        oCmd.Parameters.Add(pMensaje);
+
+        oCmd.ExecuteNonQuery();
+
+        return pMensaje.Value?.ToString();
+    }
 }

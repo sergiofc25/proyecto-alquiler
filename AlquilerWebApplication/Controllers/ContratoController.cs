@@ -138,4 +138,29 @@ public class ContratoController : ControllerBase
             return StatusCode(500, "Error interno del servidor.");
         }
     }
+    [HttpPut("Actualiza_Cerrar/{Con_Id}")]
+    public async Task<IActionResult> Actualiza_Cerrar(int Con_Id)
+    {
+        try
+        {
+            var mensaje = await _ContratoService.Actualiza_Cerrar(Con_Id);
+
+            if (!string.IsNullOrEmpty(mensaje))
+            {
+                return BadRequest(new DTO_Response<object>
+                {
+                    ErrorMessage = mensaje
+                });
+            }
+
+            return NoContent();
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, new DTO_Response<object>
+            {
+                ErrorMessage = "Error interno del servidor."
+            });
+        }
+    }
 }

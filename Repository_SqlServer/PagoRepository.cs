@@ -83,4 +83,24 @@ public class PagoRepository : Repository, IPagoRepository
             Convert.ToBoolean(oCmd.Parameters["TienePaginaProximo"].Value),
             Lst_Ent_Pago);
     }
+
+    public string Actualiza_Pagar(int Pag_Id)
+    {
+        using var oCmd = CreateCommand("SP_Pago_Actualiza_Pagar");
+
+        oCmd.CommandType = CommandType.StoredProcedure;
+
+        oCmd.Parameters.Add("@Pag_Id", SqlDbType.Int).Value = Pag_Id;
+
+        var pMensaje = new SqlParameter("@MensajeError", SqlDbType.VarChar, 500)
+        {
+            Direction = ParameterDirection.Output
+        };
+
+        oCmd.Parameters.Add(pMensaje);
+
+        oCmd.ExecuteNonQuery();
+
+        return pMensaje.Value?.ToString();
+    }
 }

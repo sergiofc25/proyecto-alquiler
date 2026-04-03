@@ -95,6 +95,22 @@
   },
   {
     "ContainingType": "AlquilerWebApplication.Controllers.ContratoController",
+    "Method": "Actualiza_Cerrar",
+    "RelativePath": "api/Contrato/Actualiza_Cerrar/{Con_Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Con_Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.ContratoController",
     "Method": "Crea",
     "RelativePath": "api/Contrato/Crea",
     "HttpMethod": "POST",
@@ -145,6 +161,22 @@
     "Parameters": [
       {
         "Name": "Con_Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.PagoController",
+    "Method": "Actualiza_Pagar",
+    "RelativePath": "api/Pago/Actualiza_Pagar/{Pag_Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Pag_Id",
         "Type": "System.Int32",
         "IsRequired": true
       }

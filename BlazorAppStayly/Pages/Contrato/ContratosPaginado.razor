@@ -26,11 +26,6 @@
                 <MudItem Class="d-flex align-center justify-start mud-width-full" xs="6">
                     <MudText Typo="Typo.h6" Color="Color.Primary">Contratos</MudText>
                 </MudItem>
-
-                <MudItem Class="d-flex align-center justify-end mud-width-full" xs="6">
-                    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.AddBox" Color="Color.Primary"
-                               Size="Size.Small" OnClick="@(() => Btn_Nuevo_Cliente_Click())">NUEVO</MudButton>
-                </MudItem>
             </MudItem>
         </MudPaper>
     </MudItem>
@@ -80,23 +75,8 @@
                     <MudTd DataLabel="Adelanto">@context.AdelantoC</MudTd>
                     <MudTd DataLabel="Garantía">@context.GarantiaC</MudTd>
                     <MudTd DataLabel="Acciones">
-                        @* @if (@context.EstadoPago == true)
-                        {
-                            <MudIconButton Icon="@Icons.Material.Filled.ViewModule"
-                                           @onclick="@(() => Btn_Mostrar_Pagos_Click(context.))"
-                                           Variant="Variant.Filled"
-                                           Color="Color.Primary"
-                                           Title="Pagos">
-                            </MudIconButton>
-                        } *@
-                        <MudIconButton Icon="@Icons.Material.Filled.Edit"
-                        Variant="Variant.Filled"
-                        Color="Color.Primary"
-                        Disabled="true"
-                        Size="Size.Small" @onclick="@(() => Btn_Actualizar_Cliente_Click(@context.IdContrato))">
-                        </MudIconButton>
                         <MudIconButton Icon="@Icons.Material.Filled.Delete"
-                        @onclick="@(() => Btn_Eliminar_Cliente_Click(context))"
+                                       @onclick="@(() => Btn_Cerrar_Contrato_Click(_maxWidth, context.IdContrato))"
                         Variant="Variant.Filled"
                         Color="Color.Error"
                         Title="Eliminar contrato">
@@ -128,6 +108,8 @@
     private string searchTerm = string.Empty;
     private bool cargando = true;
     private string errorMessage = string.Empty;
+    private readonly DialogOptions _maxWidth = new() { MaxWidth = MaxWidth.Small, FullWidth = true };
+
 
 
     protected override async Task OnInitializedAsync()
@@ -205,105 +187,13 @@
         numeroPagina = 1; // Reset to first page when searching
         _ = LoadClients();
     }
-    private async Task EliminarCliente(DTO_Contrato_Obten_Paginado cliente)
+    private Task Btn_Cerrar_Contrato_Click(DialogOptions options, string IdContrato)
     {
-        // if (cliente == null) return;
 
-        // cargando = true;
-        // StateHasChanged();
-
-        // try
-        // {
-        //     var client = ClientFactory.CreateClient("ApiPRESUPUESTOS");
-        //     var token = await localStorage.GetItemAsync<string>("authToken");
-
-        //     if (token != null)
-        //     {
-        //         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-        //     }
-
-        //     var requestData = new { Cli_Id = cliente.Cli_Id, Cli_Estado = "False" };
-        //     var content = new StringContent(JsonSerializer.Serialize(requestData), Encoding.UTF8, "application/json");
-
-        //     var response = await client.PutAsync($"api/v1/Cliente/Actualiza_Condicion/{cliente.Cli_Id}", content);
-
-        //     if (response.IsSuccessStatusCode)
-        //     {
-        //         await LoadClients();
-
-        //     }
-        //     else
-        //     {
-        //         var errorContent = await response.Content.ReadAsStringAsync();
-        //         errorMessage = $"Error: {response.StatusCode} - {errorContent}";
-        //     }
-        // }
-        // catch (Exception ex)
-        // {
-        //     errorMessage = $"Ocurrió un error: {ex.Message}";
-        // }
-        // finally
-        // {
-        //     cargando = false;
-        //     StateHasChanged();
-        // }
-    }
-    private async Task Btn_Eliminar_Cliente_Click(DTO_Contrato_Obten_Paginado cliente)
-    {
-        // var options = new DialogOptions()
-        //     {
-        //         CloseOnEscapeKey = true,
-        //         CloseButton = true,
-        //         FullWidth = true
-        //     };
-
-        // var parameters = new DialogParameters();
-        // parameters.Add("Cliente", cliente);
-
-        // var dialog = DialogService.Show<ClienteEliminaDialog>("Eliminar Cliente", parameters, options);
-        // var result = await dialog.Result;
-
-        // if (!result.Cancelled && result.Data is bool confirmado && confirmado)
-        // {
-        //     await EliminarCliente(cliente);
-        // }
-    }
-
-    private async Task Btn_Nuevo_Cliente_Click()
-    {
-        // var options = new DialogOptions()
-        //     {
-        //         CloseOnEscapeKey = true,
-        //         CloseButton = true,
-        //         FullWidth = true,
-        //         MaxWidth = MaxWidth.Small
-        //     };
-        // var dialog = DialogService.Show<ClienteCreaDialog>("Crear Cliente", options);
-        // var result = await dialog.Result;
-
-        // if (!result.Canceled)
-        // {
-        //     await LoadClients();
-        // }
-    }
-
-    private async Task Btn_Actualizar_Cliente_Click(string Cli_Id)
-    {
-        // var options = new DialogOptions()
-        //     {
-        //         CloseOnEscapeKey = true,
-        //         CloseButton = true,
-        //         FullWidth = true,
-        //         MaxWidth = MaxWidth.Small
-        //     };
-        // var parameters = new DialogParameters();
-        // parameters.Add("Cli_Id", Cli_Id);
-        // var dialog = DialogService.Show<ClienteActualizaDialog>("Editar Cliente", parameters, options);
-        // var result = await dialog.Result;
-
-        // if (!result.Canceled)
-        // {
-        //     await LoadClients();
-        // }
+        var parameters = new DialogParameters
+        {
+            { "IdContrato", IdContrato}
+        };
+        return DialogService.ShowAsync<CerrarContratoDialog>("Cerrar Contrato", parameters, options);
     }
 }

@@ -13,6 +13,7 @@
 @using System.Net.Http.Headers
 @inject ILocalStorageService localStorage
 @inject IDialogService DialogService
+@inject IJSRuntime JS
 <MudDialog>
     <TitleContent>
         Boleta
@@ -20,17 +21,33 @@
     <DialogContent>
         Dialog Content
         <MudForm @ref="form" Validation="@formValidation">
-            <MudTextField @bind-Value="IdPago"
-                          Label="PagoId"
-                          Required="true"
+            <MudTextField @bind-Value="@boleta.Codigo"
+                          Label="Código"
+                          ReadOnly="true" />
+            <MudTextField @bind-Value="@boleta.fecha"
+                          Label="Fecha"
+                          ReadOnly="true" />
+            <MudTextField @bind-Value="@boleta.descripcion"
+                          Label="Descripción"
+                          ReadOnly="true" />
+            <MudTextField @bind-Value="@boleta.total"
+                          Label="Total"
+                          ReadOnly="true" />
+            <MudTextField @bind-Value="@boleta.NombreCliente"
+                          Label="Cliente"
+                          ReadOnly="true" />
+            <MudTextField @bind-Value="@boleta.NumDocumento"
+                          Label="N° Documento"
                           ReadOnly="true" />
         </MudForm>
 
         
     </DialogContent>
     <DialogActions>
-        <MudButton OnClick="Cancel">Cancel</MudButton>
-        <MudButton Color="Color.Primary" OnClick="Submit">OK</MudButton>
+        <MudButton OnClick="Cancel">Cerrar</MudButton>
+        <MudButton Color="Color.Primary" OnClick="ExportPdf">
+            Exportar PDF
+        </MudButton>
     </DialogActions>
 </MudDialog>
 
@@ -41,7 +58,56 @@
     private void Cancel() => MudDialog.Cancel();
     private MudForm? form;
     private bool formValidation = true;
+    private string errorMessage = string.Empty;
+    private DTO_Boleta_Obten_x_Pago boleta = new();
     [Parameter] public string? IdPago { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        await GetBoleta(IdPago);
+    }
+    private async Task GetBoleta(string IdPago)
+    {
+        try
+        {
+            var client = ClientFactory.CreateClient("ApiStayly");
+            var token = await localStorage.GetItemAsync<string>("authToken");
+            if (token != null)
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            }
+
+            var response = await client.GetAsync($"api/Boleta/Obten_x_Pago/{IdPago}");
+            Console.WriteLine($"Response Status: {response.StatusCode}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Response Body: {responseBody}");
+                var result = JsonConvert.DeserializeObject<DTO_Response<DTO_Boleta_Obten_x_Pago>>(responseBody);
+                if (result != null && result.IsSuccessful)
+                {
+                    boleta = result.Data;
+                }
+                else
+                {
+                    Console.WriteLine("Response not successful or no data.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error al cargar tipos de documento: {ex.Message}";
+            Console.WriteLine(ex.Message);
+        }
+    }
+    private async Task ExportPdf()
+    {
+        await JS.InvokeVoidAsync("exportBoletaPdf", boleta);
+    }
 
 }

@@ -1,0 +1,112 @@
+﻿@using Newtonsoft.Json
+@using System.Net.Http.Json
+@using System.Text.Json
+@inject NavigationManager NavigationManager
+@inject IHttpClientFactory ClientFactory
+@using Model.DTO
+@using MudBlazor
+@using Blazored.LocalStorage
+@using System.Net.Http.Headers
+@using System.Text
+@using System.Net
+@using System.Reflection.Metadata
+@using System.Net.Http.Headers
+@inject ILocalStorageService localStorage
+@inject IDialogService DialogService
+<MudDialog>
+    <TitleContent>
+        Cerrar Contrato
+    </TitleContent>
+
+    <DialogContent>
+        ¿Cerrar Contrato?
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <MudAlert Severity="Severity.Error">@errorMessage</MudAlert>
+        }
+
+        <MudForm @ref="form" Validation="@formValidation">
+        </MudForm>
+
+    </DialogContent>
+
+    <DialogActions>
+        <MudButton OnClick="Cancel">Salir</MudButton>
+
+        <MudButton Color="Color.Primary"
+                   Variant="Variant.Filled"
+                   Disabled="@cargando"
+                   OnClick="Submit">
+            Finalizar Contrato
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    private MudForm? form;
+    private bool formValidation = true;
+    private string errorMessage = string.Empty;
+    private bool cargando = false;
+
+    [Parameter] public string? IdContrato { get; set; }
+
+    private async Task Submit()
+    {
+        if (string.IsNullOrEmpty(IdContrato))
+            return;
+
+        await Cerrar(IdContrato);
+
+        if (string.IsNullOrEmpty(errorMessage))
+        {
+            MudDialog.Close(DialogResult.Ok(true));
+
+            NavigationManager.NavigateTo(NavigationManager.Uri, true);
+        }
+    }
+
+    private void Cancel() => MudDialog.Cancel();
+
+
+    private async Task Cerrar(string IdContrato)
+    {
+        cargando = true;
+        errorMessage = "";
+        StateHasChanged();
+
+        try
+        {
+            var client = ClientFactory.CreateClient("ApiStayly");
+
+            var token = await localStorage.GetItemAsync<string>("authToken");
+
+            if (!string.IsNullOrEmpty(token))
+            {
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
+            }
+
+            var response = await client.PutAsync($"api/Contrato/Actualiza_Cerrar/{IdContrato}", null);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                errorMessage = $"Error: {response.StatusCode} - {errorContent}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Ocurrió un error: {ex.Message}";
+        }
+        finally
+        {
+            cargando = false;
+            StateHasChanged();
+        }
+    }
+}

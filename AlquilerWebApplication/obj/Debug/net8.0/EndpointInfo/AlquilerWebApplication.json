@@ -236,6 +236,29 @@
         }
       }
     },
+    "/api/Contrato/Actualiza_Cerrar/{Con_Id}": {
+      "put": {
+        "tags": [
+          "Contrato"
+        ],
+        "parameters": [
+          {
+            "name": "Con_Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Pago/Obten_Paginado/{RegistroPagina}/{NumeroPagina}": {
       "get": {
         "tags": [
@@ -265,6 +288,29 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Pago/Actualiza_Pagar/{Pag_Id}": {
+      "put": {
+        "tags": [
+          "Pago"
+        ],
+        "parameters": [
+          {
+            "name": "Pag_Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],

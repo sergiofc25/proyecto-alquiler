@@ -43,17 +43,35 @@ public class UsuarioController : ControllerBase
     {
         try
         {
-            var Email = User?.FindFirst(ClaimTypes.Email).Value;
+            // 1. Usamos ?.Value para que si el Claim no existe, 'Email' sea simplemente null en lugar de tronar.
+            var Email = User?.FindFirst(ClaimTypes.Email)?.Value;
+            // 2. Validamos si el email es nulo o vacío antes de ir a la base de datos.
+            if (string.IsNullOrEmpty(Email))
+            {
+                return Unauthorized(new DTO_Response<DTO_Usuario_Obten_x_Correo>
+                {
+                    IsSuccessful = false,
+                });
+            }
+
             var Usuario = await _UsuarioService.Obten_x_Correo(Email);
 
             if (Usuario is null)
-                return NotFound();
-            return Ok(new DTO_Response<DTO_Usuario_Obten_x_Correo> { IsSuccessful = true, Data = _mapper.Map<DTO_Usuario_Obten_x_Correo>(Usuario) });
+                return NotFound(new DTO_Response<DTO_Usuario_Obten_x_Correo>
+                {
+                    IsSuccessful = false,
+                });
 
+            return Ok(new DTO_Response<DTO_Usuario_Obten_x_Correo>
+            {
+                IsSuccessful = true,
+                Data = _mapper.Map<DTO_Usuario_Obten_x_Correo>(Usuario)
+            });
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            return StatusCode(500, "Error interno del servidor.");
+            // Loguear el error 'ex' aquí sería lo ideal
+            return StatusCode(500, $"Error interno del servidor al procesar la solicitud: {ex}");
         }
     }
 }

@@ -36,8 +36,7 @@
         <div class="ticket">
 
             <div class="center">
-                <h4>STAYLY</h4>
-                BOLETA
+                <h4>BOLETA DE ALQUILER</h4>
             </div>
 
             <div class="line"></div>
@@ -48,8 +47,15 @@
             </div>
 
             <div class="row">
-                <span>Fecha:</span>
+                <span>Fecha Incio:</span>
                 <span>${boleta.fecha}</span>
+                <span>Fecha Fin:</span>
+                <span>${boleta.fechaFin}</span>
+            </div>
+
+            <div class="row">
+                <span>Fecha de Pago:</span>
+                <span>${boleta.fechaPagoRealizado}</span>
             </div>
 
             <div class="line"></div>

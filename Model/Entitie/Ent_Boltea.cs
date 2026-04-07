@@ -15,6 +15,8 @@ namespace Model.Entitie
         public decimal? Bol_Total { get; set; }
         public Ent_Pago ePago { get; set; }
         public bool Bol_Estado { get; set; }
+        public DateOnly? Bol_FechaFin { get; set; }
+        public DateOnly? Bol_FechaPagoRealizado { get; set; }
 
     }
 }

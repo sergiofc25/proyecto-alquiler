@@ -398,6 +398,12 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        var token = await localStorage.GetItemAsync<string>("authToken");
+        if (string.IsNullOrEmpty(token))
+        {
+            NavigationManager.NavigateTo("/login");
+            return;
+        }
         await GetAlojamientos();
     }
 

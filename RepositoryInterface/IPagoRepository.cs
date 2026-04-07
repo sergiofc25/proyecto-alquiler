@@ -6,6 +6,6 @@ namespace Repository_Interface;
 public interface IPagoRepository
 {
     public (int, int, bool, bool, IEnumerable<Ent_Pago>) Obten_Paginado(int RegistroPagina, int NumeroPagina, string? TerBusqueda);
-    public string Actualiza_Pagar(int Pag_Id);
+    public string Actualiza_Pagar(int Pag_Id, DateOnly FechaPagoRealizado);
 
 }

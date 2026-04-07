@@ -363,7 +363,7 @@
         }
       }
     },
-    "/api/Pago/Actualiza_Pagar/{Pag_Id}": {
+    "/api/Pago/Actualiza_Pagar/{Pag_Id}/{FechaPagoRealizado}": {
       "put": {
         "tags": [
           "Pago"
@@ -376,6 +376,15 @@
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          },
+          {
+            "name": "FechaPagoRealizado",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
             }
           }
         ],

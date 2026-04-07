@@ -25,7 +25,13 @@
                           Label="Código"
                           ReadOnly="true" />
             <MudTextField @bind-Value="@boleta.fecha"
-                          Label="Fecha"
+                          Label="Fecha Inicio"
+                          ReadOnly="true" />
+            <MudTextField @bind-Value="@boleta.fechaFin"
+                          Label="Fecha Fin"
+                          ReadOnly="true" />
+            <MudTextField @bind-Value="@boleta.fechaPagoRealizado"
+                          Label="Fecha Pago"
                           ReadOnly="true" />
             <MudTextField @bind-Value="@boleta.descripcion"
                           Label="Descripción"

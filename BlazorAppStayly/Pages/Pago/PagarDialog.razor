@@ -27,6 +27,10 @@
         }
 
         <MudForm @ref="form" Validation="@formValidation">
+            <MudDatePicker Label="Fecha de pago"
+                           @bind-Date="FechaPagoRealizado"
+                           Required="true"
+                           RequiredError="Fecha Requerida!" />
         </MudForm>
 
     </DialogContent>
@@ -52,6 +56,7 @@
     private bool formValidation = true;
     private string errorMessage = string.Empty;
     private bool cargando = false;
+    public DateTime? FechaPagoRealizado;
 
     [Parameter] public string? IdPago { get; set; }
 
@@ -91,7 +96,10 @@
                     new AuthenticationHeaderValue("Bearer", token);
             }
 
-            var response = await client.PutAsync($"api/Pago/Actualiza_Pagar/{IdPago}", null);
+            // var response = await client.PutAsync($"api/Pago/Actualiza_Pagar/{IdPago}/{FechaPagoRealizado}", null);
+            var fecha = FechaPagoRealizado?.ToString("yyyy-MM-dd");
+
+            var response = await client.PutAsync($"api/Pago/Actualiza_Pagar/{IdPago}/{fecha}", null);
 
             if (!response.IsSuccessStatusCode)
             {

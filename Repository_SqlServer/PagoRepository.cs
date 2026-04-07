@@ -84,13 +84,14 @@ public class PagoRepository : Repository, IPagoRepository
             Lst_Ent_Pago);
     }
 
-    public string Actualiza_Pagar(int Pag_Id)
+    public string Actualiza_Pagar(int Pag_Id, DateOnly FechaPagoRealizado)
     {
         using var oCmd = CreateCommand("SP_Pago_Actualiza_Pagar");
 
         oCmd.CommandType = CommandType.StoredProcedure;
 
         oCmd.Parameters.Add("@Pag_Id", SqlDbType.Int).Value = Pag_Id;
+        oCmd.Parameters.Add("@FechaPagoRealizado", SqlDbType.Date).Value = FechaPagoRealizado;
 
         var pMensaje = new SqlParameter("@MensajeError", SqlDbType.VarChar, 500)
         {

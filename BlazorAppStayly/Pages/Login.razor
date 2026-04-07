@@ -97,7 +97,7 @@
                                 <MudText>Iniciar Sesión</MudText>
                             }
                         </MudButton>
-                        <MudButton Variant="Variant.Filled"
+                        @* <MudButton Variant="Variant.Filled"
                                    Color="Color.Default"
                                    Size="Size.Small"
                                    EndIcon="@Icons.Material.Filled.Person"
@@ -105,7 +105,7 @@
                                    OnClick="async () => await LoginAsGuest()"
                                    Class="mb-3" FullWidth="true">
                             <MudText>Ingresar como Invitado</MudText>
-                        </MudButton>
+                        </MudButton> *@
                         @if (!string.IsNullOrEmpty(errorMessage))
                         {
                             <MudAlert Severity="Severity.Error" Class="mt-3">@errorMessage</MudAlert>
@@ -223,41 +223,41 @@
             }
         }
     }
-    private async Task LoginAsGuest()
-    {
-        isProcessing = true;
-        StateHasChanged();
+    // private async Task LoginAsGuest()
+    // {
+    //     isProcessing = true;
+    //     StateHasChanged();
 
-        try
-        {
-            var client = ClientFactory.CreateClient("ApiStayly");
-            var response = await client.PostAsJsonAsync("api/Accounts/Login", new DTO_Usuario_Obten_Login
-                {
-                    Email = "Invitado",
-                    Clave = "Inv_45.@4458"
-                });
+    //     try
+    //     {
+    //         var client = ClientFactory.CreateClient("ApiStayly");
+    //         var response = await client.PostAsJsonAsync("api/Accounts/Login", new DTO_Usuario_Obten_Login
+    //             {
+    //                 Email = "Invitado",
+    //                 Clave = "Inv_45.@4458"
+    //             });
 
-            if (response.IsSuccessStatusCode)
-            {
-                var result = await response.Content.ReadFromJsonAsync<DTO_AuthResponse>();
-                if (result?.IsAuthSuccessful == true)
-                {
-                    await localStorage.SetItemAsync("authToken", result.Token);
-                    NavigationManager.NavigateTo("/proyectos_paginado");
-                    return;
-                }
-            }
-            errorMessage = "Error al acceder como invitado";
-        }
-        catch (Exception ex)
-        {
-            errorMessage = ex.Message;
-        }
-        finally
-        {
-            isProcessing = false;
-            StateHasChanged();
-        }
-    }
+    //         if (response.IsSuccessStatusCode)
+    //         {
+    //             var result = await response.Content.ReadFromJsonAsync<DTO_AuthResponse>();
+    //             if (result?.IsAuthSuccessful == true)
+    //             {
+    //                 await localStorage.SetItemAsync("authToken", result.Token);
+    //                 NavigationManager.NavigateTo("/proyectos_paginado");
+    //                 return;
+    //             }
+    //         }
+    //         errorMessage = "Error al acceder como invitado";
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         errorMessage = ex.Message;
+    //     }
+    //     finally
+    //     {
+    //         isProcessing = false;
+    //         StateHasChanged();
+    //     }
+    // }
 
 }

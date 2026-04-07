@@ -253,7 +253,11 @@ namespace AlquilerWebApplication.Mapping
                 .ForMember(destino => destino.NumDocumento,
                 opt => opt.MapFrom(origen => origen.ePago.eContrato.eCliente.Cli_NumDocumento))
                 .ForMember(destino => destino.EstadoPago,
-                opt => opt.MapFrom(origen => origen.Bol_Estado));
+                opt => opt.MapFrom(origen => origen.Bol_Estado))
+                .ForMember(destino => destino.fechaFin,
+                opt => opt.MapFrom(origen => origen.Bol_FechaFin))
+                .ForMember(destino => destino.fechaPagoRealizado,
+                opt => opt.MapFrom(origen => origen.Bol_FechaPagoRealizado));
         }
     }
 }

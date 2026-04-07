@@ -51,9 +51,9 @@
 
                     <MudTh>Codigo</MudTh>
                     <MudTh>Usuario</MudTh>
-                    <MudTh>Fecha Generado</MudTh>
-                    <MudTh>Fecha Vencimiento</MudTh>
-                    <MudTh>Fecha Pago</MudTh>
+                    <MudTh>Fecha Inicio</MudTh>
+                    <MudTh>Fecha Fin</MudTh>
+                    <MudTh>Fecha Pagado</MudTh>
                     <MudTh>Cliente</MudTh>
                     <MudTh>DNI</MudTh>
                     <MudTh>Habitación</MudTh>
@@ -66,9 +66,9 @@
 
                     <MudTd DataLabel="Codigo">@context.CodigoPago</MudTd>
                     <MudTd DataLabel="Usuario">@context.NombreUsuario</MudTd>
-                    <MudTd DataLabel="Fecha Generado">@context.FechaPago</MudTd>
-                    <MudTd DataLabel="Fecha Vencimiento">@context.FechaVencimiento</MudTd>
-                    <MudTd DataLabel="Fecha Pago">@context.FechaPagado</MudTd>
+                    <MudTd DataLabel="Fecha Inicio">@context.FechaPago</MudTd>
+                    <MudTd DataLabel="Fecha Fin">@context.FechaVencimiento</MudTd>
+                    <MudTd DataLabel="Fecha Pagado">@context.FechaPagado</MudTd>
                     <MudTd DataLabel="Cliente">@context.NombreCliente</MudTd>
                     <MudTd DataLabel="DNI">@context.DNICliente</MudTd>
                     <MudTd DataLabel="Habitación">@context.CodigoHabitacion</MudTd>
@@ -141,11 +141,11 @@
             var client = ClientFactory.CreateClient("ApiStayly");
 
             // Agregar el token de autorización a la solicitud actual
-            // var token = await localStorage.GetItemAsync<string>("authToken");
-            // if (token != null)
-            // {
-            //     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            // }
+            var token = await localStorage.GetItemAsync<string>("authToken");
+            if (token != null)
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            }
             var requestUri = $"api/Pago/Obten_Paginado/{registroPagina}/{numeroPagina}";
 
             if (!string.IsNullOrWhiteSpace(searchTerm))

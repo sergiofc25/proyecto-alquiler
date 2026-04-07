@@ -48,6 +48,8 @@ public class BoletaRepository : Repository, IBoletaRepository
                     }
                 },
                 Bol_Estado = oDR.GetByte(oDR.GetOrdinal("Bol_Estado")) != 0 ? true : false,
+                Bol_FechaFin = DateOnly.FromDateTime(oDR.GetDateTime(oDR.GetOrdinal("Bol_FechaFin"))),
+                Bol_FechaPagoRealizado = DateOnly.FromDateTime(oDR.GetDateTime(oDR.GetOrdinal("Bol_FechaPagoRealizado")))
             };
         }
 

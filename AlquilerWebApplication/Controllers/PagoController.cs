@@ -59,12 +59,12 @@ public class PagoController : ControllerBase
             return StatusCode(500, "Error interno del servidor.");
         }
     }
-    [HttpPut("Actualiza_Pagar/{Pag_Id}")]
-    public async Task<IActionResult> Actualiza_Pagar(int Pag_Id)
+    [HttpPut("Actualiza_Pagar/{Pag_Id}/{FechaPagoRealizado}")]
+    public async Task<IActionResult> Actualiza_Pagar(int Pag_Id, DateOnly FechaPagoRealizado)
     {
         try
         {
-            var mensaje = await _PagoService.Actualiza_Pagar(Pag_Id);
+            var mensaje = await _PagoService.Actualiza_Pagar(Pag_Id, FechaPagoRealizado);
 
             if (!string.IsNullOrEmpty(mensaje))
             {

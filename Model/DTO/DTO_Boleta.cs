@@ -17,5 +17,8 @@ namespace Model.DTO
         public string? NombreCliente { get; set; }
         public string? NumDocumento { get; set; }
         public bool? EstadoPago { get; set; }
+        public string? fechaFin { get; set; }
+        public string? fechaPagoRealizado { get; set; }
+
     }
 }

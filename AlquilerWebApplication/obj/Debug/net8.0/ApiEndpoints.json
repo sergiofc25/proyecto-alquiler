@@ -207,7 +207,7 @@
   {
     "ContainingType": "AlquilerWebApplication.Controllers.PagoController",
     "Method": "Actualiza_Pagar",
-    "RelativePath": "api/Pago/Actualiza_Pagar/{Pag_Id}",
+    "RelativePath": "api/Pago/Actualiza_Pagar/{Pag_Id}/{FechaPagoRealizado}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -215,6 +215,11 @@
       {
         "Name": "Pag_Id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "FechaPagoRealizado",
+        "Type": "System.DateOnly",
         "IsRequired": true
       }
     ],

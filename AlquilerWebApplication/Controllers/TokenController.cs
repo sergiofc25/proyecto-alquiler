@@ -33,13 +33,11 @@ public class TokenController : ControllerBase
 
         var principal = _tokenService.GetPrincipalFromExpiredToken(eDTO_RefreshToken.Token);
 
-        var Usuario =
-            await _UsuarioService.Obten_Token_x_Correo(((ClaimsIdentity)principal.Identity).FindFirst(ClaimTypes.Email).Value);
+        var Usuario = await _UsuarioService.Obten_x_Correo(((ClaimsIdentity)principal.Identity).FindFirst(ClaimTypes.Email).Value);
 
-        if (Usuario == null || Usuario.Usu_TokenActualizado != eDTO_RefreshToken.RefreshToken ||
-            Usuario.Usu_FecHoraTokenActualizado <= DateTime.Now)
-            return BadRequest(new DTO_AuthResponse
-            { IsAuthSuccessful = false, ErrorMessage = "Solicitud de cliente inválida" });
+
+        if (Usuario == null || Usuario.Usu_Token != eDTO_RefreshToken.RefreshToken || Usuario.Usu_FechaHoraVencimientoToken <= DateTime.Now)
+            return BadRequest(new DTO_AuthResponse { IsAuthSuccessful = false, ErrorMessage = "Solicitud de cliente inválida" });
 
         var signingCredentials = _tokenService.GetSigningCredentials();
         var claims = _tokenService.GetClaims(Usuario);
@@ -50,6 +48,6 @@ public class TokenController : ControllerBase
 
         await _UsuarioService.Actualiza_Token(Usuario);
 
-        return Ok(new DTO_AuthResponse { Token = token, RefreshToken = Usuario.Usu_TokenActualizado, IsAuthSuccessful = true, Expires = expirationTime });
+        return Ok(new DTO_AuthResponse { Token = token, RefreshToken = Usuario.Usu_Token, IsAuthSuccessful = true, Expires = expirationTime });
     }
 }

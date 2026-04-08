@@ -13,6 +13,8 @@ namespace AlquilerWebApplication.Controllers;
 //[ApiController]
 [Route("api/[Controller]")]
 [ApiController]
+[Authorize]
+
 public class PagoController : ControllerBase
 {
     private readonly IPagoService _PagoService;

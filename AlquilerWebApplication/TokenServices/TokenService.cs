@@ -66,8 +66,7 @@ namespace AlquilerWebApplication.TokenServices
                 ValidateAudience = true,
                 ValidateIssuer = true,
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes(_jwtSettings["securityKey"])),
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings["securityKey"])),
                 ValidateLifetime = true,
                 ValidIssuer = _jwtSettings["validIssuer"],
                 ValidAudience = _jwtSettings["validAudience"]

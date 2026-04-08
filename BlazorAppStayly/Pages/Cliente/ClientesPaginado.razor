@@ -54,11 +54,11 @@
                 </ToolBarContent>
                 <HeaderContent>
 
-                    <MudTh>Nombre</MudTh>
-                    <MudTh>Documento</MudTh>
-                    <MudTh>N° Documento</MudTh>
-                    <MudTh>Teléfono</MudTh>
-                    <MudTh>Email</MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Cliente_Obten_Paginado, object>(x => x.NombreCliente)">Nombre</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Cliente_Obten_Paginado, object>(x => x.TipoDocumento)">Documento</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Cliente_Obten_Paginado, object>(x => x.NumDocumento)">N° Documento</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Cliente_Obten_Paginado, object>(x => x.Telefono)">Teléfono</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Cliente_Obten_Paginado, object>(x => x.Email)">Email</MudTableSortLabel></MudTh>
                     <MudTh>Acciones</MudTh>
                 </HeaderContent>
                 <RowTemplate>
@@ -130,11 +130,11 @@
             var client = ClientFactory.CreateClient("ApiStayly");
 
             // Agregar el token de autorización a la solicitud actual
-            // var token = await localStorage.GetItemAsync<string>("authToken");
-            // if (token != null)
-            // {
-            //     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            // }
+            var token = await localStorage.GetItemAsync<string>("authToken");
+            if (token != null)
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            }
             var requestUri = $"api/Cliente/Obten_Paginado/{registroPagina}/{numeroPagina}";
 
             if (!string.IsNullOrWhiteSpace(searchTerm))

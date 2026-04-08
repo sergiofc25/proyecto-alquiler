@@ -13,6 +13,8 @@ namespace AlquilerWebApplication.Controllers;
 //[ApiController]
 [Route("api/[Controller]")]
 [ApiController]
+[Authorize]
+
 public class ClienteController : ControllerBase
 {
     private readonly IClienteService _ClienteService;
@@ -23,7 +25,6 @@ public class ClienteController : ControllerBase
         _ClienteService = ClienteService;
         _mapper = mapper;
     }
-
     [HttpGet("Obten_Paginado/{RegistroPagina}/{NumeroPagina}")]
     public async Task<IActionResult> Obten_Paginado(int RegistroPagina, int NumeroPagina, [FromQuery] string? TerBusqueda = null)
     {

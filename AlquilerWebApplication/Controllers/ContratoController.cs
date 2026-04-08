@@ -15,6 +15,8 @@ namespace AlquilerWebApplication.Controllers;
 //[ApiController]
 [Route("api/[Controller]")]
 [ApiController]
+[Authorize]
+
 public class ContratoController : ControllerBase
 {
     private readonly IContratoService _ContratoService;

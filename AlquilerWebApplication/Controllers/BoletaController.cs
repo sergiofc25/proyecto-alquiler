@@ -13,6 +13,8 @@ namespace AlquilerWebApplication.Controllers;
 //[ApiController]
 [Route("api/[Controller]")]
 [ApiController]
+[Authorize]
+
 public class BoletaController : ControllerBase
 {
     private readonly IBoletaService _BoletaService;

@@ -42,24 +42,24 @@
                 <ToolBarContent>
                     <MudItem Class="d-flex align-center justify-center mud-width-full pb-5" xs="12">
                         <MudTextField T="string" Value="@searchTerm" ValueChanged="@(value => OnSearch(value))"
-                        Placeholder="Buscar por N° de documento" Adornment="Adornment.Start"
+                        Placeholder="Buscar por " Adornment="Adornment.Start"
                         AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
                         </MudTextField>
                     </MudItem>
                 </ToolBarContent>
                 <HeaderContent>
 
-                    <MudTh>Codigo</MudTh>
-                    <MudTh>Usuario</MudTh>
-                    <MudTh>Fecha Inicio</MudTh>
-                    <MudTh>Fecha Fin</MudTh>
-                    <MudTh>Fecha Pagado</MudTh>
-                    <MudTh>Cliente</MudTh>
-                    <MudTh>DNI</MudTh>
-                    <MudTh>Habitación</MudTh>
-                    <MudTh>Contrato</MudTh>
-                    <MudTh>Costo</MudTh>
-                    <MudTh>Tipo Pago</MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.CodigoPago)"> Codigo</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.NombreUsuario)"> Usuario</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.FechaPago)"> Fecha Inicio</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.FechaVencimiento)"> Fecha Fin</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.FechaPagado)"> Fecha Pagado</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.NombreCliente)"> Cliente</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.DNICliente)"> DNI</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.CodigoHabitacion)"> Habitación</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.CodigoContrato)"> Contrato</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.PagoCantidad)"> Costo</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.TipoPago)"> Tipo Pago</MudTableSortLabel></MudTh>
                     <MudTh>Acciones</MudTh>
                 </HeaderContent>
                 <RowTemplate>
@@ -120,6 +120,7 @@
     private bool cargando = true;
     private string errorMessage = string.Empty;
     private readonly DialogOptions _maxWidth = new() { MaxWidth = MaxWidth.Small, FullWidth = true };
+    private bool mostrarPagados = true;
 
 
     protected override async Task OnInitializedAsync()

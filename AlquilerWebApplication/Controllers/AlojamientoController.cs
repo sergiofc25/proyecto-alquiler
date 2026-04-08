@@ -13,6 +13,7 @@ namespace AlquilerWebApplication.Controllers;
 //[ApiController]
 [Route("api/[Controller]")]
 [ApiController]
+[Authorize]
 public class AlojamientoController : ControllerBase
 {
     private readonly IAlojamientoService _AlojamientoService;

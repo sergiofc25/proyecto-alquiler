@@ -9,7 +9,6 @@ public interface IUsuarioService
     Task<IEnumerable<Ent_Usuario>> Obten();
     Task<int> Obten_Login(string Usu_Correo, string Usu_Clave);
     Task<Ent_Usuario> Obten_x_Correo(string Usu_Correo);
-    Task<Ent_Usuario> Obten_Token_x_Correo(string Usu_Correo);
     Task<bool> Actualiza_Token(Ent_Usuario Usuario);
 
 }
@@ -72,13 +71,5 @@ public class UsuarioService : IUsuarioService
             return context.Repositories.UsuarioRepository.Obten_x_Correo(Usu_Correo);
         });
     }
-    public async Task<Ent_Usuario> Obten_Token_x_Correo(string Usu_Correo)
-    {
-        return await Task.Run(() =>
-        {
-            using var context = _unitOfWork.Create();
 
-            return context.Repositories.UsuarioRepository.Obten_Token_x_Correo(Usu_Correo);
-        });
-    }
 }

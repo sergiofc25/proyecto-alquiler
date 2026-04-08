@@ -124,6 +124,12 @@
 
     protected override async Task OnInitializedAsync()
     {
+        var token = await localStorage.GetItemAsync<string>("authToken");
+        if (string.IsNullOrEmpty(token))
+        {
+            NavigationManager.NavigateTo("/login");
+            return;
+        }
         await GetTipoDocumentos();
         await GetUsuario();
     }
@@ -149,22 +155,33 @@
             dni = seleccionado.NumDocumento;
         }
     }
-    private async Task<IEnumerable<DTO_Cliente_Obten_x_NumDocumento>> BuscarClientesApi(string value, CancellationToken token)
+    
+    private async Task<IEnumerable<DTO_Cliente_Obten_x_NumDocumento>> BuscarClientesApi(string value, CancellationToken cantoken)
     {
-        if (string.IsNullOrWhiteSpace(value) || value.Length < 8)
-            return Enumerable.Empty<DTO_Cliente_Obten_x_NumDocumento>();
-
         try
         {
+            if (string.IsNullOrWhiteSpace(value))
+                return Enumerable.Empty<DTO_Cliente_Obten_x_NumDocumento>();
+
             var client = ClientFactory.CreateClient("ApiStayly");
 
-            var response = await client.GetAsync($"api/Cliente/Obten_x_NumDocumento/{value}");
+            var token = await localStorage.GetItemAsync<string>("authToken");
+
+            if (token != null)
+            {
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
+            }
+
+            var response = await client.GetAsync($"api/Cliente/Obten_x_NumDocumento/{value}", cantoken);
 
             if (response.IsSuccessStatusCode)
             {
-                var responseBody = await response.Content.ReadAsStringAsync();
+                var responseBody = await response.Content.ReadAsStringAsync(cantoken);
 
-                var result = JsonConvert.DeserializeObject<DTO_Response<DTO_Cliente_Obten_x_NumDocumento>>(responseBody);
+                var result = JsonConvert.DeserializeObject<
+                    DTO_Response<DTO_Cliente_Obten_x_NumDocumento>
+                >(responseBody);
 
                 if (result != null && result.IsSuccessful && result.Data != null)
                 {
@@ -174,7 +191,7 @@
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error en búsqueda: {ex.Message}");
+            Console.WriteLine(ex.Message);
         }
 
         return Enumerable.Empty<DTO_Cliente_Obten_x_NumDocumento>();
@@ -250,64 +267,6 @@
         }
     }
 
-    // private async Task Guardar()
-    // {
-    //     guardando = true;
-
-    //     await form.Validate();
-
-    //     if (!form.IsValid)
-    //     {
-    //         guardando = false;
-    //         return;
-    //     }
-
-    //     try
-    //     {
-    //         var client = ClientFactory.CreateClient("ApiStayly");
-    //         var token = await localStorage.GetItemAsync<string>("authToken");
-
-    //         if (!string.IsNullOrEmpty(token))
-    //         {
-    //             client.DefaultRequestHeaders.Authorization =
-    //                 new AuthenticationHeaderValue("Bearer", token);
-    //         }
-
-    //         var contratoParaEnviar = new DTO_Contrato_Crea
-    //         {
-    //             FechaInicio = nuevoContrato.FechaInicio,
-    //             FechaFin = nuevoContrato.FechaFin,
-    //             NombreUsuario = nuevoContrato.NombreUsuario,
-    //             NumDocumento = nuevoContrato.NumDocumento,
-    //             AlojamientoCodigo = nuevoContrato.AlojamientoCodigo,
-
-    //             NombreCliente = nuevoContrato?.NombreCliente,
-    //             TelefonoCliente = nuevoContrato?.TelefonoCliente,
-    //             EmailCliente = nuevoContrato?.EmailCliente,
-    //             TipoDocumento = nuevoContrato?.TipoDocumento
-    //         };
-
-    //         var response = await client.PostAsJsonAsync("api/Contrato/Crea", contratoParaEnviar);
-
-    //         if (response.IsSuccessStatusCode)
-    //         {
-    //             Submit(); // cerrar diálogo correctamente
-    //         }
-    //         else
-    //         {
-    //             var errorContent = await response.Content.ReadAsStringAsync();
-    //             Console.WriteLine(errorContent);
-    //         }
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         Console.WriteLine($"Error al crear contrato: {ex.Message}");
-    //     }
-    //     finally
-    //     {
-    //         guardando = false;
-    //     }
-    // }
     private async Task Guardar()
     {
         guardando = true;

@@ -8,6 +8,8 @@
 @inject NavigationManager NavigationManager
 @inject IDialogService DialogService
 @using Newtonsoft.Json
+@using System.Net.Http.Headers
+
 
 <PageTitle>Habitaciones</PageTitle>
 
@@ -412,6 +414,12 @@ else
         try
         {
             var client = ClientFactory.CreateClient("ApiStayly");
+            // Agregar el token de autorización a la solicitud actual
+            var token = await localStorage.GetItemAsync<string>("authToken");
+            if (token != null)
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            }
 
             var response = await client.GetAsync("api/Alojamiento/Alojamiento_Obten");
 

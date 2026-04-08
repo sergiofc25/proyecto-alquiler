@@ -12,6 +12,8 @@ namespace AlquilerWebApplication.Controllers;
 //[ApiController]
 [Route("api/[Controller]")]
 [ApiController]
+[Authorize]
+
 public class RolController : ControllerBase
 {
     private readonly IRolService _RolService;

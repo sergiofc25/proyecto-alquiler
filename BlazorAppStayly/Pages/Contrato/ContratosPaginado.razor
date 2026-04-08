@@ -32,7 +32,7 @@
 
     <MudItem xs="12">
         <MudPaper Class="pa-5" Elevation="3">
-            <MudTable Items="@contratos" RowsPerPage="@registroPagina" FixedHeader="true" Dense="true"
+            <MudTable Items="@contratos" RowsPerPage="@registroPagina" SortLabel="Sort By" FixedHeader="true" Dense="true"
             Hover="true" Striped="true" Breakpoint="Breakpoint.Sm" Loading="@cargando"
             LoadingProgressColor="Color.Primary" Height="466px" Elevation="3">
                 <ToolBarContent>
@@ -48,17 +48,17 @@
                 </ToolBarContent>
                 <HeaderContent>
 
-                    <MudTh>Codigo</MudTh>
-                    <MudTh>Descripcion</MudTh>
-                    <MudTh>Fecha Inicio</MudTh>
-                    <MudTh>Fecha Fin</MudTh>
-                    <MudTh>Alquiler</MudTh>
-                    <MudTh>Usuario</MudTh>
-                    <MudTh>Inquilino</MudTh>
-                    <MudTh>DNI Inquilino</MudTh>
-                    <MudTh>Habitación</MudTh>
-                    <MudTh>Adelanto</MudTh>
-                    <MudTh>Garantía</MudTh>
+                    <MudTh> <MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.ContratoCodigo)"> Codigo</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.DescripcionContrato)"> Descripcion</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.FechaInicio)"> Fecha Inicio</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.FechaFin)"> Fecha Fin</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.PrecioAlquiler)"> Alquiler</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.NombreUsuario)"> Usuario</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.NombreCliente)"> Inquilino</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.NumDocumento)"> DNI Inquilino</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.AlojamientoCodigo)"> Habitación</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.AdelantoC)"> Adelanto</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.GarantiaC)"> Garantía</MudTableSortLabel></MudTh>
                     <MudTh>Acciones</MudTh>
                 </HeaderContent>
                 <RowTemplate>
@@ -131,11 +131,11 @@
             var client = ClientFactory.CreateClient("ApiStayly");
 
             // Agregar el token de autorización a la solicitud actual
-            // var token = await localStorage.GetItemAsync<string>("authToken");
-            // if (token != null)
-            // {
-            //     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            // }
+            var token = await localStorage.GetItemAsync<string>("authToken");
+            if (token != null)
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            }
             var requestUri = $"api/Contrato/Obten_Paginado/{registroPagina}/{numeroPagina}";
 
             if (!string.IsNullOrWhiteSpace(searchTerm))

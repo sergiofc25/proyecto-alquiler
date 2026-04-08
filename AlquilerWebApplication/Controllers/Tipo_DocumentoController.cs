@@ -12,6 +12,8 @@ namespace AlquilerWebApplication.Controllers;
 //[ApiController]
 [Route("api/[Controller]")]
 [ApiController]
+[Authorize]
+
 public class Tipo_DocumentoController : ControllerBase
 {
     private readonly ITipo_DocumentoService _Tipo_DocumentoService;

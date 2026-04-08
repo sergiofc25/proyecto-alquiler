@@ -12,6 +12,7 @@ namespace AlquilerWebApplication.Controllers;
 [Route("api/[Controller]")]
 //[ApiVersion("1")]
 [ApiController]
+[Authorize]
 //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 public class UsuarioController : ControllerBase
 {

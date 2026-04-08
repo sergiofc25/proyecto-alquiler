@@ -38,8 +38,8 @@ namespace AlquilerWebApplication.Mapping
             CreateMap<Ent_Usuario, DTO_Usuario_Obten_Login>()
                 .ForMember(destino => destino.Email,
                 opt => opt.MapFrom(origen => origen.Usu_Correo))
-                .ForMember(destino => destino.Clave,
-                opt => opt.MapFrom(origen => origen.Usu_Clave));
+                .ForMember(destino => destino.Pass,
+                opt => opt.MapFrom(origen => origen.Usu_Pass));
 
             //ALOJAMIENTO
 

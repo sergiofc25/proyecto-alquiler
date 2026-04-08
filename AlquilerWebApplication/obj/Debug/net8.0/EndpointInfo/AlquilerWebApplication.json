@@ -560,7 +560,7 @@
             "type": "string",
             "nullable": true
           },
-          "clave": {
+          "pass": {
             "type": "string",
             "nullable": true
           }

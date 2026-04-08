@@ -32,19 +32,26 @@
 
     <MudItem xs="12">
         <MudPaper Class="pa-5" Elevation="3">
-            <MudTable Items="@contratos" RowsPerPage="@registroPagina" SortLabel="Sort By" FixedHeader="true" Dense="true"
+            <MudTable Items="@contratosFiltrados" RowsPerPage="@registroPagina" SortLabel="Sort By" FixedHeader="true" Dense="true"
             Hover="true" Striped="true" Breakpoint="Breakpoint.Sm" Loading="@cargando"
             LoadingProgressColor="Color.Primary" Height="466px" Elevation="3">
                 <ToolBarContent>
-                    <MudText Typo="Typo.h6">Listado de Contratos</MudText>
-                </ToolBarContent>
-                <ToolBarContent>
-                    <MudItem Class="d-flex align-center justify-center mud-width-full pb-5" xs="12">
-                        <MudTextField T="string" Value="@searchTerm" ValueChanged="@(value => OnSearch(value))"
-                        Placeholder="Buscar por N° de documento" Adornment="Adornment.Start"
-                        AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
-                        </MudTextField>
+                    <MudItem Class="d-flex align-center justify-between mud-width-full pb-5" xs="12">
+                        <MudItem xs="8" Class="d-flex align-center">
+                            <MudTextField T="string" Value="@searchTerm" ValueChanged="@(value => OnSearch(value))"
+                                          Placeholder="Buscar por N° de documento" Adornment="Adornment.Start"
+                                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
+                            </MudTextField>
+                        </MudItem>
+                        <MudItem xs="4" Class="d-flex align-center justify-end gap-2">
+                            <MudChipSet T="string" @bind-SelectedValue="filtroEstado" SelectionMode="SelectionMode.SingleSelection">
+                                <MudChip Value="@("todos")" Color="Color.Default" Variant="Variant.Filled" Default="true">Todos</MudChip>
+                                <MudChip Value="@("cerrados")" Color="Color.Error" Variant="Variant.Filled">Cerrados</MudChip>
+                                <MudChip Value="@("activos")" Color="Color.Success" Variant="Variant.Filled">Activos</MudChip>
+                            </MudChipSet>
+                        </MudItem>
                     </MudItem>
+                    
                 </ToolBarContent>
                 <HeaderContent>
 
@@ -75,12 +82,15 @@
                     <MudTd DataLabel="Adelanto">@context.AdelantoC</MudTd>
                     <MudTd DataLabel="Garantía">@context.GarantiaC</MudTd>
                     <MudTd DataLabel="Acciones">
-                        <MudIconButton Icon="@Icons.Material.Filled.Delete"
-                                       @onclick="@(() => Btn_Cerrar_Contrato_Click(_maxWidth, context.IdContrato))"
-                        Variant="Variant.Filled"
-                        Color="Color.Error"
-                        Title="Eliminar contrato">
-                        </MudIconButton>
+                        @if (@context.EstadoContrato == true)
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                           @onclick="@(() => Btn_Cerrar_Contrato_Click(_maxWidth, context.IdContrato))"
+                                           Variant="Variant.Filled"
+                                           Color="Color.Error"
+                                           Title="Eliminar contrato">
+                            </MudIconButton>
+                        }
                     </MudTd>
                 </RowTemplate>
                 <PagerContent>
@@ -109,7 +119,16 @@
     private bool cargando = true;
     private string errorMessage = string.Empty;
     private readonly DialogOptions _maxWidth = new() { MaxWidth = MaxWidth.Small, FullWidth = true };
+    private string filtroEstado = "todos";
 
+    // 2. Propiedad computada que filtra localmente
+    private IEnumerable<DTO_Contrato_Obten_Paginado> contratosFiltrados =>
+        filtroEstado switch
+        {
+            "cerrados" => contratos?.Where(p => p.EstadoContrato == false) ?? Enumerable.Empty<DTO_Contrato_Obten_Paginado>(),
+            "activos" => contratos?.Where(p => p.EstadoContrato == true) ?? Enumerable.Empty<DTO_Contrato_Obten_Paginado>(),
+            _ => contratos ?? Enumerable.Empty<DTO_Contrato_Obten_Paginado>()
+        };
 
 
     protected override async Task OnInitializedAsync()

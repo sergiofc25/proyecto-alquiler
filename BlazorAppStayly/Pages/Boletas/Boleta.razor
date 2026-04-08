@@ -1,20 +1,31 @@
-﻿@using Newtonsoft.Json
-@using System.Net.Http.Json
-@using System.Text.Json
-@inject NavigationManager NavigationManager
-@inject IHttpClientFactory ClientFactory
+﻿@page "/boleta/{IdPago}"
 @using Model.DTO
 @using MudBlazor
+@inject IHttpClientFactory ClientFactory
 @using Blazored.LocalStorage
-@using System.Net.Http.Headers
-@using System.Text
-@using System.Net
-@using System.Reflection.Metadata
 @inject ILocalStorageService localStorage
+@inject ISnackbar Snackbar
+@inject NavigationManager NavigationManager
 @inject IDialogService DialogService
+@using Newtonsoft.Json
+@using System.Net.Http.Headers
 @inject IJSRuntime JS
-<MudDialog>
-    <DialogContent>
+
+
+
+<PageTitle>Boleta</PageTitle>
+
+@if (_loading)
+{
+    <MudProgressCircular Indeterminate="true" />
+}
+else if (!string.IsNullOrEmpty(errorMessage))
+{
+    <MudAlert Severity="Severity.Error">@errorMessage</MudAlert>
+}
+else
+{
+    <div class="d-flex justify-center align-center" style="min-height: 80vh; padding: 2rem;">
         <MudPaper Elevation="0" Style="width: 100%; max-width: 440px; border: 0.5px solid var(--mud-palette-divider); border-radius: 12px; padding: 2rem;">
 
             @* --- Header --- *@
@@ -73,30 +84,31 @@
 
             @* --- Total --- *@
             <MudPaper Elevation="0" Class="d-flex justify-space-between align-center pa-4 mt-4"
-                        Style="border-radius: 8px;">
+                      Style="border-radius: 8px;">
                 <MudText Typo="Typo.subtitle2" Color="Color.Default">Total</MudText>
                 <MudText Typo="Typo.h6" Color="Color.Default" Style="font-weight: 500;">@boleta.total</MudText>
             </MudPaper>
+            @* Exportar a pdf *@
+            <MudPaper Elevation="0" Class="d-flex justify-space-between align-center pa-4 mt-4"
+                      Style="border-radius: 8px;">
+                <MudButton Color="Color.Primary" OnClick="ExportPdf">
+                    Exportar PDF
+                </MudButton>
+            </MudPaper>
 
         </MudPaper>
-    </DialogContent>
-    <DialogActions>
-        <MudButton OnClick="Cancel">Cerrar</MudButton>
-        <MudButton Color="Color.Primary" OnClick="ExportPdf">
-            Exportar PDF
-        </MudButton>
-    </DialogActions>
-</MudDialog>
+    </div>
+}
 
 @code {
-    [CascadingParameter]
-    private IMudDialogInstance MudDialog { get; set; }
-    private void Submit() => MudDialog.Close(DialogResult.Ok(true));
-    private void Cancel() => MudDialog.Cancel();
+
+    private DTO_Boleta_Obten_x_Pago boleta = new();
     private MudForm? form;
     private bool formValidation = true;
     private string errorMessage = string.Empty;
-    private DTO_Boleta_Obten_x_Pago boleta = new();
+    private bool _loading = true;
+
+
     [Parameter] public string? IdPago { get; set; }
 
     protected override async Task OnInitializedAsync()
@@ -140,6 +152,11 @@
         {
             errorMessage = $"Error al cargar tipos de documento: {ex.Message}";
             Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            _loading = false;
+            StateHasChanged();
         }
     }
     private async Task ExportPdf()

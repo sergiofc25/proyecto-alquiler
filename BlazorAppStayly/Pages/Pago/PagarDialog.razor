@@ -95,13 +95,15 @@
                 client.DefaultRequestHeaders.Authorization =
                     new AuthenticationHeaderValue("Bearer", token);
             }
-
-            // var response = await client.PutAsync($"api/Pago/Actualiza_Pagar/{IdPago}/{FechaPagoRealizado}", null);
             var fecha = FechaPagoRealizado?.ToString("yyyy-MM-dd");
 
             var response = await client.PutAsync($"api/Pago/Actualiza_Pagar/{IdPago}/{fecha}", null);
 
-            if (!response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo($"/boleta/{IdPago}");
+            }
+            else
             {
                 var errorContent = await response.Content.ReadAsStringAsync();
                 errorMessage = $"Error: {response.StatusCode} - {errorContent}";

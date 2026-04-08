@@ -1,0 +1,238 @@
+﻿@page "/pagos/{IdContrato}"
+@using System.Net.Http.Json
+@using System.Text.Json
+@inject NavigationManager NavigationManager
+@inject IHttpClientFactory ClientFactory
+@using Model.DTO
+@using MudBlazor
+@using Blazored.LocalStorage
+@using System.Net.Http.Headers
+@using System.Text
+@using System.Net
+@using System.Reflection.Metadata
+@using Boletas
+@inject ILocalStorageService localStorage
+@inject IDialogService DialogService
+@inject UserStateService UserStateService
+
+
+
+<PageTitle>Pagos</PageTitle>
+
+<MudGrid>
+    <MudItem xs="12">
+        <MudPaper Class="pa-5" Elevation="3">
+            <MudItem Class="d-flex align-content-start justify-content-start mud-width-full" xs="12">
+                <MudItem Class="d-flex align-content-start justify-start mud-width-full" xs="6">
+                    <MudText Typo="Typo.h6" Color="Color.Primary">Pagos</MudText>
+                </MudItem>
+            </MudItem>
+        </MudPaper>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudPaper Class="pa-5" Elevation="3">
+            <MudTable Items="@pagosFiltrados" RowsPerPage="@registroPagina" FixedHeader="true" Dense="true"
+            Hover="true" Striped="true" Breakpoint="Breakpoint.Sm" Loading="@cargando"
+            LoadingProgressColor="Color.Primary" Height="466px" Elevation="3">
+                <ToolBarContent>
+                    <MudItem Class="d-flex align-center justify-between mud-width-full pb-5" xs="12">
+                        <MudItem xs="8" Class="d-flex align-center">
+                            <MudTextField T="string" Value="@searchTerm" ValueChanged="@(value => OnSearch(value))"
+                                          Placeholder="Buscar por " Adornment="Adornment.Start"
+                                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
+                            </MudTextField>
+                        </MudItem>
+                        <MudItem xs="4" Class="d-flex align-center justify-end gap-2">
+                            <MudChipSet T="string" @bind-SelectedValue="filtroEstado" SelectionMode="SelectionMode.SingleSelection">
+                                <MudChip Value="@("todos")" Color="Color.Default" Variant="Variant.Filled" Default="true">Todos</MudChip>
+                                <MudChip Value="@("pagados")" Color="Color.Success" Variant="Variant.Filled">Pagados</MudChip>
+                                <MudChip Value="@("pendiente")" Color="Color.Warning" Variant="Variant.Filled">Pendientes</MudChip>
+                            </MudChipSet>
+                        </MudItem>
+                    </MudItem>
+                </ToolBarContent>
+                <HeaderContent>
+
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.CodigoPago)"> Codigo</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.NombreUsuario)"> Usuario</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.FechaPago)"> Fecha Inicio</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.FechaVencimiento)"> Fecha Fin</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.FechaPagado)"> Fecha Pagado</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.NombreCliente)"> Cliente</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.DNICliente)"> DNI</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.CodigoHabitacion)"> Habitación</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.CodigoContrato)"> Contrato</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.PagoCantidad)"> Costo</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Pago_Obten_Paginado, object>(x => x.TipoPago)"> Tipo Pago</MudTableSortLabel></MudTh>
+                    <MudTh>Acciones</MudTh>
+                </HeaderContent>
+                <RowTemplate>
+
+                    <MudTd DataLabel="Codigo">@context.CodigoPago</MudTd>
+                    <MudTd DataLabel="Usuario">@context.NombreUsuario</MudTd>
+                    <MudTd DataLabel="Fecha Inicio">@context.FechaPago</MudTd>
+                    <MudTd DataLabel="Fecha Fin">@context.FechaVencimiento</MudTd>
+                    <MudTd DataLabel="Fecha Pagado">@context.FechaPagado</MudTd>
+                    <MudTd DataLabel="Cliente">@context.NombreCliente</MudTd>
+                    <MudTd DataLabel="DNI">@context.DNICliente</MudTd>
+                    <MudTd DataLabel="Habitación">@context.CodigoHabitacion</MudTd>
+                    <MudTd DataLabel="Contrato">@context.CodigoContrato</MudTd>
+                    <MudTd DataLabel="Costo">@context.PagoCantidad</MudTd>
+                    <MudTd DataLabel="Tipo Pago">@context.TipoPago</MudTd>
+
+                    <MudTd DataLabel="Acciones">    
+                        @if (@context.EstadoPago == false)
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.Receipt"
+                                           Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           Size="Size.Small" @onclick="@(() => Btn_Ver_Boleta_Click(_maxWidth, @context.IdPago))">
+                            </MudIconButton>
+                        }else
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.Payment"
+                                           Variant="Variant.Filled"
+                                           Color="Color.Warning"
+                                           Size="Size.Small" @onclick="@(() => Btn_Pagar_Click(_maxWidth, @context.IdPago))">
+                            </MudIconButton>
+                        }
+                    </MudTd>
+                </RowTemplate>
+                <PagerContent>
+                    <div class="d-flex flex-column align-center">
+                        <MudPagination Size="Size.Small" Rectangular="true" Variant="Variant.Text" BoundaryCount="1"
+                                       MiddleCount="3" Count="@metaData.TotalPagina" SelectedChanged="PageChanged" Class="pa-4" />
+                    </div>
+                </PagerContent>
+                <NoRecordsContent>
+                    <MudText>No se encontraron registros.</MudText>
+                </NoRecordsContent>
+                <LoadingContent>
+                    <MudText>Un momento por favor...</MudText>
+                </LoadingContent>
+            </MudTable>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+@code {
+    private IEnumerable<DTO_Pago_Obten_Paginado> pagos;
+    private MetaData metaData = new MetaData();
+    private int registroPagina = 10;
+    private int numeroPagina = 1;
+    private string searchTerm = string.Empty;
+    private bool cargando = true;
+    private string errorMessage = string.Empty;
+    private readonly DialogOptions _maxWidth = new() { MaxWidth = MaxWidth.Small, FullWidth = true };
+    private bool mostrarPagados = true;
+    private string filtroEstado = "todos";
+    [Parameter] public string? IdContrato { get; set; }
+
+
+    // 2. Propiedad computada que filtra localmente
+    private IEnumerable<DTO_Pago_Obten_Paginado> pagosFiltrados =>
+        filtroEstado switch
+        {
+            "pagados" => pagos?.Where(p => p.EstadoPago == false) ?? Enumerable.Empty<DTO_Pago_Obten_Paginado>(),
+            "pendiente" => pagos?.Where(p => p.EstadoPago == true) ?? Enumerable.Empty<DTO_Pago_Obten_Paginado>(),
+            _ => pagos ?? Enumerable.Empty<DTO_Pago_Obten_Paginado>()
+        };
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var token = await localStorage.GetItemAsync<string>("authToken");
+        if (string.IsNullOrEmpty(token))
+        {
+            NavigationManager.NavigateTo("/login");
+            return;
+        }
+        await LoadClients();
+    }
+
+    private async Task LoadClients()
+    {
+        try
+        {
+            cargando = true;
+            var client = ClientFactory.CreateClient("ApiStayly");
+
+            // Agregar el token de autorización a la solicitud actual
+            var token = await localStorage.GetItemAsync<string>("authToken");
+            if (token != null)
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            }
+            var requestUri = $"api/Pago/Obten_Paginado_Contrato/{registroPagina}/{numeroPagina}/{IdContrato}";
+
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                requestUri += $"?TerBusqueda={Uri.EscapeDataString(searchTerm)}";
+            }
+
+            var response = await client.GetAsync(requestUri);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var metadataHeader = response.Headers.GetValues("X-Pagination").FirstOrDefault();
+                if (metadataHeader != null)
+                {
+                    metaData = JsonSerializer.Deserialize<MetaData>(metadataHeader);
+                }
+
+                var responseBody = await response.Content.ReadFromJsonAsync<DTO_ResponsePag<IEnumerable<DTO_Pago_Obten_Paginado>>>();
+                if (responseBody != null && responseBody.IsSuccessful)
+                {
+                    pagos = responseBody.Data;
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            cargando = false;
+            StateHasChanged();
+        }
+    }
+
+    private void PageChanged(int page)
+    {
+        numeroPagina = page;
+        _ = LoadClients();
+    }
+
+    private void OnSearch(string searchTerm)
+    {
+        this.searchTerm = searchTerm;
+        numeroPagina = 1; // Reset to first page when searching
+        _ = LoadClients();
+    }
+    
+
+    private Task Btn_Ver_Boleta_Click(DialogOptions options, string IdPago)
+    {
+
+        var parameters = new DialogParameters
+        {
+            { "IdPago", IdPago}
+        };
+        return DialogService.ShowAsync<BoletaDialog>("Ver Boleta", parameters, options);
+    }
+    private Task Btn_Pagar_Click(DialogOptions options, string IdPago)
+    {
+
+        var parameters = new DialogParameters
+        {
+            { "IdPago", IdPago}
+        };
+        return DialogService.ShowAsync<PagarDialog>("Realizar Pago", parameters, options);
+    }
+}

@@ -13,7 +13,7 @@ namespace AlquilerWebApplication.Controllers;
 //[ApiController]
 [Route("api/[Controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 
 public class PagoController : ControllerBase
 {
@@ -33,6 +33,41 @@ public class PagoController : ControllerBase
         {
             TerBusqueda ??= string.Empty;
             (int TotalPagina, int TotalRegistro, bool TienePaginaAnterior, bool TienePaginaProximo, var Lst_Pago) = await _PagoService.Obten_Paginado(RegistroPagina, NumeroPagina, TerBusqueda);
+
+            var metadata = new
+            {
+                RegistroPagina,
+                NumeroPagina,
+                TotalPagina,
+                TotalRegistro,
+                TienePaginaAnterior,
+                TienePaginaProximo
+            };
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(metadata));
+
+            return Ok(new DTO_ResponsePag<IEnumerable<DTO_Pago_Obten_Paginado>>
+            {
+                PaginaActual = NumeroPagina,
+                TotalDePagina = TotalPagina,
+                ElementosPorPagina = RegistroPagina,
+                TotalDeElementos = TotalRegistro,
+                IsSuccessful = true,
+                Data = _mapper.Map<IEnumerable<DTO_Pago_Obten_Paginado>>(Lst_Pago)
+            });
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, "Error interno del servidor.");
+        }
+    }
+    [HttpGet("Obten_Paginado_Contrato/{RegistroPagina}/{NumeroPagina}/{Con_Id}")]
+    public async Task<IActionResult> Obten_Paginado_x_Contrato(int RegistroPagina, int NumeroPagina, string Con_Id, [FromQuery] string? TerBusqueda = null)
+    {
+        try
+        {
+            TerBusqueda ??= string.Empty;
+            (int TotalPagina, int TotalRegistro, bool TienePaginaAnterior, bool TienePaginaProximo, var Lst_Pago) = await _PagoService.Obten_Paginado_x_Contrato(RegistroPagina, NumeroPagina, TerBusqueda,Con_Id);
 
             var metadata = new
             {

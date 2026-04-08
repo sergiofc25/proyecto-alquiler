@@ -56,12 +56,16 @@
                 <HeaderContent>
 
                     <MudTh> <MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.ContratoCodigo)"> Codigo</MudTableSortLabel></MudTh>
-                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.DescripcionContrato)"> Descripcion</MudTableSortLabel></MudTh>
+                    <MudTh Style="max-width: 150px;">
+                        <MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.DescripcionContrato)">
+                            Descripción
+                        </MudTableSortLabel>
+                    </MudTh>
                     <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.FechaInicio)"> Fecha Inicio</MudTableSortLabel></MudTh>
                     <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.FechaFin)"> Fecha Fin</MudTableSortLabel></MudTh>
                     <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.PrecioAlquiler)"> Alquiler</MudTableSortLabel></MudTh>
-                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.NombreUsuario)"> Usuario</MudTableSortLabel></MudTh>
-                    <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.NombreCliente)"> Inquilino</MudTableSortLabel></MudTh>
+                    <MudTh Style="max-width: 150px;"><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.NombreUsuario)"> Usuario</MudTableSortLabel></MudTh>
+                    <MudTh Style="max-width: 150px;"><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.NombreCliente)"> Inquilino</MudTableSortLabel></MudTh>
                     <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.NumDocumento)"> DNI Inquilino</MudTableSortLabel></MudTh>
                     <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.AlojamientoCodigo)"> Habitación</MudTableSortLabel></MudTh>
                     <MudTh><MudTableSortLabel SortBy="new Func<DTO_Contrato_Obten_Paginado, object>(x => x.AdelantoC)"> Adelanto</MudTableSortLabel></MudTh>
@@ -71,17 +75,40 @@
                 <RowTemplate>
 
                     <MudTd DataLabel="Codigo">@context.ContratoCodigo</MudTd>
-                    <MudTd DataLabel="Descripcion">@context.DescripcionContrato</MudTd>
+                    <MudTd DataLabel="Descripcion" Style="max-width: 150px;">
+                        <MudTooltip Text="@context.DescripcionContrato" Placement="Placement.Top">
+                            <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+                                @context.DescripcionContrato
+                            </div>
+                        </MudTooltip>
+                    </MudTd>
                     <MudTd DataLabel="Fecha Inicio">@context.FechaInicio</MudTd>
                     <MudTd DataLabel="Fecha Fin">@context.FechaFin</MudTd>
                     <MudTd DataLabel="Alquiler">@context.PrecioAlquiler</MudTd>
-                    <MudTd DataLabel="Usuario">@context.NombreUsuario</MudTd>
-                    <MudTd DataLabel="Inquilino">@context.NombreCliente</MudTd>
+                    <MudTd DataLabel="Usuario" Style="max-width: 150px;">
+                        <MudTooltip Text="@context.NombreUsuario" Placement="Placement.Top">
+                            <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+                                @context.NombreUsuario
+                            </div>
+                        </MudTooltip>
+                    </MudTd>
+                    <MudTd DataLabel="Inquilino" Style="max-width: 150px;">
+                        <MudTooltip Text="@context.NombreCliente" Placement="Placement.Top">
+                            <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+                                @context.NombreCliente
+                            </div>
+                        </MudTooltip>
+                    </MudTd>
                     <MudTd DataLabel="DNI Inquilino">@context.NumDocumento</MudTd>
                     <MudTd DataLabel="Habitación">@context.AlojamientoCodigo</MudTd>
                     <MudTd DataLabel="Adelanto">@context.AdelantoC</MudTd>
                     <MudTd DataLabel="Garantía">@context.GarantiaC</MudTd>
                     <MudTd DataLabel="Acciones">
+                        <MudIconButton Icon="@Icons.Material.Filled.Receipt"
+                                       @onclick="@(() => Btn_Mostrar_Pagos_Click(context.IdContrato))"
+                                       Variant="Variant.Filled"
+                                       Color="Color.Primary">
+                        </MudIconButton>
                         @if (@context.EstadoContrato == true)
                         {
                             <MudIconButton Icon="@Icons.Material.Filled.Delete"
@@ -214,5 +241,10 @@
             { "IdContrato", IdContrato}
         };
         return DialogService.ShowAsync<CerrarContratoDialog>("Cerrar Contrato", parameters, options);
+    }
+    private Task Btn_Mostrar_Pagos_Click(string IdContrato)
+    {
+        NavigationManager.NavigateTo($"/pagos/{IdContrato}");
+        return Task.CompletedTask;
     }
 }

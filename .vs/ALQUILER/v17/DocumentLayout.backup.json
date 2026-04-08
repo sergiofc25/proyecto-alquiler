@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ProyectoStayly\\ALQUILER\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\boletas\\boletadialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\boletas\\boletadialog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\boletas\\boleta.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\boletas\\boleta.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|d:\\proyectostayly\\alquiler\\blazorappstayly\\pages\\habitaciones\\habitaciones.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DA91C37-C5DB-40DC-8C4E-C2C0565D1678}|BlazorAppStayly\\BlazorAppStayly.csproj|solutionrelative:blazorappstayly\\pages\\habitaciones\\habitaciones.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,45 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BoletaDialog.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
-              "RelativeToolTip": "BlazorAppStayly\\Pages\\Boletas\\BoletaDialog.razor",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-08T03:41:43.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Boleta.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Boletas\\Boleta.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Boletas\\Boleta.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Boletas\\Boleta.razor",
-              "RelativeToolTip": "BlazorAppStayly\\Pages\\Boletas\\Boleta.razor",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGMAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-08T03:38:02.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Habitaciones.razor",
-              "DocumentMoniker": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\Habitaciones.razor",
-              "RelativeDocumentMoniker": "BlazorAppStayly\\Pages\\Habitaciones\\Habitaciones.razor",
-              "ToolTip": "D:\\ProyectoStayly\\ALQUILER\\BlazorAppStayly\\Pages\\Habitaciones\\Habitaciones.razor",
-              "RelativeToolTip": "BlazorAppStayly\\Pages\\Habitaciones\\Habitaciones.razor",
-              "ViewState": "AgIAAG8BAAAAAAAAAAAswIQBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-08T03:28:33.29Z",
-              "EditorCaption": ""
             }
           ]
         }

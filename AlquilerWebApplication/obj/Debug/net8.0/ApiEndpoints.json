@@ -227,6 +227,37 @@
   },
   {
     "ContainingType": "AlquilerWebApplication.Controllers.PagoController",
+    "Method": "Obten_Paginado_x_Contrato",
+    "RelativePath": "api/Pago/Obten_Paginado_Contrato/{RegistroPagina}/{NumeroPagina}/{Con_Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RegistroPagina",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "NumeroPagina",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Con_Id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "TerBusqueda",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AlquilerWebApplication.Controllers.PagoController",
     "Method": "Obten_Paginado",
     "RelativePath": "api/Pago/Obten_Paginado/{RegistroPagina}/{NumeroPagina}",
     "HttpMethod": "GET",

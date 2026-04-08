@@ -7,6 +7,7 @@ namespace Service;
 public interface IPagoService
 {
     Task<(int, int, bool, bool, IEnumerable<Ent_Pago>)> Obten_Paginado(int RegistroPagina, int NumeroPagina, string? TerBusqueda);
+    Task<(int, int, bool, bool, IEnumerable<Ent_Pago>)> Obten_Paginado_x_Contrato(int RegistroPagina, int NumeroPagina, string? TerBusqueda, string Con_Id);
     Task<string> Actualiza_Pagar(int Pag_Id, DateOnly FechaPagoRealizado);
 
 }
@@ -27,6 +28,15 @@ public class PagoService : IPagoService
             using var context = _unitOfWork.Create();
 
             return context.Repositories.PagoRepository.Obten_Paginado(RegistroPagina, NumeroPagina, TerBusqueda);
+        });
+    }
+    public async Task<(int, int, bool, bool, IEnumerable<Ent_Pago>)> Obten_Paginado_x_Contrato(int RegistroPagina, int NumeroPagina, string? TerBusqueda, string Con_Id)
+    {
+        return await Task.Run(() =>
+        {
+            using var context = _unitOfWork.Create();
+
+            return context.Repositories.PagoRepository.Obten_Paginado_x_Contrato(RegistroPagina, NumeroPagina, TerBusqueda, Con_Id);
         });
     }
     public async Task<string> Actualiza_Pagar(int Pag_Id, DateOnly FechaPagoRealizado)

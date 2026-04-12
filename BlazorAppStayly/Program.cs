@@ -13,7 +13,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddHttpClient("ApiStayly", httpClient =>
 {
     httpClient.BaseAddress = new Uri("https://localhost:7054/");
-    //httpClient.BaseAddress = new Uri("https://apiprueba.runasp.net");
+    //httpClient.BaseAddress = new Uri("https://app.stay-ly.com/");
 });
 // HttpClient para recursos locales
 builder.Services.AddScoped(sp => new HttpClient

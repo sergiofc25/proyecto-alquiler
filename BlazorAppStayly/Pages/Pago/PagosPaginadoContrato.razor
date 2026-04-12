@@ -36,18 +36,18 @@
             Hover="true" Striped="true" Breakpoint="Breakpoint.Sm" Loading="@cargando"
             LoadingProgressColor="Color.Primary" Height="466px" Elevation="3">
                 <ToolBarContent>
-                    <MudItem Class="d-flex align-center justify-between mud-width-full pb-5" xs="12">
-                        <MudItem xs="8" Class="d-flex align-center">
+                    <MudItem Class="d-flex flex-column flex-sm-row align-start align-sm-center justify-between mud-width-full py-2" xs="12">
+                        <MudItem xs="12" sm="8" Class="d-flex align-center mud-width-full mb-2 mb-sm-0">
                             <MudTextField T="string" Value="@searchTerm" ValueChanged="@(value => OnSearch(value))"
                                           Placeholder="Buscar por " Adornment="Adornment.Start"
                                           AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
                             </MudTextField>
                         </MudItem>
-                        <MudItem xs="4" Class="d-flex align-center justify-end gap-2">
+                        <MudItem xs="12" sm="4" Class="d-flex align-center justify-start justify-sm-end">
                             <MudChipSet T="string" @bind-SelectedValue="filtroEstado" SelectionMode="SelectionMode.SingleSelection">
-                                <MudChip Value="@("todos")" Color="Color.Default" Variant="Variant.Filled" Default="true">Todos</MudChip>
-                                <MudChip Value="@("pagados")" Color="Color.Success" Variant="Variant.Filled">Pagados</MudChip>
-                                <MudChip Value="@("pendiente")" Color="Color.Warning" Variant="Variant.Filled">Pendientes</MudChip>
+                                <MudChip Value="@("todos")" Color="Color.Default" Size="Size.Small" Variant="Variant.Filled" Default="true">Todos</MudChip>
+                                <MudChip Value="@("pagados")" Color="Color.Success" Size="Size.Small" Variant="Variant.Filled">Pagados</MudChip>
+                                <MudChip Value="@("pendiente")" Color="Color.Warning" Size="Size.Small" Variant="Variant.Filled">Pendientes</MudChip>
                             </MudChipSet>
                         </MudItem>
                     </MudItem>

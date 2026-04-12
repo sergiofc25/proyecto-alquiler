@@ -10,7 +10,6 @@
 @using System.Text
 @using System.Net
 @using System.Reflection.Metadata
-@using System.Net.Http.Headers
 @inject ILocalStorageService localStorage
 @inject IDialogService DialogService
 @inject UserStateService UserStateService
@@ -22,8 +21,8 @@
 <MudGrid>
     <MudItem xs="12">
         <MudPaper Class="pa-5" Elevation="3">
-            <MudItem Class="d-flex align-center justify-center mud-width-full" xs="12">
-                <MudItem Class="d-flex align-center justify-start mud-width-full" xs="6">
+            <MudItem Class="d-flex align-content-start justify-content-start mud-width-full" xs="12">
+                <MudItem Class="d-flex align-content-start justify-start mud-width-full" xs="6">
                     <MudText Typo="Typo.h6" Color="Color.Primary">Contratos</MudText>
                 </MudItem>
             </MudItem>
@@ -36,22 +35,28 @@
             Hover="true" Striped="true" Breakpoint="Breakpoint.Sm" Loading="@cargando"
             LoadingProgressColor="Color.Primary" Height="466px" Elevation="3">
                 <ToolBarContent>
-                    <MudItem Class="d-flex align-center justify-between mud-width-full pb-5" xs="12">
-                        <MudItem xs="8" Class="d-flex align-center">
+                    <MudItem Class="d-flex flex-column flex-sm-row align-start align-sm-center justify-between mud-width-full py-2" xs="12">
+
+                        <MudItem xs="12" sm="8" Class="d-flex align-center mud-width-full mb-2 mb-sm-0">
                             <MudTextField T="string" Value="@searchTerm" ValueChanged="@(value => OnSearch(value))"
                                           Placeholder="Buscar por N° de documento" Adornment="Adornment.Start"
-                                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
+                                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium"
+                                          Class="mt-0" Style="margin-top: 0 !important;">
                             </MudTextField>
                         </MudItem>
-                        <MudItem xs="4" Class="d-flex align-center justify-end gap-2">
+
+                        <MudItem xs="12" sm="4" Class="d-flex align-center justify-start justify-sm-end">
                             <MudChipSet T="string" @bind-SelectedValue="filtroEstado" SelectionMode="SelectionMode.SingleSelection">
-                                <MudChip Value="@("todos")" Color="Color.Default" Variant="Variant.Filled" Default="true">Todos</MudChip>
-                                <MudChip Value="@("cerrados")" Color="Color.Error" Variant="Variant.Filled">Cerrados</MudChip>
-                                <MudChip Value="@("activos")" Color="Color.Success" Variant="Variant.Filled">Activos</MudChip>
+                                <MudChip Value="@("todos")" Color="Color.Default" Variant="Variant.Filled"
+                                         Size="Size.Small" Default="true">Todos</MudChip>
+                                <MudChip Value="@("cerrados")" Color="Color.Error" Variant="Variant.Filled"
+                                         Size="Size.Small">Cerrados</MudChip>
+                                <MudChip Value="@("activos")" Color="Color.Success" Variant="Variant.Filled"
+                                         Size="Size.Small">Activos</MudChip>
                             </MudChipSet>
                         </MudItem>
+
                     </MudItem>
-                    
                 </ToolBarContent>
                 <HeaderContent>
 

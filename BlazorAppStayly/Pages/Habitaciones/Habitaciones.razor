@@ -104,282 +104,294 @@ else
             grid-row: 3;
         }
     </style>
-    <MudPaper Class="pa-5" Elevation="3">
-        <MudItem Class="d-flex align-content-start justify-content-start mud-width-full" xs="12">
-            <MudItem Class="d-flex align-content-start justify-start mud-width-full" xs="6">
-                <MudText Typo="Typo.h6" Color="Color.Primary">Piso 3</MudText>
-            </MudItem>
-        </MudItem>
-    </MudPaper>
-    <div class="grid-dashboard mb-10 mt-10">
 
-        @if (Alojamientos.ContainsKey("301"))
-        {
-
-            <MudPaper Class="item-hab-301 d-flex flex-column">
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           Disabled="@(!Alojamientos["301"].EstadoAlojamiento)">
-                    <MudText Typo="Typo.h6">@Alojamientos["301"].CodigoAlojamiento</MudText>
-                </MudButton>
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["301"]))"
-                           Disabled="@(!Alojamientos["301"].EstadoAlojamiento)">
-                    @(Alojamientos["301"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
-                </MudButton>
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["301"]))">
-                    @(Alojamientos["301"].EstadoAlojamiento ? "Editar" : "Editar")
-                </MudButton>
-
-            </MudPaper>
-
-        }
-
-        @for (int i = 1; i <= 7; i++)
-        {
-            <MudPaper Style="background-color: #808080; color: white;" Class="d-flex align-center justify-center">
-            </MudPaper>
-        }
-        @if (Alojamientos.ContainsKey("302"))
-        {
-
-            <MudPaper Class="item-hab-302 d-flex flex-column">
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           Disabled="@(!Alojamientos["302"].EstadoAlojamiento)">
-                    <MudText Typo="Typo.h6">@Alojamientos["302"].CodigoAlojamiento</MudText>
-                </MudButton>
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["302"]))"
-                           Disabled="@(!Alojamientos["302"].EstadoAlojamiento)">
-                    @(Alojamientos["302"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
-                </MudButton>
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["302"]))">
-                    @(Alojamientos["302"].EstadoAlojamiento ? "Editar" : "Editar")
-                </MudButton>
-
-            </MudPaper>
-        }
-        @if (Alojamientos.ContainsKey("303"))
-        {
-
-            <MudPaper Class="item-hab-303 d-flex flex-column">
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           Disabled="@(!Alojamientos["303"].EstadoAlojamiento)">
-                    <MudText Typo="Typo.h6">@Alojamientos["303"].CodigoAlojamiento</MudText>
-                </MudButton>
-                    <MudButton Variant="Variant.Filled"
-                               Color="Color.Primary"
-                               Class="mud-width-full flex-grow-1"
-                               @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["303"]))"
-                               Disabled="@(!Alojamientos["303"].EstadoAlojamiento)">
-                        @(Alojamientos["303"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
-                    </MudButton>
-
-                    <MudButton Variant="Variant.Filled"
-                               Color="Color.Primary"
-                               Class="mud-width-full flex-grow-1"
-                               @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["303"]))">
-                    @(Alojamientos["303"].EstadoAlojamiento ? "Editar" : "Editar")
-                    </MudButton>
-            </MudPaper>
-        }
-
-        @if (Alojamientos.ContainsKey("304"))
-        {
-
-            <MudPaper Class="item-hab-304 d-flex flex-column">
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           Disabled="@(!Alojamientos["304"].EstadoAlojamiento)">
-                    <MudText Typo="Typo.h6">@Alojamientos["304"].CodigoAlojamiento</MudText>
-                </MudButton>
-                <div class="d-flex flex-grow-1">
-
-                    <MudButton Variant="Variant.Filled"
-                               Color="Color.Primary"
-                               Class="mud-width-full flex-grow-1"
-                               @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["304"]))"
-                               Disabled="@(!Alojamientos["304"].EstadoAlojamiento)">
-                        @(Alojamientos["304"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
-                    </MudButton>
-
-                    <MudButton Variant="Variant.Filled"
-                               Color="Color.Primary"
-                               Class="mud-width-full flex-grow-1"
-                               @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["304"]))">
-                        @(Alojamientos["304"].EstadoAlojamiento ? "Editar" : "Editar")
-                    </MudButton>
-                </div>
-            </MudPaper>
-        }
-
-
-
-        <MudPaper Style="background-color: #808080; color: white;" Class="centro-unido-f2 d-flex align-center justify-center gap-4">
-        </MudPaper>
-
-
-        @if (Alojamientos.ContainsKey("305"))
-        {
-
-            <MudPaper Class="item-hab-305 d-flex flex-column">
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           Disabled="@(!Alojamientos["305"].EstadoAlojamiento)">
-                    <MudText Typo="Typo.h6">@Alojamientos["305"].CodigoAlojamiento</MudText>
-                </MudButton>
-                <div class="d-flex flex-grow-1">
-
-                    <MudButton Variant="Variant.Filled"
-                               Color="Color.Primary"
-                               Class="mud-width-full flex-grow-1"
-                               @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["305"]))"
-                               Disabled="@(!Alojamientos["305"].EstadoAlojamiento)">
-                        @(Alojamientos["305"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
-                    </MudButton>
-
-                    <MudButton Variant="Variant.Filled"
-                               Color="Color.Primary"
-                               Class="mud-width-full flex-grow-1"
-                               @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["305"]))">
-                        @(Alojamientos["305"].EstadoAlojamiento ? "Editar" : "Editar")
-                    </MudButton>
-                </div>
-            </MudPaper>
-        }
-
-        @if (Alojamientos.ContainsKey("306"))
-        {
-
-            <MudPaper Class="item-hab-306 d-flex flex-column">
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           Disabled="@(!Alojamientos["306"].EstadoAlojamiento)">
-                    <MudText Typo="Typo.h6">@Alojamientos["306"].CodigoAlojamiento</MudText>
-                </MudButton>
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["306"]))"
-                           Disabled="@(!Alojamientos["306"].EstadoAlojamiento)">
-                    @(Alojamientos["306"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
-                </MudButton>
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["306"]))">
-                    @(Alojamientos["306"].EstadoAlojamiento ? "Editar" : "Editar")
-                </MudButton>
-
-            </MudPaper>
-        }
-        @if (Alojamientos.ContainsKey("307"))
-        {
-
-            <MudPaper Class="item-hab-307 d-flex flex-column">
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           Disabled="@(!Alojamientos["307"].EstadoAlojamiento)">
-                    <MudText Typo="Typo.h6">@Alojamientos["307"].CodigoAlojamiento</MudText>
-                </MudButton>
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["307"]))"
-                           Disabled="@(!Alojamientos["307"].EstadoAlojamiento)">
-                    @(Alojamientos["307"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
-                </MudButton>
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["307"]))">
-                    @(Alojamientos["307"].EstadoAlojamiento ? "Editar" : "Editar")
-                </MudButton>
-
-            </MudPaper>
-        }
-
+    <MudItem xs="12">
+        <MudPaper Class="pa-2" Elevation="3" Style="overflow-x: auto; overflow-y: auto;">
         
-    </div>
-    <MudPaper Class="pa-5" Elevation="3">
-        <MudItem Class="d-flex align-content-start justify-content-start mud-width-full" xs="12">
-            <MudItem Class="d-flex align-content-start justify-start mud-width-full" xs="6">
-                <MudText Typo="Typo.h6" Color="Color.Primary">Piso 2</MudText>
-            </MudItem>
-        </MudItem>
-    </MudPaper>
+            <div style="min-width: 900px; min-height: 600px;">
 
-    <div class="grid-dashboard mt-10">
-        @if (Alojamientos.ContainsKey("201"))
-        {
+                <MudPaper Class="pa-5" Elevation="3">
+                    <MudItem Class="d-flex align-content-start justify-content-start mud-width-full" xs="12">
+                        <MudItem Class="d-flex align-content-start justify-start mud-width-full" xs="6">
+                            <MudText Typo="Typo.h6" Color="Color.Primary">Piso 3</MudText>
+                        </MudItem>
+                    </MudItem>
+                </MudPaper>
+                <div class="grid-dashboard mb-10 mt-10">
 
-            <MudPaper Class="item-hab-301 d-flex flex-column">
+                    @if (Alojamientos.ContainsKey("301"))
+                    {
 
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           Disabled="@(!Alojamientos["201"].EstadoAlojamiento)">
-                    <MudText Typo="Typo.h6">@Alojamientos["201"].CodigoAlojamiento</MudText>
-                </MudButton>
+                        <MudPaper Class="item-hab-301 d-flex flex-column">
 
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["201"]))"
-                           Disabled="@(!Alojamientos["201"].EstadoAlojamiento)">
-                    @(Alojamientos["201"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
-                </MudButton>
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       Disabled="@(!Alojamientos["301"].EstadoAlojamiento)">
+                                <MudText Typo="Typo.h6">@Alojamientos["301"].CodigoAlojamiento</MudText>
+                            </MudButton>
 
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Primary"
-                           Class="mud-width-full flex-grow-1"
-                           @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["201"]))">
-                    @(Alojamientos["201"].EstadoAlojamiento ? "Editar" : "Editar")
-                </MudButton>
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["301"]))"
+                                       Disabled="@(!Alojamientos["301"].EstadoAlojamiento)">
+                                @(Alojamientos["301"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
+                            </MudButton>
 
-            </MudPaper>
-        }
-    </div>
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["301"]))">
+                                @(Alojamientos["301"].EstadoAlojamiento ? "Editar" : "Editar")
+                            </MudButton>
+
+                        </MudPaper>
+
+                    }
+
+                    @for (int i = 1; i <= 7; i++)
+                    {
+                        <MudPaper Style="background-color: #808080; color: white;" Class="d-flex align-center justify-center">
+                        </MudPaper>
+                    }
+                    @if (Alojamientos.ContainsKey("302"))
+                    {
+
+                        <MudPaper Class="item-hab-302 d-flex flex-column">
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       Disabled="@(!Alojamientos["302"].EstadoAlojamiento)">
+                                <MudText Typo="Typo.h6">@Alojamientos["302"].CodigoAlojamiento</MudText>
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["302"]))"
+                                       Disabled="@(!Alojamientos["302"].EstadoAlojamiento)">
+                                @(Alojamientos["302"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["302"]))">
+                                @(Alojamientos["302"].EstadoAlojamiento ? "Editar" : "Editar")
+                            </MudButton>
+
+                        </MudPaper>
+                    }
+                    @if (Alojamientos.ContainsKey("303"))
+                    {
+
+                        <MudPaper Class="item-hab-303 d-flex flex-column">
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       Disabled="@(!Alojamientos["303"].EstadoAlojamiento)">
+                                <MudText Typo="Typo.h6">@Alojamientos["303"].CodigoAlojamiento</MudText>
+                            </MudButton>
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["303"]))"
+                                       Disabled="@(!Alojamientos["303"].EstadoAlojamiento)">
+                                @(Alojamientos["303"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["303"]))">
+                                @(Alojamientos["303"].EstadoAlojamiento ? "Editar" : "Editar")
+                            </MudButton>
+                        </MudPaper>
+                    }
+
+                    @if (Alojamientos.ContainsKey("304"))
+                    {
+
+                        <MudPaper Class="item-hab-304 d-flex flex-column">
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       Disabled="@(!Alojamientos["304"].EstadoAlojamiento)">
+                                <MudText Typo="Typo.h6">@Alojamientos["304"].CodigoAlojamiento</MudText>
+                            </MudButton>
+                            <div class="d-flex flex-grow-1">
+
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           Class="mud-width-full flex-grow-1"
+                                           @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["304"]))"
+                                           Disabled="@(!Alojamientos["304"].EstadoAlojamiento)">
+                                    @(Alojamientos["304"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
+                                </MudButton>
+
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           Class="mud-width-full flex-grow-1"
+                                           @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["304"]))">
+                                    @(Alojamientos["304"].EstadoAlojamiento ? "Editar" : "Editar")
+                                </MudButton>
+                            </div>
+                        </MudPaper>
+                    }
+
+
+
+                    <MudPaper Style="background-color: #808080; color: white;" Class="centro-unido-f2 d-flex align-center justify-center gap-4">
+                    </MudPaper>
+
+
+                    @if (Alojamientos.ContainsKey("305"))
+                    {
+
+                        <MudPaper Class="item-hab-305 d-flex flex-column">
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       Disabled="@(!Alojamientos["305"].EstadoAlojamiento)">
+                                <MudText Typo="Typo.h6">@Alojamientos["305"].CodigoAlojamiento</MudText>
+                            </MudButton>
+                            <div class="d-flex flex-grow-1">
+
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           Class="mud-width-full flex-grow-1"
+                                           @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["305"]))"
+                                           Disabled="@(!Alojamientos["305"].EstadoAlojamiento)">
+                                    @(Alojamientos["305"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
+                                </MudButton>
+
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           Class="mud-width-full flex-grow-1"
+                                           @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["305"]))">
+                                    @(Alojamientos["305"].EstadoAlojamiento ? "Editar" : "Editar")
+                                </MudButton>
+                            </div>
+                        </MudPaper>
+                    }
+
+                    @if (Alojamientos.ContainsKey("306"))
+                    {
+
+                        <MudPaper Class="item-hab-306 d-flex flex-column">
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       Disabled="@(!Alojamientos["306"].EstadoAlojamiento)">
+                                <MudText Typo="Typo.h6">@Alojamientos["306"].CodigoAlojamiento</MudText>
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["306"]))"
+                                       Disabled="@(!Alojamientos["306"].EstadoAlojamiento)">
+                                @(Alojamientos["306"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["306"]))">
+                                @(Alojamientos["306"].EstadoAlojamiento ? "Editar" : "Editar")
+                            </MudButton>
+
+                        </MudPaper>
+                    }
+                    @if (Alojamientos.ContainsKey("307"))
+                    {
+
+                        <MudPaper Class="item-hab-307 d-flex flex-column">
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       Disabled="@(!Alojamientos["307"].EstadoAlojamiento)">
+                                <MudText Typo="Typo.h6">@Alojamientos["307"].CodigoAlojamiento</MudText>
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["307"]))"
+                                       Disabled="@(!Alojamientos["307"].EstadoAlojamiento)">
+                                @(Alojamientos["307"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["307"]))">
+                                @(Alojamientos["307"].EstadoAlojamiento ? "Editar" : "Editar")
+                            </MudButton>
+
+                        </MudPaper>
+                    }
+
+
+                </div>
+                <MudPaper Class="pa-5" Elevation="3">
+                    <MudItem Class="d-flex align-content-start justify-content-start mud-width-full" xs="12">
+                        <MudItem Class="d-flex align-content-start justify-start mud-width-full" xs="6">
+                            <MudText Typo="Typo.h6" Color="Color.Primary">Piso 2</MudText>
+                        </MudItem>
+                    </MudItem>
+                </MudPaper>
+
+                <div class="grid-dashboard mt-10">
+                    @if (Alojamientos.ContainsKey("201"))
+                    {
+
+                        <MudPaper Class="item-hab-301 d-flex flex-column">
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       Disabled="@(!Alojamientos["201"].EstadoAlojamiento)">
+                                <MudText Typo="Typo.h6">@Alojamientos["201"].CodigoAlojamiento</MudText>
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => GenerarContrato(_maxWidth, Alojamientos["201"]))"
+                                       Disabled="@(!Alojamientos["201"].EstadoAlojamiento)">
+                                @(Alojamientos["201"].EstadoAlojamiento ? "Alquilar" : "Alquilado")
+                            </MudButton>
+
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Class="mud-width-full flex-grow-1"
+                                       @onclick="@(() => EditarHabitacion(_maxWidth, Alojamientos["201"]))">
+                                @(Alojamientos["201"].EstadoAlojamiento ? "Editar" : "Editar")
+                            </MudButton>
+
+                        </MudPaper>
+                    }
+                </div>
+            </div>
+        </MudPaper>
+    </MudItem>
+    
+    
 
 
 
 
 
 }
+
 
 @code {
 

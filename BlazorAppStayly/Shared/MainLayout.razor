@@ -1,24 +1,107 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider/>
+
+<MudThemeProvider @ref="_mudThemeProvider" Theme="_theme" IsDarkMode="@_darkMode" />
 <MudPopoverProvider />
 <MudDialogProvider/>
 <MudSnackbarProvider />
+
 <MudLayout>
-    <div class="page">
-        <div class="sidebar">
-            <NavMenu />
-        </div>
+    <MudAppBar Elevation="1" Dense="@_dense">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
+        <MudSpacer />
+        <MudIconButton Icon="@(_darkMode? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode)"
+                       Color="Color.Inherit"
+                       OnClick="@ToggleDarkMode" />
+        <UsuarioActual />
+    </MudAppBar>
+        <MudDrawer @bind-Open="@_open" ClipMode="DrawerClipMode.Always" Elevation="1" Color="Color.Inherit" Variant="@DrawerVariant.Responsive">
+            <MudDrawerHeader>
+                <MudIcon Icon="@Icons.Material.Filled.Apartment" Color="Color.Primary" />
+                <MudText Typo="Typo.h6">STAYLY</MudText>
+            </MudDrawerHeader>
+            <MudNavMenu>
+                <nav class="flex-column">
+                    <div class="nav-item px-3">
+                        <MudNavLink Href="habitaciones" Icon="@Icons.Material.TwoTone.BedroomChild">
+                            Habitaciones
+                        </MudNavLink>
+                    </div>
+                    <div class="nav-item px-3">
+                        <MudNavLink Href="contratos" Icon="@Icons.Material.TwoTone.HistoryEdu">
+                            Contratos
+                        </MudNavLink>
+                    </div>
+                    <div class="nav-item px-3">
+                        <MudNavLink Href="pagos" Icon="@Icons.Material.TwoTone.AttachMoney">
+                            Pagos
+                        </MudNavLink>
+                    </div>
+                    <div class="nav-item px-3">
+                        <MudNavLink Href="inquilinos" Icon="@Icons.Material.TwoTone.People">
+                            Inquilinos
+                        </MudNavLink>
+                    </div>
+                </nav>
+            </MudNavMenu>
+        </MudDrawer>
+    
+    <MudMainContent Class="mt-4 px-4">
+        <MudPaper Class="d-flex d-md-none justify-space-between align-center pa-2 mb-3" Elevation="2">
+            <MudNavLink Href="habitaciones" Icon="@Icons.Material.TwoTone.BedroomChild" />
+            <MudNavLink Href="contratos" Icon="@Icons.Material.TwoTone.HistoryEdu" />
+            <MudNavLink Href="pagos" Icon="@Icons.Material.TwoTone.AttachMoney" />
+            <MudNavLink Href="inquilinos" Icon="@Icons.Material.TwoTone.People" />
+        </MudPaper>
 
-        <main>
-            <div class="top-row px-4">
-                <UsuarioActual />
-            </div>
-
-            <article class="content px-4">
-                @Body
-            </article>
-        </main>
-    </div>
+        @Body
+    </MudMainContent>
 </MudLayout>
+@code {
+    private bool _open = false;
+    private bool _dense = false;
+    private bool _darkMode = true;
+    private MudThemeProvider _mudThemeProvider = null!;
+    private DrawerClipMode _clipMode = DrawerClipMode.Never;
+
+
+    private async Task ToggleDarkMode()
+    {
+        _darkMode = !_darkMode;
+        StateHasChanged();
+    }
+
+    private void ToggleDrawer() => _open = !_open;
+
+    private MudTheme _theme = new MudTheme()
+    {
+        PaletteLight = new PaletteLight()
+        {
+            //Primary = "#6200ea",
+            Primary = "#5314cd",
+            AppbarBackground = "#6200ea",
+            DrawerBackground = "#f5f5f5",
+            DrawerText = "#212121",
+            DrawerIcon = "#6200ea",
+            Background = "#f4f4f8",
+            Surface = "#ffffff",
+            TextPrimary = "#212121",
+            TextSecondary = "#616161",
+        },
+        PaletteDark = new PaletteDark()
+        {
+            Primary = "#bb86fc",
+            AppbarBackground = "#1e1e2e",
+            DrawerBackground = "#1e1e2e",
+            DrawerText = "#e0e0e0",
+            DrawerIcon = "#bb86fc",
+            Background = "#121212",
+            Surface = "#1e1e2e",
+            TextPrimary = "#ffffff",
+            TextSecondary = "#ffffffb3",
+        },
+    };
+}
+
+
 

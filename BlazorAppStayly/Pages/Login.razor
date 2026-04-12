@@ -10,167 +10,88 @@
 @inject ILocalStorageService localStorage
 @layout LoginLayout
 
+<PageTitle>Login - Stayly</PageTitle>
 
-<PageTitle>Login - Sistema Web SFC</PageTitle>
+<MudGrid Justify="Justify.Center" Class="mud-height-full">
+    <MudItem xs="12" sm="8" md="5" lg="4" Class="d-flex align-center justify-center" Style="min-height: 100vh;">
+        <MudPaper Elevation="10" Class="pa-8 mud-width-full" Style="border-radius: 16px;">
 
-<MudGrid Class="full-height" Style="overflow-y: auto;">
-    <MudItem xs="12" md="8" Class="d-flex flex-column justify-center align-center pa-4 pa-md-10">
-        <div class="welcome-content">
-            <MudText Typo="Typo.h4" Class="mb-3" Color="Color.Primary">
-                Bienvenido al Sistema Web De Gestión de Rentas Stayly
-            </MudText>
-            <MudText Typo="Typo.h6" Class="mb-4" Color="Color.Secondary">
-                Gestión de rentas
-            </MudText>
-
-            <div class="features-list">
-                <MudText Class="d-flex align-center mb-2">
-                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" />
-                    Acceso seguro
+            <MudStack AlignItems="AlignItems.Center" Class="mb-6">
+                <MudAvatar Color="Color.Primary" Size="Size.Large">
+                    <MudIcon Icon="@Icons.Material.Filled.Apartment" Size="Size.Large" />
+                </MudAvatar>
+                <MudText Typo="Typo.h5" Color="Color.Primary" Align="Align.Center">
+                    <b>STAYLY</b>
                 </MudText>
-                <MudText Class="d-flex align-center mb-2">
-                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" />
-                    Panel de control intuitivo
+                <MudText Typo="Typo.body2" Color="Color.Primary" Align="Align.Center">
+                    Sistema de Gestión de Rentas
                 </MudText>
-                <MudText Class="d-flex align-center mb-2">
-                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" />
-                    Analisis de costos
-                </MudText>
-            </div>
+            </MudStack>
 
-            <MudPaper Class="mt-6 pa-3" Elevation="0" Style="background-color: rgba(255,255,255,0.1); border-radius: 16px;">
-                <MudButton Variant="Variant.Outlined" Color="Color.Info" FullWidth="true"
-                           EndIcon="@Icons.Material.Filled.ContactSupport" Size="Size.Small">
-                    Contactar al administrador
+            <MudDivider Class="mb-6" />
+
+            <MudForm @ref="form">
+                <MudTextField @bind-Value="loginModel.Email"
+                              Label="Usuario"
+                              Variant="Variant.Outlined"
+                              Margin="Margin.Dense"
+                              FullWidth="true"
+                              Required="true"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.Person"
+                              Class="mb-4" />
+
+                <MudTextField @bind-Value="loginModel.Pass"
+                              Label="Contraseña"
+                              Variant="Variant.Outlined"
+                              Margin="Margin.Dense"
+                              FullWidth="true"
+                              Required="true"
+                              InputType="InputType.Password"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.Lock"
+                              Class="mb-5" />
+
+                <MudButton Type="Submit"
+                           Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           FullWidth="true"
+                           Size="Size.Large"
+                           Disabled="isProcessing"
+                           OnClick="async () => await HandleLogin()"
+                           EndIcon="@Icons.Material.Filled.ArrowForward"
+                           Class="mb-3">
+                    @if (isProcessing)
+                    {
+                        <MudProgressCircular Size="Size.Small" Indeterminate="true" Color="Color.Inherit" Class="mr-2" />
+                        <MudText>Ingresando...</MudText>
+                    }
+                    else
+                    {
+                        <MudText>Iniciar Sesión</MudText>
+                    }
                 </MudButton>
-            </MudPaper>
-        </div>
-    </MudItem>
 
-    <MudItem xs="12" md="4" Class="login-section">
-        <MudPaper Class="pa-4 pa-md-8 full-height" Elevation="10" Style="border-radius: 0;">
-            <div class="d-flex flex-column justify-space-between full-height">
-                <div>
-                    <div class="text-center mb-4">
-                        <MudAvatar Size="Size.Large" Color="Color.Primary" Style="margin: 0 auto;">
-                            <MudIcon Icon="@Icons.Material.Filled.Lock" Size="Size.Large" />
-                        </MudAvatar>
-                        <MudText Typo="Typo.h5" Class="mt-2" Color="Color.Primary">Inicio de Sesión</MudText>
-                        <MudText Class="mt-1" Color="Color.Secondary">Ingresa tus credenciales para continuar</MudText>
-                    </div>
+                @if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="mt-2">
+                        @errorMessage
+                    </MudAlert>
+                }
+            </MudForm>
 
-                    <MudForm @ref="form">
-                        <MudTextField @bind-Value="loginModel.Email"
-                                      Label="Usuario"
-                                      Variant="Variant.Outlined"
-                                      Margin="Margin.Dense"
-                                      FullWidth="true"
-                                      Required="true"
-                                      AdornmentIcon="@Icons.Material.Filled.Person"
-                                      Class="mb-3" />
+            <MudDivider Class="mt-6 mb-4" />
 
-                        <MudTextField @bind-Value="loginModel.Pass"
-                                      Label="Contraseña"
-                                      Variant="Variant.Outlined"
-                                      Margin="Margin.Dense"
-                                      FullWidth="true"
-                                      Required="true"
-                                      InputType="InputType.Password"
-                                      AdornmentIcon="@Icons.Material.Filled.Lock"
-                                      Class="mb-3" />
+            <MudStack AlignItems="AlignItems.Center" Spacing="0">
+                <MudText Typo="Typo.caption" Color="Color.Secondary">
+                    © @DateTime.Now.Year Stayly — Todos los derechos reservados
+                </MudText>
+                <MudText Typo="Typo.caption" Color="Color.Secondary">v11.04.26</MudText>
+            </MudStack>
 
-                        <MudButton Type="Submit"
-                                   Variant="Variant.Filled"
-                                   Color="Color.Primary"
-                                   Size="Size.Small"
-                                   EndIcon="@Icons.Material.Filled.Send"
-                                   Disabled="isProcessing"
-                                   OnClick="async () => await HandleLogin()"
-                                   Class="mb-3" FullWidth="true">
-                            @if (isProcessing)
-                            {
-                                <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" Color="Color.Inherit" />
-                                <MudText Class="ms-2">Ingresando...</MudText>
-                            }
-                            else
-                            {
-                                <MudText>Iniciar Sesión</MudText>
-                            }
-                        </MudButton>
-                        @* <MudButton Variant="Variant.Filled"
-                                   Color="Color.Default"
-                                   Size="Size.Small"
-                                   EndIcon="@Icons.Material.Filled.Person"
-                                   Disabled="isProcessing"
-                                   OnClick="async () => await LoginAsGuest()"
-                                   Class="mb-3" FullWidth="true">
-                            <MudText>Ingresar como Invitado</MudText>
-                        </MudButton> *@
-                        @if (!string.IsNullOrEmpty(errorMessage))
-                        {
-                            <MudAlert Severity="Severity.Error" Class="mt-3">@errorMessage</MudAlert>
-                        }
-                    </MudForm>
-                </div>
-
-                <div class="text-center mt-4">
-                    <MudText Color="Color.Secondary" Class="mb-1">© @DateTime.Now.Year Sistema Web SFC</MudText>
-                    <MudText Color="Color.Secondary" Typo="Typo.caption">v15.07.25</MudText>
-                </div>
-            </div>
         </MudPaper>
     </MudItem>
 </MudGrid>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-size: cover;
-    }
-
-    .full-height {
-        min-height: 100vh;
-        margin: 0;
-    }
-
-    .login-section {
-        background-color: white;
-    }
-
-    .welcome-content {
-        max-width: 100%;
-        border-radius: 8px;
-        color: black;
-        padding: 1rem;
-    }
-
-    .features-list {
-        margin: 1.5rem 0;
-        padding: 0.5rem;
-        border-radius: 8px;
-        color: black;
-    }
-
-    @@media (max-width: 600px) {
-        .full-height {
-            height: auto;
-        }
-
-        .welcome-content {
-            text-align: center;
-        }
-
-        .features-list {
-            text-align: left;
-            margin: 1rem 0;
-        }
-
-        MudText {
-            font-size: 0.9rem;
-        }
-    }
-</style>
 @code {
     private DTO_Usuario_Obten_Login loginModel = new DTO_Usuario_Obten_Login();
     private string errorMessage = string.Empty;
@@ -223,41 +144,5 @@
             }
         }
     }
-    // private async Task LoginAsGuest()
-    // {
-    //     isProcessing = true;
-    //     StateHasChanged();
-
-    //     try
-    //     {
-    //         var client = ClientFactory.CreateClient("ApiStayly");
-    //         var response = await client.PostAsJsonAsync("api/Accounts/Login", new DTO_Usuario_Obten_Login
-    //             {
-    //                 Email = "Invitado",
-    //                 Clave = "Inv_45.@4458"
-    //             });
-
-    //         if (response.IsSuccessStatusCode)
-    //         {
-    //             var result = await response.Content.ReadFromJsonAsync<DTO_AuthResponse>();
-    //             if (result?.IsAuthSuccessful == true)
-    //             {
-    //                 await localStorage.SetItemAsync("authToken", result.Token);
-    //                 NavigationManager.NavigateTo("/proyectos_paginado");
-    //                 return;
-    //             }
-    //         }
-    //         errorMessage = "Error al acceder como invitado";
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         errorMessage = ex.Message;
-    //     }
-    //     finally
-    //     {
-    //         isProcessing = false;
-    //         StateHasChanged();
-    //     }
-    // }
 
 }

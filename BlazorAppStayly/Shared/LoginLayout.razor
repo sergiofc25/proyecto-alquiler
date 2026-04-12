@@ -1,12 +1,34 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider Theme="_theme" IsDarkMode="true" />
 <MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 
-<div class="login-page">
-    <main>
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+<MudLayout>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    private MudTheme _theme = new MudTheme()
+    {
+        PaletteLight = new PaletteLight()
+        {
+            Primary = "#6200ea",
+            Background = "#f4f4f8",
+            Surface = "#ffffff",
+            TextPrimary = "#212121",
+            TextSecondary = "#616161",
+        },
+        PaletteDark = new PaletteDark()
+        {
+            Primary = "#bb86fc",
+            Background = "#121212",
+            Surface = "#1e1e2e",
+            TextPrimary = "#ffffff",
+            TextSecondary = "#ffffffb3",
+        }
+    };
+}

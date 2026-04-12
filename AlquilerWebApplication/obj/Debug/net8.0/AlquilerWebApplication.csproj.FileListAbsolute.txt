@@ -205,10 +205,13 @@ D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\staticwebasse
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\staticwebassets.development.json
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\Alquiler.9DEC03DE.Up2Date
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\AlquilerWebApplication.dll
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\refint\AlquilerWebApplication.dll
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\AlquilerWebApplication.pdb
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\AlquilerWebApplication.genruntimeconfig.cache
 D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\ref\AlquilerWebApplication.dll
+D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\bin\Debug\net8.0\appsettings - Copia.Development.json
+D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\bin\Debug\net8.0\appsettings - Copia.json
+D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\bin\Debug\net8.0\dotnet-tools.json
+D:\ProyectoStayly\ALQUILER\AlquilerWebApplication\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -1,6 +1,6 @@
 {
-  "name": "BlazorAppStayly",
-  "short_name": "BlazorAppStayly",
+  "name": "Stayly",
+  "short_name": "Stayly",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
@@ -9,12 +9,12 @@
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "Logos/house512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "icon-192.png",
+      "src": "Logos/house192.png",
       "type": "image/png",
       "sizes": "192x192"
     }

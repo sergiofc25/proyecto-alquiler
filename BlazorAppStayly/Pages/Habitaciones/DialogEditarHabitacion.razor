@@ -30,13 +30,13 @@
                                       Required="true" />
 
                         <MudTextField @bind-Value="Alojamiento.Precio"
-                                      Label="Precio"
-                                      Required="true"
+                                         Label="Precio"
+                                         Required="true"
                                       InputType="InputType.Number" />
 
                         <MudTextField @bind-Value="Alojamiento.Garantia"
-                                      Label="Garantía"
-                                      Required="true"
+                                         Label="Garantía"
+                                         Required="true"
                                       InputType="InputType.Number" />
 
                     </MudForm>
@@ -92,6 +92,7 @@
 
     private void Cancel()
     {
+        Console.WriteLine($"Info recibida editar: {Alojamiento.CodigoAlojamiento}, Precio: {Alojamiento.Precio}, Garantia: {Alojamiento.Garantia}");
         MudDialog.Cancel();
     }
 

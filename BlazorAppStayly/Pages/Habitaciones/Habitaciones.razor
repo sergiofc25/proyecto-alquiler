@@ -477,11 +477,11 @@ else
     }
     private Task EditarHabitacion(DialogOptions options, DTO_Alojamiento_Obten Alojamiento)
     {
-
         var parameters = new DialogParameters
         {
             { "Alojamiento", Alojamiento }
         };
+        Console.WriteLine($"Info enviada a dialog editar: {Alojamiento.CodigoAlojamiento}, Precio: {Alojamiento.Precio}, Garantia: {Alojamiento.Garantia}");
         return DialogService.ShowAsync<DialogEditarHabitacion>("Editar Habitación", parameters, options);
     }
 }

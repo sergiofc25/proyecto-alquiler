@@ -532,11 +532,13 @@
             "nullable": true
           },
           "precio": {
-            "type": "string",
+            "type": "number",
+            "format": "double",
             "nullable": true
           },
           "garantia": {
-            "type": "string",
+            "type": "number",
+            "format": "double",
             "nullable": true
           }
         },

@@ -33,7 +33,6 @@
     <Folder Include="wwwroot\FotosHabitaciones\201\" />
     <Folder Include="wwwroot\FotosHabitaciones\302\" />
     <Folder Include="wwwroot\FotosHabitaciones\301\" />
-    <Folder Include="wwwroot\Logos\" />
   </ItemGroup>
 
 </Project>

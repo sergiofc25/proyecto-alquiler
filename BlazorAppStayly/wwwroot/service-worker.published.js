@@ -37,19 +37,45 @@ async function onActivate(event) {
         .map(key => caches.delete(key)));
 }
 
+//async function onFetch(event) {
+//    let cachedResponse = null;
+//    if (event.request.method === 'GET') {
+//        // For all navigation requests, try to serve index.html from cache,
+//        // unless that request is for an offline resource.
+//        // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
+//        const shouldServeIndexHtml = event.request.mode === 'navigate'
+//            && !manifestUrlList.some(url => url === event.request.url);
+
+//        const request = shouldServeIndexHtml ? 'index.html' : event.request;
+//        const cache = await caches.open(cacheName);
+//        cachedResponse = await cache.match(request);
+//    }
+
+//    return cachedResponse || fetch(event.request);
+//}
 async function onFetch(event) {
     let cachedResponse = null;
+
     if (event.request.method === 'GET') {
-        // For all navigation requests, try to serve index.html from cache,
-        // unless that request is for an offline resource.
-        // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
         const shouldServeIndexHtml = event.request.mode === 'navigate'
             && !manifestUrlList.some(url => url === event.request.url);
 
         const request = shouldServeIndexHtml ? 'index.html' : event.request;
         const cache = await caches.open(cacheName);
         cachedResponse = await cache.match(request);
+
+        // Si debería servir index.html pero no está en caché,
+        // intenta con la URL absoluta como fallback
+        if (!cachedResponse && shouldServeIndexHtml) {
+            cachedResponse = await cache.match('/index.html');
+        }
     }
 
-    return cachedResponse || fetch(event.request);
+    // Manejo explícito del error en fetch
+    return cachedResponse || fetch(event.request).catch(err => {
+        console.error('[SW] Fetch failed:', event.request.url, err);
+        // Opcional: retornar página offline si la tienes cacheada
+        // return caches.match('/offline.html');
+        return new Response('Network error', { status: 408, statusText: 'Network error' });
+    });
 }

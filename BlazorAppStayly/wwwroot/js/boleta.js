@@ -148,19 +148,50 @@
             <div class="footer">Gracias por su preferencia</div>
         </div>
     `;
-
     const element = document.createElement("div");
     element.innerHTML = ticket;
+
+    // Insertar visible pero fuera del flujo
+    element.style.cssText = `
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        width: 302px;
+        visibility: hidden;
+    `;
     document.body.appendChild(element);
 
-    html2pdf()
-        .from(element)
-        .set({
-            margin: 0,
-            filename: `boleta_${boleta.codigo}.pdf`,
-            html2canvas: { scale: 3, useCORS: true },
-            jsPDF: { unit: 'mm', format: [80, 160], orientation: 'portrait' }
-        })
-        .save()
-        .then(() => document.body.removeChild(element));
+    setTimeout(() => {
+        const dpr = window.devicePixelRatio || 1;
+
+        // Alto real del contenido en px → convertir a mm
+        const heightPx = element.getBoundingClientRect().height;
+        const heightMm = (heightPx * 25.4) / 96;
+        const finalHeight = Math.ceil(heightMm) + 15; // +15mm de margen
+
+        element.style.cssText = ""; // limpiar estilos antes de capturar
+
+        html2pdf()
+            .from(element)
+            .set({
+                margin: 0,
+                filename: `boleta_${boleta.codigo}.pdf`,
+                pagebreak: { mode: 'avoid-all' },
+                html2canvas: {
+                    scale: Math.min(dpr, 2),  // máximo 2x para calidad sin desbordar
+                    useCORS: true,
+                    logging: false,
+                    windowWidth: 302,
+                    dpi: 96,
+                    devicePixelRatio: 1
+                },
+                jsPDF: {
+                    unit: 'mm',
+                    format: [80, finalHeight],  // alto exacto al contenido
+                    orientation: 'portrait'
+                }
+            })
+            .save()
+            .then(() => document.body.removeChild(element));
+    }, 300); // pequeño delay para que el DOM calcule el layout
 };

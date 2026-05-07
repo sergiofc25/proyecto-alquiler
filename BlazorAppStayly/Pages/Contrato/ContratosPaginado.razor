@@ -48,11 +48,11 @@
                         <MudItem xs="12" sm="4" Class="d-flex align-center justify-start justify-sm-end">
                             <MudChipSet T="string" @bind-SelectedValue="filtroEstado" SelectionMode="SelectionMode.SingleSelection">
                                 <MudChip Value="@("todos")" Color="Color.Default" Variant="Variant.Filled"
-                                         Size="Size.Small" Default="true">Todos</MudChip>
+                                         Size="Size.Small" >Todos</MudChip>
                                 <MudChip Value="@("cerrados")" Color="Color.Error" Variant="Variant.Filled"
                                          Size="Size.Small">Cerrados</MudChip>
                                 <MudChip Value="@("activos")" Color="Color.Success" Variant="Variant.Filled"
-                                         Size="Size.Small">Activos</MudChip>
+                                         Size="Size.Small" Default="true">Activos</MudChip>
                             </MudChipSet>
                         </MudItem>
 

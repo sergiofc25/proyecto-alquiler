@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "do7bdKKnSf8=",
+  "dgSpecHash": "Q0912pW4P4c=",
   "success": true,
   "projectFilePath": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
   "expectedPackageFiles": [
@@ -55,5 +55,18 @@
     "C:\\Users\\user\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "El paquete \"MailKit\" 4.13.0 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-9j88-vvj5-vhgr",
+      "projectPath": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\ProyectoStayly\\ALQUILER\\AlquilerWebApplication\\AlquilerWebApplication.csproj",
+      "libraryId": "MailKit",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
